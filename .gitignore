@@ -3,3 +3,8 @@ api/
 server.py
 setup.sh
 *.php
+
+api/
+server.py
+setup.sh
+*.php
