@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サマテイ エントリー集計 〜夏とゾンビ〜</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=Klee+One:wght@400;600&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Caveat:wght@500;700&family=Kosugi+Maru&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fdf8ec; --paper2:#fbf3e0; --paper3:#f5ead0; --paper-deep:#ebdcb6;
+  --sky:#cfe9f3; --sky2:#a8d4e8; --sea:#7ec4cf; --sea2:#4ea7b6;
+  --coral:#ff9aa8; --coral2:#ffb6c1; --pink:#fcd6dc; --sand:#f0d9a8;
+  --sun:#ffd97d; --sun2:#fce086; --mint:#b8e3c8; --lavender:#dcd0ee;
+  --zombie:#a8c89c; --zombie2:#8ab581; --bruise:#b48ee0;
+  --ink:#3d352f; --ink2:#5a4d44; --sub:#8a7a6c; --pencil:#7c6f63;
+  --line:#d8c8a8; --line2:#c4b18a;
+  --display:'Yusei Magic',cursive; --hand:'Klee One',serif;
+  --body:'Zen Maru Gothic','Hiragino Maru Gothic ProN',sans-serif;
+  --en:'Caveat',cursive; --kana:'Kosugi Maru',sans-serif;
+  --mono:'JetBrains Mono','Kosugi Maru',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.8;-webkit-font-smoothing:antialiased}
+.es{max-width:1040px;margin:0 auto;padding:clamp(2rem,6vw,4rem) clamp(1rem,4vw,2rem)}
+
+.es-num{display:inline-block;font-family:var(--en);font-size:1rem;font-weight:700;letter-spacing:.05em;
+  color:var(--ink);background:var(--sun2);padding:.05rem .7rem;border:1.5px solid var(--ink);
+  border-radius:99px;transform:rotate(-2deg);margin-bottom:.6rem}
+.es-h2{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,5.5vw,2.6rem);
+  line-height:1.35;letter-spacing:.04em;color:var(--ink)}
+.es-h2 em{color:var(--coral);font-style:normal}
+.es-h2 .z{color:var(--zombie2);font-style:normal}
+.es-lead{font-size:.95rem;color:var(--ink2);margin-top:.9rem;max-width:50ch}
+.es-lead b{color:var(--coral);font-weight:700}
+.es-lead .s{color:var(--sea2);font-weight:700}
+
+.wave{width:100%;height:18px;margin:2rem 0;opacity:.6;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 18'><path d='M0 9 Q 7.5 0 15 9 T 30 9 T 45 9 T 60 9' stroke='%237ec4cf' stroke-width='2' fill='none' stroke-linecap='round'/></svg>");
+  background-repeat:repeat-x;background-size:60px 18px}
+
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin:2rem 0 1rem}
+.metric{background:var(--paper2);border:2px solid var(--ink);border-radius:8px;padding:1.2rem 1.3rem;
+  box-shadow:4px 4px 0 rgba(61,53,47,.15);position:relative}
+.metric:nth-child(2n){transform:rotate(.6deg)}
+.metric:nth-child(3n){transform:rotate(-.7deg)}
+.metric .ic{position:absolute;top:.7rem;right:.9rem;font-size:1.3rem}
+.metric .lbl{font-family:var(--en);font-size:1rem;font-weight:700;color:var(--sea2);letter-spacing:.04em}
+.metric .num{font-family:var(--display);font-size:clamp(2.4rem,6.5vw,3.1rem);line-height:1;margin-top:.2rem;color:var(--ink)}
+.metric .num span{font-size:.4em;color:var(--coral);margin-left:.12em}
+.metric .ft{font-size:.72rem;color:var(--sub);margin-top:.4rem}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:1.4rem}
+.panel{background:var(--paper);border:2px solid var(--ink);border-radius:8px;
+  padding:1.3rem 1.4rem 1.5rem;box-shadow:4px 4px 0 rgba(61,53,47,.13)}
+.panel.full{grid-column:1 / -1}
+.p-head{display:flex;align-items:baseline;justify-content:space-between;gap:.8rem;margin-bottom:1.1rem;flex-wrap:wrap}
+.p-name{font-family:var(--display);font-size:1.15rem;color:var(--ink);letter-spacing:.03em}
+.p-name::before{content:'✿';color:var(--coral);margin-right:.4em;font-size:.85em}
+.p-tag{font-family:var(--en);font-size:.95rem;font-weight:700;color:var(--sea2);letter-spacing:.04em}
+.cv{position:relative;width:100%}
+.leg{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:1rem;font-family:var(--mono);font-size:.66rem;color:var(--ink2)}
+.leg span{display:inline-flex;align-items:center;gap:6px}
+.leg i{width:11px;height:11px;border-radius:3px;border:1.5px solid var(--ink);display:inline-block}
+.note{font-size:.74rem;color:var(--sub);margin-top:.9rem;line-height:1.65}
+.note b{color:var(--coral)}
+.foot{font-family:var(--mono);font-size:.62rem;color:var(--sub);margin-top:2.4rem;
+  border-top:1.5px dashed var(--line);padding-top:1.1rem;letter-spacing:.03em;line-height:1.7}
+@media(max-width:720px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<section class="es">
+  <span class="es-num">ENTRY DATA</span>
+  <h1 class="es-h2">プレエントリー<em>集計</em> <span class="z">🧟</span></h1>
+  <p class="es-lead">サマテイ 〜夏とゾンビ〜 のプレエントリー集計。応募は<b>108件</b>、同じ人の出し直し<span class="s">3件</span>を除くと<b>105名</b>。自己申告の底辺度から、得意ジャンル・提出スタイルまでゆる〜く集計しました。🏖</p>
+
+  <div class="metrics">
+    <div class="metric"><span class="ic">🩴</span><div class="lbl">Entrants</div><div class="num">105<span>名</span></div><div class="ft">実エントリー（応募108件・重複3件除外）</div></div>
+    <div class="metric"><span class="ic">🧟</span><div class="lbl">Teihen-do</div><div class="num">7.4</div><div class="ft">底辺度の平均（中央値 8）</div></div>
+    <div class="metric"><span class="ic">🎬</span><div class="lbl">Self-made</div><div class="num">75<span>%</span></div><div class="ft">自作動画派（79名）</div></div>
+    <div class="metric"><span class="ic">🌴</span><div class="lbl">Join</div><div class="num">83<span>%</span></div><div class="ft">当日参加できそう（87名）</div></div>
+  </div>
+
+  <div class="wave"></div>
+
+  <div class="grid">
+
+    <div class="panel full">
+      <div class="p-head"><span class="p-name">底辺度の自己申告（1〜10）</span><span class="p-tag">self-rated / n=105</span></div>
+      <div class="cv" style="height:300px"><canvas id="cT" role="img" aria-label="底辺度1〜10の分布。8が15名、9が22名、10が27名と高い自己申告に偏る">1=6,2=3,3=1,4=11,5=2,6=7,7=11,8=15,9=22,10=27</canvas></div>
+      <p class="note">「10 ありがとうございました」が最多の<b>27名</b>。8以上だけで全体の約6割と、みんな堂々と底辺を名乗ってます。</p>
+    </div>
+
+    <div class="panel">
+      <div class="p-head"><span class="p-name">得意ジャンル</span><span class="p-tag">genre</span></div>
+      <div class="cv" style="height:340px"><canvas id="cG" role="img" aria-label="得意ジャンル別の人数。ロック31が最多、ポップ21、電子17と続く">ロック31,ポップ21,電子17,ネタ15,その他12,ヒップホップ4,R&B3,アンビエント2</canvas></div>
+      <p class="note">「AIに丸投げ」系のネタ回答が<b>15名</b>。自由記述の一点ものも12名と個性派ぞろい。</p>
+    </div>
+
+    <div class="panel">
+      <div class="p-head"><span class="p-name">提出スタイル</span><span class="p-tag">style</span></div>
+      <div class="cv" style="height:230px"><canvas id="cS" role="img" aria-label="提出スタイル。自作動画派79名75%、サポート希望26名25%">自作動画派79(75%),サポート希望26(25%)</canvas></div>
+      <div class="leg"><span><i style="background:#ff9aa8"></i>🎬 自作動画派 79（75%）</span><span><i style="background:#7ec4cf"></i>🎵 サポート希望 26（25%）</span></div>
+    </div>
+
+    <div class="panel">
+      <div class="p-head"><span class="p-name">当日リアルタイム参加</span><span class="p-tag">realtime</span></div>
+      <div class="cv" style="height:230px"><canvas id="cR" role="img" aria-label="当日リアルタイム参加の希望。たぶん参加55、参加できる32、難しいかも11、来られないのでアーカイブ視聴7。全員が出演者として参加">たぶん55,参加32,難しい11,アーカイブ視聴7</canvas></div>
+      <div class="leg">
+        <span><i style="background:#ff9aa8"></i>参加できる 32</span>
+        <span><i style="background:#ffd97d"></i>たぶん参加 55</span>
+        <span><i style="background:#b48ee0"></i>難しいかも 11</span>
+        <span><i style="background:#c4b18a"></i>アーカイブ視聴 7</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="p-head"><span class="p-name">連絡が取りやすい方法</span><span class="p-tag">contact</span></div>
+      <div class="cv" style="height:230px"><canvas id="cC" role="img" aria-label="連絡方法。X59、Discord24、Eメール12、tiktok10">X59,Discord24,メール12,tiktok10</canvas></div>
+      <p class="note">過半数が<b>X（Twitter）</b>。告知・連絡はXを軸にするのが効率的。</p>
+    </div>
+
+    <div class="panel">
+      <div class="p-head"><span class="p-name">出演可能日</span><span class="p-tag">available / 複数回答</span></div>
+      <div class="cv" style="height:230px"><canvas id="cD" role="img" aria-label="出演可能日。どの日でも可79、8/19が13、8/18が12、不明12、8/24が11、8/25が11">どの日でも可79,8/19=13,8/18=12,不明12,8/24=11,8/25=11</canvas></div>
+      <p class="note">約<b>75%</b>が「どの日でも可」。日程は組みやすい。複数選択のため延べ数です。</p>
+    </div>
+
+  </div>
+
+  <p class="foot">SOURCE: サマテイ 出演エントリーシート（応募 108件 → 重複3件除外 → 105名 / 集計スナップショット）🐚<br>※重複は同一メール＆同一名義の再提出。各人の最新提出を採用。</p>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const CORAL='#ff9aa8',CORAL2='#ffb6c1',SEA='#7ec4cf',SUN='#ffd97d',ZOM='#8ab581',LAV='#b48ee0',SKY='#a8d4e8',SAND='#f0d9a8',LINE='#c4b18a',INK='#3d352f',SUB='#8a7a6c';
+const GRID='rgba(61,53,47,.08)';
+Chart.defaults.font.family="'JetBrains Mono','Kosugi Maru',monospace";
+Chart.defaults.font.size=11;
+Chart.defaults.color=SUB;
+Chart.defaults.borderColor=GRID;
+const JP="'Zen Maru Gothic',sans-serif";
+const tip={backgroundColor:'#fbf3e0',borderColor:'#3d352f',borderWidth:1.5,titleColor:'#3d352f',bodyColor:'#5a4d44',padding:9,cornerRadius:6,titleFont:{family:JP},bodyFont:{family:JP},displayColors:false};
+const bar={borderColor:'#3d352f',borderWidth:1.5,borderRadius:6,borderSkipped:false};
+
+new Chart(cT,{type:'bar',
+ data:{labels:['1','2','3','4','5','6','7','8','9','10'],
+   datasets:[{data:[6,3,1,11,2,7,11,15,22,27],
+     backgroundColor:[SKY,'#9fd4dd',SEA,'#b8e3c8',SUN,'#ffcf86','#ffbf90','#ffac9c',CORAL,'#ff8493'],...bar,barPercentage:.84,categoryPercentage:.9}]},
+ options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...tip,callbacks:{label:c=>c.parsed.y+'名'}}},
+   scales:{x:{grid:{display:false},ticks:{color:INK}},y:{grid:{color:GRID},ticks:{color:SUB,precision:0},beginAtZero:true}}}});
+
+new Chart(cG,{type:'bar',
+ data:{labels:['ロック / バンド','ポップ / J-POP','電子 / EDM / テクノ','ネタ回答（AI丸投げ）','その他フリー回答','ヒップホップ / ラップ','R&B / ソウル','アンビエント / チル'],
+   datasets:[{data:[31,21,17,15,12,4,3,2],backgroundColor:[CORAL,CORAL2,CORAL2,ZOM,SAND,SEA,SEA,SEA],...bar,barPercentage:.8}]},
+ options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+   plugins:{legend:{display:false},tooltip:{...tip,callbacks:{label:c=>c.parsed.x+'名'}}},
+   scales:{x:{grid:{color:GRID},ticks:{color:SUB,precision:0},beginAtZero:true},
+     y:{grid:{display:false},ticks:{color:INK,font:{family:JP,size:11}}}}}});
+
+new Chart(cS,{type:'doughnut',
+ data:{labels:['自作動画派','サポート希望'],datasets:[{data:[79,26],backgroundColor:[CORAL,SEA],borderColor:'#fdf8ec',borderWidth:3}]},
+ options:{responsive:true,maintainAspectRatio:false,cutout:'60%',
+   plugins:{legend:{display:false},tooltip:{...tip,callbacks:{label:c=>c.label+' '+c.parsed+'名'}}}}});
+
+new Chart(cR,{type:'doughnut',
+ data:{labels:['参加できる','たぶん参加','難しいかも','アーカイブ視聴'],datasets:[{data:[32,55,11,7],backgroundColor:[CORAL,SUN,LAV,LINE],borderColor:'#fdf8ec',borderWidth:3}]},
+ options:{responsive:true,maintainAspectRatio:false,cutout:'60%',
+   plugins:{legend:{display:false},tooltip:{...tip,callbacks:{label:c=>c.label+' '+c.parsed+'名'}}}}});
+
+new Chart(cC,{type:'bar',
+ data:{labels:['X (Twitter)','Discord','Eメール','tiktok'],datasets:[{data:[59,24,12,10],backgroundColor:[CORAL,LAV,SUN,SEA],...bar,barPercentage:.72}]},
+ options:{responsive:true,maintainAspectRatio:false,
+   plugins:{legend:{display:false},tooltip:{...tip,callbacks:{label:c=>c.parsed.y+'名'}}},
+   scales:{x:{grid:{display:false},ticks:{color:INK,font:{family:JP}}},y:{grid:{color:GRID},ticks:{color:SUB,precision:0},beginAtZero:true}}}});
+
+new Chart(cD,{type:'bar',
+ data:{labels:['どの日でも可','8/19(水)','8/18(火)','不明','8/24(月)','8/25(火)'],datasets:[{data:[79,13,12,12,11,11],backgroundColor:[CORAL,SEA,SEA,SAND,SEA,SEA],...bar,barPercentage:.74}]},
+ options:{responsive:true,maintainAspectRatio:false,
+   plugins:{legend:{display:false},tooltip:{...tip,callbacks:{label:c=>c.parsed.y+'件'}}},
+   scales:{x:{grid:{display:false},ticks:{color:INK,font:{family:JP,size:10}}},y:{grid:{color:GRID},ticks:{color:SUB,precision:0},beginAtZero:true}}}});
+</script>
+</body>
+</html>

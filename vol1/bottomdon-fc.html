@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>底辺どん Official Fan Club | 奈落レコーズ</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Noto+Sans+JP:wght@400;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+  :root {
+    --bg: #0a0804;
+    --gold: #c9a227;
+    --red: #c0392b;
+    --cream: #f5ead8;
+    --dark-brown: #1a0f00;
+    --text: #e8d5b0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans JP', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* ---- CONCERT BACKGROUND ---- */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 80%, rgba(201,162,39,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 80% 60% at 30% 100%, rgba(192,57,43,0.1) 0%, transparent 50%),
+      linear-gradient(180deg, #0a0804 0%, #110a02 50%, #0a0804 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Spotlight beams */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      conic-gradient(from -10deg at 20% 0%, transparent 0deg, rgba(201,162,39,0.04) 8deg, transparent 16deg),
+      conic-gradient(from -5deg at 80% 0%, transparent 0deg, rgba(201,162,39,0.04) 8deg, transparent 16deg),
+      conic-gradient(from 0deg at 50% 0%, transparent 0deg, rgba(255,255,255,0.03) 6deg, transparent 12deg);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ---- APRIL FOOLS BANNER (shown after April 1) ---- */
+  #af-banner {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: linear-gradient(90deg, #c0392b, #e74c3c, #c0392b);
+    background-size: 200% 100%;
+    animation: bannerShift 3s linear infinite;
+    padding: 14px 20px;
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: clamp(13px, 4vw, 18px);
+    color: #fff;
+    letter-spacing: 0.05em;
+    border-bottom: 3px solid #ff0;
+    box-shadow: 0 4px 30px rgba(192,57,43,0.8);
+  }
+  @keyframes bannerShift {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+  }
+  #af-banner span {
+    font-size: 1.4em;
+    vertical-align: middle;
+    margin: 0 6px;
+  }
+
+  /* ---- MAIN CONTAINER ---- */
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 60px 20px 80px;
+  }
+
+  /* ---- HEADER BADGE ---- */
+  .header-badge {
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+
+  /* ---- LOGO AREA ---- */
+  .logo-area {
+    text-align: center;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .logo-jp {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: clamp(22px, 7vw, 36px);
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    text-shadow: 0 0 20px rgba(201,162,39,0.5);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .logo-en {
+    font-family: 'Black Ops One', cursive;
+    font-size: clamp(56px, 18vw, 110px);
+    color: var(--cream);
+    line-height: 0.85;
+    display: block;
+    text-shadow:
+      4px 4px 0 #1a0f00,
+      -2px -2px 0 rgba(0,0,0,0.5),
+      0 0 40px rgba(255,255,255,0.1);
+    letter-spacing: -0.02em;
+    position: relative;
+  }
+
+  /* Distressed texture on logo */
+  .logo-en::after {
+    content: 'BOTTOM DON';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  .ofc-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(18px, 5vw, 28px);
+    letter-spacing: 0.25em;
+    color: var(--cream);
+    opacity: 0.85;
+    margin-top: -4px;
+    display: block;
+  }
+
+  /* ---- DIVIDER ---- */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .divider-icon {
+    color: var(--gold);
+    font-size: 16px;
+  }
+
+  /* ---- HERO CALL TO ACTION ---- */
+  .hero-cta {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .cta-badge {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: clamp(36px, 12vw, 64px);
+    padding: 8px 24px;
+    margin-bottom: 8px;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 97% 100%, 3% 100%);
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.4);
+    animation: pulse-glow 2.5s ease-in-out infinite;
+  }
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(192,57,43,0.4); }
+    50% { box-shadow: 0 0 50px rgba(192,57,43,0.9), 0 0 100px rgba(192,57,43,0.3); }
+  }
+
+  .cta-sub {
+    font-size: clamp(13px, 3.5vw, 16px);
+    color: var(--gold);
+    letter-spacing: 0.1em;
+  }
+
+  /* ---- BENEFITS CARD ---- */
+  .benefits-card {
+    background: linear-gradient(135deg, rgba(26,15,0,0.9), rgba(15,9,0,0.95));
+    border: 1px solid rgba(201,162,39,0.3);
+    border-radius: 4px;
+    padding: 28px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+  }
+  .benefits-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--red), var(--gold), var(--red));
+  }
+
+  .benefits-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(18px, 5vw, 24px);
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .benefits-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .benefits-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: clamp(14px, 3.5vw, 16px);
+    line-height: 1.5;
+    color: var(--cream);
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(201,162,39,0.1);
+  }
+  .benefits-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .benefit-icon {
+    color: var(--gold);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .benefit-name {
+    font-weight: 700;
+    display: block;
+  }
+  .benefit-desc {
+    font-size: 0.8em;
+    color: rgba(232,213,176,0.6);
+    margin-top: 2px;
+    display: block;
+  }
+
+  /* ---- PRICE SECTION ---- */
+  .price-section {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(201,162,39,0.06);
+    border: 1px dashed rgba(201,162,39,0.3);
+    border-radius: 4px;
+  }
+  .price-label {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    color: rgba(232,213,176,0.5);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .price-amount {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 15vw, 80px);
+    color: var(--gold);
+    line-height: 1;
+    text-shadow: 0 0 30px rgba(201,162,39,0.4);
+  }
+  .price-unit {
+    font-size: 20px;
+    vertical-align: super;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+  }
+  .price-period {
+    font-size: 13px;
+    color: rgba(232,213,176,0.5);
+    margin-top: 4px;
+  }
+
+  /* ---- JOIN BUTTON ---- */
+  .join-btn {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 10px;
+    background: linear-gradient(135deg, var(--red), #922b21);
+    color: #fff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: clamp(18px, 5vw, 24px);
+    letter-spacing: 0.1em;
+    padding: 18px 32px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    clip-path: polygon(4px 0, 100% 0, calc(100% - 4px) 100%, 0 100%);
+    transition: all 0.2s;
+    text-decoration: none;
+    text-align: center;
+  }
+  .join-btn:hover {
+    background: linear-gradient(135deg, #e74c3c, var(--red));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(192,57,43,0.6);
+  }
+  .join-btn-sub {
+    text-align: center;
+    font-size: 11px;
+    color: rgba(232,213,176,0.3);
+    letter-spacing: 0.2em;
+  }
+
+  /* ---- QR SECTION ---- */
+  .qr-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 30px 0;
+    padding: 24px;
+    border: 1px solid rgba(201,162,39,0.2);
+    border-radius: 4px;
+    background: rgba(0,0,0,0.3);
+  }
+  .qr-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  #qr-code {
+    background: #fff;
+    padding: 12px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  #qr-code img, #qr-code canvas {
+    display: block;
+  }
+  .qr-url {
+    font-size: 11px;
+    color: rgba(232,213,176,0.3);
+    letter-spacing: 0.05em;
+    word-break: break-all;
+    text-align: center;
+  }
+
+  /* ---- NARAKU RECORDS FOOTER ---- */
+  .footer-logo {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(201,162,39,0.15);
+  }
+  .footer-naraku {
+    font-family: 'Black Ops One', cursive;
+    font-size: 28px;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    display: block;
+    opacity: 0.7;
+  }
+  .footer-naraku span {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+  }
+  .footer-copy {
+    font-size: 10px;
+    color: rgba(232,213,176,0.2);
+    margin-top: 8px;
+    letter-spacing: 0.1em;
+  }
+
+  /* ---- APRIL FOOLS OVERLAY (after April 1) ---- */
+  #af-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    backdrop-filter: blur(4px);
+  }
+  #af-overlay-inner {
+    background: linear-gradient(135deg, #1a0f00, #0a0804);
+    border: 3px solid var(--gold);
+    border-radius: 8px;
+    padding: 40px 32px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 80px rgba(201,162,39,0.3);
+    animation: overlayIn 0.5s ease-out;
+  }
+  @keyframes overlayIn {
+    from { transform: scale(0.8) rotate(-3deg); opacity: 0; }
+    to { transform: scale(1) rotate(0deg); opacity: 1; }
+  }
+  .af-stamp {
+    font-family: 'Black Ops One', cursive;
+    font-size: clamp(40px, 12vw, 72px);
+    color: var(--red);
+    border: 5px solid var(--red);
+    display: inline-block;
+    padding: 8px 20px;
+    transform: rotate(-8deg);
+    opacity: 0.9;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+    box-shadow: inset 0 0 20px rgba(192,57,43,0.2);
+  }
+  .af-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: clamp(18px, 5vw, 26px);
+    color: var(--gold);
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  .af-body {
+    font-size: clamp(13px, 3.5vw, 15px);
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 24px;
+    opacity: 0.8;
+  }
+  .af-close-btn {
+    background: var(--gold);
+    color: var(--dark-brown);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: 15px;
+    border: none;
+    padding: 12px 32px;
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    transition: all 0.2s;
+  }
+  .af-close-btn:hover {
+    background: #e9b83d;
+    transform: translateY(-2px);
+  }
+
+  /* ---- PAGE-TOP WARNING BANNER (after April 1, persistent) ---- */
+  #af-page-banner {
+    display: none;
+    background: linear-gradient(90deg, #1a0f00, #2d1200, #1a0f00);
+    border: 2px solid var(--gold);
+    border-left: 6px solid var(--red);
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    border-radius: 4px;
+    text-align: center;
+    position: relative;
+  }
+  .af-page-banner-emoji {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .af-page-banner-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: clamp(16px, 5vw, 22px);
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .af-page-banner-body {
+    font-size: clamp(12px, 3vw, 14px);
+    color: var(--text);
+    opacity: 0.75;
+    line-height: 1.7;
+  }
+
+  /* ---- MEMBERSHIP FORM ---- */
+  .form-section {
+    background: linear-gradient(160deg, rgba(26,15,0,0.95), rgba(10,8,4,0.98));
+    border: 1px solid rgba(201,162,39,0.3);
+    border-radius: 4px;
+    padding: 32px 24px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+  }
+  .form-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--red), var(--gold));
+  }
+  .form-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(20px, 6vw, 28px);
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .form-subtitle {
+    text-align: center;
+    font-size: 11px;
+    color: rgba(232,213,176,0.4);
+    letter-spacing: 0.15em;
+    margin-bottom: 28px;
+  }
+
+  .form-group {
+    margin-bottom: 22px;
+  }
+  .form-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .form-note {
+    display: block;
+    font-size: 10px;
+    color: rgba(232,213,176,0.35);
+    margin-bottom: 6px;
+    letter-spacing: 0.05em;
+  }
+  .form-input {
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(201,162,39,0.25);
+    border-radius: 2px;
+    color: var(--cream);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    padding: 11px 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    -webkit-appearance: none;
+  }
+  .form-input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px rgba(201,162,39,0.15);
+  }
+  .form-input::placeholder {
+    color: rgba(232,213,176,0.2);
+    font-size: 12px;
+  }
+  select.form-input {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a227' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 36px;
+  }
+  textarea.form-input {
+    resize: vertical;
+    min-height: 90px;
+    line-height: 1.6;
+  }
+
+  /* Radio/Checkbox group */
+  .radio-group, .check-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .radio-label, .check-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--cream);
+    line-height: 1.5;
+    padding: 8px 12px;
+    border: 1px solid rgba(201,162,39,0.1);
+    border-radius: 2px;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .radio-label:hover, .check-label:hover {
+    background: rgba(201,162,39,0.05);
+    border-color: rgba(201,162,39,0.3);
+  }
+  .radio-label input, .check-label input {
+    accent-color: var(--gold);
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .radio-sub {
+    display: block;
+    font-size: 10px;
+    color: rgba(232,213,176,0.35);
+    margin-top: 2px;
+  }
+
+  /* Gauge / meter */
+  .gauge-wrap {
+    margin-top: 6px;
+  }
+  .gauge-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: rgba(232,213,176,0.4);
+    margin-bottom: 4px;
+  }
+  input[type=range].gauge-slider {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--gold) var(--val, 50%), rgba(201,162,39,0.15) var(--val, 50%));
+    outline: none;
+  }
+  input[type=range].gauge-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: var(--gold);
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(201,162,39,0.6);
+  }
+  .gauge-value {
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--gold);
+    line-height: 1;
+    margin-top: 4px;
+  }
+  .gauge-rank {
+    text-align: center;
+    font-size: 11px;
+    color: rgba(232,213,176,0.5);
+    min-height: 16px;
+  }
+
+  /* Captcha-style gag */
+  .captcha-box {
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(201,162,39,0.2);
+    border-radius: 2px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .captcha-question {
+    font-size: 13px;
+    color: var(--cream);
+    line-height: 1.5;
+    flex: 1;
+  }
+  .captcha-answer {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+  .captcha-note {
+    font-size: 10px;
+    color: rgba(232,213,176,0.3);
+    display: block;
+    margin-top: 6px;
+  }
+
+  /* Escape button */
+  .btn-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .submit-btn {
+    flex: 1;
+    min-width: 180px;
+    background: linear-gradient(135deg, var(--red), #7b241c);
+    color: #fff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: clamp(16px, 4.5vw, 20px);
+    letter-spacing: 0.08em;
+    padding: 16px 24px;
+    border: none;
+    cursor: pointer;
+    clip-path: polygon(4px 0, 100% 0, calc(100% - 4px) 100%, 0 100%);
+    transition: all 0.2s;
+  }
+  .submit-btn:hover {
+    background: linear-gradient(135deg, #e74c3c, var(--red));
+    box-shadow: 0 6px 24px rgba(192,57,43,0.5);
+    transform: translateY(-2px);
+  }
+  .escape-btn {
+    background: transparent;
+    border: 1px solid rgba(201,162,39,0.2);
+    color: rgba(232,213,176,0.3);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: all 0.15s;
+    border-radius: 2px;
+    white-space: nowrap;
+    position: relative;
+  }
+  .escape-btn:hover {
+    color: rgba(232,213,176,0.6);
+    border-color: rgba(201,162,39,0.4);
+  }
+
+  /* ---- SUCCESS SCREEN ---- */
+  #form-success {
+    display: none;
+    text-align: center;
+    padding: 12px 0;
+  }
+  .success-stamp {
+    display: inline-block;
+    border: 4px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Black Ops One', cursive;
+    font-size: clamp(28px, 8vw, 44px);
+    padding: 8px 20px;
+    transform: rotate(-5deg);
+    margin-bottom: 20px;
+    opacity: 0.9;
+    letter-spacing: 0.05em;
+    animation: stampIn 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+  }
+  @keyframes stampIn {
+    0% { transform: rotate(-5deg) scale(2); opacity: 0; }
+    60% { transform: rotate(-5deg) scale(0.95); }
+    100% { transform: rotate(-5deg) scale(1); opacity: 0.9; }
+  }
+  .member-id-label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: rgba(232,213,176,0.4);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .member-id {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(32px, 10vw, 52px);
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+    text-shadow: 0 0 20px rgba(201,162,39,0.4);
+  }
+  .success-msg {
+    font-size: clamp(13px, 3.5vw, 15px);
+    color: var(--text);
+    line-height: 1.9;
+    margin-bottom: 20px;
+    opacity: 0.8;
+  }
+  .success-benefits {
+    list-style: none;
+    text-align: left;
+    font-size: 12px;
+    color: rgba(232,213,176,0.4);
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(201,162,39,0.1);
+    border-radius: 2px;
+    padding: 16px 20px;
+    display: inline-block;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto 20px;
+  }
+  .success-benefits li {
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(201,162,39,0.07);
+  }
+  .success-benefits li:last-child { border-bottom: none; }
+  .success-benefits .sb-cross {
+    color: var(--red);
+    margin-right: 6px;
+  }
+</style>
+</head>
+<body>
+<!-- ARCHIVE BANNER -->
+<div id="archive-banner" style="position:fixed;top:0;left:0;right:0;z-index:99999;background:linear-gradient(90deg,#1a1a2e,#16213e);color:#e8e8e8;text-align:center;padding:8px 16px;font-family:sans-serif;font-size:13px;letter-spacing:.5px;border-bottom:2px solid #e94560;box-shadow:0 2px 12px rgba(233,69,96,.3)">
+  📁 これは<strong style="color:#e94560">第一回（2026年4月）</strong>のアーカイブです。
+  <a href="/" style="color:#4ecdc4;text-decoration:underline;margin-left:8px;font-weight:bold">▶ サマテイ（第二回）はこちら</a>
+</div>
+<div style="height:38px"></div>
+
+<!-- Top sticky banner (after April 1) -->
+<div id="af-banner">
+  <span>⚠️</span>
+  これは <strong>2026年4月1日</strong> のエイプリルフールネタでした。底辺どんオフィシャルファンクラブは存在しません。
+  <span>⚠️</span>
+</div>
+
+<!-- April Fools overlay popup (after April 1) -->
+<div id="af-overlay">
+  <div id="af-overlay-inner">
+    <div class="af-stamp">APRIL FOOLS</div>
+    <div class="af-title">🎸 呼ばれてないけど来ました 🎸<br>エイプリルフールでした！</div>
+    <p class="af-body">
+      底辺どんオフィシャルファンクラブは<br>
+      <strong style="color:var(--gold)">存在しません。</strong><br><br>
+      2026年4月1日限定の底辺ジョークです。<br>
+      ご登録いただいた方、ご安心ください。<br>
+      何も起きません（底辺なので）。
+    </p>
+    <button class="af-close-btn" onclick="document.getElementById('af-overlay').style.display='none'">
+      ✓ 底辺を受け入れた
+    </button>
+  </div>
+</div>
+
+<!-- Main content -->
+<div class="wrap">
+
+  <!-- Page-top notice banner (after April 1) -->
+  <div id="af-page-banner">
+    <span class="af-page-banner-emoji">🃏</span>
+    <div class="af-page-banner-title">エイプリルフールネタ公開中</div>
+    <p class="af-page-banner-body">
+      このページは 2026年4月1日 に公開されたジョークページです。<br>
+      底辺どんオフィシャルファンクラブは実在しません。
+    </p>
+  </div>
+
+  <div class="header-badge">奈落レコーズ presents</div>
+
+  <div class="logo-area">
+    <span class="logo-jp">底辺どん</span>
+    <span class="logo-en">BOTTOM<br>DON</span>
+    <span class="ofc-label">Official Fan Club</span>
+  </div>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-icon">★</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <div class="hero-cta">
+    <div class="cta-badge">会員募集中！</div>
+    <p class="cta-sub">〜 呼ばれてないけど来た人のための、来ていい場所 〜</p>
+  </div>
+
+  <!-- Benefits -->
+  <div class="benefits-card">
+    <div class="benefits-title">▶ Fan Club Benefits ◀</div>
+    <ul class="benefits-list">
+      <li>
+        <span class="benefit-icon">🎫</span>
+        <div>
+          <span class="benefit-name">チケット優先予約</span>
+          <span class="benefit-desc">底辺AI音楽フェス・各種イベントへの優先アクセス権</span>
+        </div>
+      </li>
+      <li>
+        <span class="benefit-icon">📺</span>
+        <div>
+          <span class="benefit-name">配信番組「どんボトム」</span>
+          <span class="benefit-desc">会員限定・底辺どんが語る底辺トーク番組（月1回配信予定）</span>
+        </div>
+      </li>
+      <li>
+        <span class="benefit-icon">🪪</span>
+        <div>
+          <span class="benefit-name">ファンクラブ会員証</span>
+          <span class="benefit-desc">デジタル会員証発行。底辺メンバーとして公式認定</span>
+        </div>
+      </li>
+      <li>
+        <span class="benefit-icon">📬</span>
+        <div>
+          <span class="benefit-name">メールマガジン「どん底」</span>
+          <span class="benefit-desc">底辺どんから直接届く底辺近況報告・底辺コラム</span>
+        </div>
+      </li>
+      <li>
+        <span class="benefit-icon">🗺️</span>
+        <div>
+          <span class="benefit-name">奈落市旅行企画</span>
+          <span class="benefit-desc">奈落市への底辺ツアー（交通費・宿泊費すべて自己負担）</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Price -->
+  <div class="price-section">
+    <div class="price-label">年会費</div>
+    <div class="price-amount">
+      <span class="price-unit">¥</span>底辺
+    </div>
+    <div class="price-period">※ お気持ち程度（底辺なので）</div>
+  </div>
+
+  <!-- Membership Form -->
+  <div class="form-section" id="form-wrap">
+    <div class="form-title">▶ 入会申込書 ◀</div>
+    <p class="form-subtitle">全項目入力必須（でも何も変わりません）</p>
+
+    <!-- Success screen (hidden) -->
+    <div id="form-success">
+      <div class="success-stamp">MEMBER</div>
+      <div class="member-id-label">あなたの会員番号</div>
+      <div class="member-id" id="member-id-display">底辺-????</div>
+      <p class="success-msg">
+        ご入会ありがとうございます。<br>
+        <strong style="color:var(--gold)">何も届きません。</strong><br>
+        何も変わりません。<br>
+        でも、あなたはもう底辺どんの仲間です。<br>
+        <span style="font-size:0.85em; opacity:0.5;">（呼ばれてないけど来た人として）</span>
+      </p>
+      <ul class="success-benefits">
+        <li><span class="sb-cross">✗</span> チケット優先予約メール → <em>送られません</em></li>
+        <li><span class="sb-cross">✗</span> 会員証 → <em>発行されません</em></li>
+        <li><span class="sb-cross">✗</span> メルマガ「どん底」→ <em>届きません</em></li>
+        <li><span class="sb-cross">✗</span> 奈落市ツアー → <em>開催未定</em></li>
+        <li><span style="color:var(--gold); margin-right:6px;">✓</span> 底辺メンバーとしての自覚 → <strong style="color:var(--gold)">取得済み</strong></li>
+      </ul>
+      <p style="font-size:11px; color:rgba(232,213,176,0.25); letter-spacing:0.1em;">
+        ※ このページを閉じると会員情報はすべて消えます（底辺なので）
+      </p>
+    </div>
+
+    <!-- The actual form -->
+    <div id="form-body">
+
+      <!-- 1. Name -->
+      <div class="form-group">
+        <label class="form-label" for="fc-name">① お名前（底辺ネーム可）</label>
+        <span class="form-note">※ 本名でなくても底辺として受け入れます</span>
+        <input class="form-input" type="text" id="fc-name" placeholder="例：呼ばれてない太郎 / 底辺どん信者">
+      </div>
+
+      <!-- 2. Email -->
+      <div class="form-group">
+        <label class="form-label" for="fc-email">② メールアドレス</label>
+        <span class="form-note">※ 何も送られてきませんが、雰囲気で入力してください</span>
+        <input class="form-input" type="email" id="fc-email" placeholder="teihen@naraku.city">
+      </div>
+
+      <!-- 3. 底辺歴 -->
+      <div class="form-group">
+        <label class="form-label" for="fc-history">③ 底辺歴</label>
+        <span class="form-note">※ 自己申告制</span>
+        <select class="form-input" id="fc-history">
+          <option value="">── 選択してください ──</option>
+          <option>生まれた瞬間から（先天性底辺）</option>
+          <option>物心ついた頃から（幼児期発症）</option>
+          <option>就職してから（社会人型底辺）</option>
+          <option>AI音楽を始めてから（令和型底辺）</option>
+          <option>底辺どんを知ってから（感染型底辺）</option>
+          <option>気づいたらずっと底辺だった（慢性型）</option>
+        </select>
+      </div>
+
+      <!-- 4. 底辺度スライダー -->
+      <div class="form-group">
+        <label class="form-label">④ 自己底辺度（正直に）</label>
+        <span class="form-note">※ 高いほど優良会員です</span>
+        <div class="gauge-wrap">
+          <div class="gauge-labels">
+            <span>🌸 わりと普通</span>
+            <span>💀 完全底辺</span>
+          </div>
+          <input type="range" class="gauge-slider" id="teihen-gauge" min="0" max="100" value="50">
+          <div class="gauge-value" id="gauge-num">50%</div>
+          <div class="gauge-rank" id="gauge-rank">「中級底辺」— まだまだ伸びしろあります</div>
+        </div>
+      </div>
+
+      <!-- 5. AI tool -->
+      <div class="form-group">
+        <label class="form-label">⑤ 使用AIツール（複数可）</label>
+        <span class="form-note">※ 審査に関係ありません（審査がないので）</span>
+        <div class="check-group">
+          <label class="check-label"><input type="checkbox" value="suno"> Suno <span class="radio-sub">底辺AI音楽の定番</span></label>
+          <label class="check-label"><input type="checkbox" value="udio"> Udio <span class="radio-sub">もう一方の定番</span></label>
+          <label class="check-label"><input type="checkbox" value="sora"> SORA2 <span class="radio-sub">底辺どん本人が使っている</span></label>
+          <label class="check-label"><input type="checkbox" value="other"> その他のAIツール <span class="radio-sub">何でもよい（底辺なので）</span></label>
+          <label class="check-label"><input type="checkbox" value="none"> 使っていない <span class="radio-sub">それでも底辺として歓迎します</span></label>
+        </div>
+      </div>
+
+      <!-- 6. Why did you come -->
+      <div class="form-group">
+        <label class="form-label">⑥ なぜ呼ばれてないのに来ましたか</label>
+        <div class="radio-group" id="why-group">
+          <label class="radio-label"><input type="radio" name="why" value="a"> 来てしまったので <span class="radio-sub">最もシンプルな底辺理由</span></label>
+          <label class="radio-label"><input type="radio" name="why" value="b"> 底辺どんに呼ばれた気がした <span class="radio-sub">霊感型底辺</span></label>
+          <label class="radio-label"><input type="radio" name="why" value="c"> SNSで見かけてしまった <span class="radio-sub">アルゴリズム誘導型底辺</span></label>
+          <label class="radio-label"><input type="radio" name="why" value="d"> QRコードをスキャンしてしまった <span class="radio-sub">衝動型底辺</span></label>
+          <label class="radio-label"><input type="radio" name="why" value="e"> 特に理由はない <span class="radio-sub">これが最も底辺</span></label>
+        </div>
+      </div>
+
+      <!-- 7. 底辺エピソード -->
+      <div class="form-group">
+        <label class="form-label" for="fc-episode">⑦ 最近の底辺エピソード（任意）</label>
+        <span class="form-note">※ 誰にも読まれませんが、書くと少し楽になります</span>
+        <textarea class="form-input" id="fc-episode" placeholder="例：誰にも聴かれていないのにSunoで100曲作った&#10;例：フェスに誘ってもらえなかったので自分で開催した&#10;例：底辺どんが好きすぎて会員になろうとしている"></textarea>
+      </div>
+
+      <!-- 8. ネタ認証 (captcha gag) -->
+      <div class="form-group">
+        <label class="form-label">⑧ 底辺認証</label>
+        <span class="form-note">※ ボットでないことを確認するため、以下を音読してください</span>
+        <div class="captcha-box">
+          <div>
+            <span class="captcha-question">
+              以下のフレーズを心の中で唱えてください：<br>
+              <strong style="color:var(--gold); font-size:1.1em;">「呼ばれてないけど来ました」</strong>
+            </span>
+            <span class="captcha-note">※ 唱えたら自動的に認証されます（されません）</span>
+          </div>
+          <div class="captcha-answer" id="captcha-status">未唱</div>
+        </div>
+      </div>
+
+      <!-- 9. 誓約 -->
+      <div class="form-group">
+        <label class="form-label">⑨ 底辺宣誓</label>
+        <div class="check-group">
+          <label class="check-label" id="oath-label">
+            <input type="checkbox" id="fc-oath">
+            私は底辺であることを認め、呼ばれていないにもかかわらず来たことを自覚し、今後も底辺として生きることを誓います（誓わなくてもよいです）
+          </label>
+        </div>
+      </div>
+
+      <!-- Submit row -->
+      <div class="btn-row">
+        <button class="submit-btn" id="submit-btn" onclick="submitForm()">
+          入会する（何も起きません）
+        </button>
+        <button class="escape-btn" id="escape-btn">逃げる</button>
+      </div>
+      <p style="text-align:center; font-size:10px; color:rgba(232,213,176,0.2); margin-top:10px; letter-spacing:0.1em;">
+        ※ 送信されたデータはどこにも保存されません ／ 個人情報は宇宙に消えます
+      </p>
+
+    </div><!-- /form-body -->
+  </div><!-- /form-section -->
+
+  <div class="divider" style="margin: 30px 0 20px;">
+    <div class="divider-line"></div>
+    <div class="divider-icon">◆</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- QR Code -->
+  <div class="qr-section">
+    <span class="qr-label">QR Code — スキャンして底辺へ</span>
+    <div id="qr-code"></div>
+    <p class="qr-url">fes.wistaria-addict.com/bottomdon-fc.html</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer-logo">
+    <span class="footer-naraku"><span>奈落</span> RECORDS</span>
+    <p class="footer-copy">©2026 NARAKU RECORDS — All Wrongs Reserved</p>
+  </div>
+
+</div>
+
+<script>
+  // Generate QR code
+  const qrTarget = 'https://fes.wistaria-addict.com/bottomdon-fc.html';
+  new QRCode(document.getElementById('qr-code'), {
+    text: qrTarget,
+    width: 160,
+    height: 160,
+    colorDark: '#000000',
+    colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.H
+  });
+
+  // ---- GAUGE ----
+  const gauge = document.getElementById('teihen-gauge');
+  const gaugeNum = document.getElementById('gauge-num');
+  const gaugeRank = document.getElementById('gauge-rank');
+  const ranks = [
+    [0,  10,  '「底辺予備軍」— もう少し頑張れば底辺になれます'],
+    [11, 25,  '「見習い底辺」— 伸びしろが眩しい'],
+    [26, 40,  '「中堅底辺」— 平均的な底辺です'],
+    [41, 60,  '「中級底辺」— まだまだ伸びしろあります'],
+    [61, 75,  '「上級底辺」— 底辺の中の底辺'],
+    [76, 89,  '「底辺エキスパート」— 尊敬します'],
+    [90, 99,  '「底辺マスター」— もはや底辺を超えた底辺'],
+    [100, 100,'「底辺どん」— あなたが本物です'],
+  ];
+  function updateGauge() {
+    const v = parseInt(gauge.value);
+    gauge.style.setProperty('--val', v + '%');
+    gaugeNum.textContent = v + '%';
+    for (const [lo, hi, label] of ranks) {
+      if (v >= lo && v <= hi) { gaugeRank.textContent = label; break; }
+    }
+  }
+  gauge.addEventListener('input', updateGauge);
+  updateGauge();
+
+  // ---- CAPTCHA GAG ----
+  // "Uttered" after hovering the captcha for 2s
+  const captchaBox = document.querySelector('.captcha-box');
+  const captchaStatus = document.getElementById('captcha-status');
+  let captchaTimer = null;
+  captchaBox.addEventListener('mouseenter', () => {
+    captchaTimer = setTimeout(() => {
+      captchaStatus.textContent = '✓ 唱えた';
+      captchaStatus.style.color = '#2ecc71';
+    }, 1800);
+  });
+  captchaBox.addEventListener('mouseleave', () => clearTimeout(captchaTimer));
+  // Touch: tap to toggle
+  captchaBox.addEventListener('click', () => {
+    if (captchaStatus.textContent !== '✓ 唱えた') {
+      captchaStatus.textContent = '✓ 唱えた';
+      captchaStatus.style.color = '#2ecc71';
+    }
+  });
+
+  // ---- ESCAPE BUTTON — runs away on hover ----
+  const escBtn = document.getElementById('escape-btn');
+  escBtn.addEventListener('mouseenter', () => {
+    const wrap = escBtn.parentElement;
+    const rect = wrap.getBoundingClientRect();
+    const btnRect = escBtn.getBoundingClientRect();
+    const maxX = wrap.offsetWidth - btnRect.width;
+    const newX = Math.random() * maxX;
+    escBtn.style.position = 'relative';
+    escBtn.style.left = (newX - (btnRect.left - rect.left)) + 'px';
+    escBtn.style.transition = 'left 0.15s ease';
+  });
+  escBtn.addEventListener('click', () => {
+    escBtn.textContent = '逃げられませんでした';
+    escBtn.disabled = true;
+    escBtn.style.opacity = '0.2';
+  });
+
+  // ---- SUBMIT ----
+  let memberCount = Math.floor(Math.random() * 8) + 1;
+  function submitForm() {
+    // Gentle validation gag
+    const name = document.getElementById('fc-name').value.trim();
+    const email = document.getElementById('fc-email').value.trim();
+    const history = document.getElementById('fc-history').value;
+    const oath = document.getElementById('fc-oath').checked;
+    const why = document.querySelector('input[name="why"]:checked');
+
+    if (!name) {
+      shakeInput('fc-name', 'お名前を入力してください（底辺ネームでも可）');
+      return;
+    }
+    if (!email || !email.includes('@')) {
+      shakeInput('fc-email', 'メールアドレスを入力してください（何も届きませんが）');
+      return;
+    }
+    if (!history) {
+      alert('底辺歴を選択してください（自己申告制です）');
+      return;
+    }
+    if (!why) {
+      alert('なぜ来たか教えてください（重要ではありませんが気になります）');
+      return;
+    }
+    if (!oath) {
+      const proceed = confirm('底辺宣誓にチェックしませんでしたが、本当に底辺を受け入れましたか？\n\n（誓わなくてもよいですが、確認は必要です）');
+      if (!proceed) return;
+    }
+
+    // Generate member ID
+    const memberNum = String(memberCount).padStart(4, '0');
+    memberCount++;
+    document.getElementById('member-id-display').textContent = '底辺-' + memberNum;
+
+    // Show success
+    document.getElementById('form-body').style.display = 'none';
+    const success = document.getElementById('form-success');
+    success.style.display = 'block';
+    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function shakeInput(id, msg) {
+    const el = document.getElementById(id);
+    el.style.borderColor = '#e74c3c';
+    el.style.animation = 'shake 0.4s ease';
+    el.focus();
+    alert(msg);
+    setTimeout(() => {
+      el.style.borderColor = '';
+      el.style.animation = '';
+    }, 600);
+  }
+
+  // Add shake keyframe
+  const shakeStyle = document.createElement('style');
+  shakeStyle.textContent = `@keyframes shake {
+    0%,100%{transform:translateX(0)} 20%{transform:translateX(-6px)} 40%{transform:translateX(6px)} 60%{transform:translateX(-4px)} 80%{transform:translateX(4px)}
+  }`;
+  document.head.appendChild(shakeStyle);
+
+  // April Fools reveal logic
+  function checkAprilFools() {
+    const now = new Date();
+    const revealDate = new Date('2026-04-01T23:59:59+09:00');
+    if (now > revealDate) {
+      document.getElementById('af-banner').style.display = 'block';
+      document.getElementById('af-page-banner').style.display = 'block';
+      document.getElementById('af-overlay').style.display = 'flex';
+      document.querySelector('.wrap').style.paddingTop = '110px';
+    }
+  }
+  checkAprilFools();
+</script>
+</body>
+</html>

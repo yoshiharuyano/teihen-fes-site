@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="底辺AI音楽フェス公式ロゴの使用ガイドライン。利用規約・使用例・禁止事項をまとめています。">
+<meta name="keywords" content="AI音楽,AI音楽フェス,底辺AI音楽フェス,Suno,Udio,AI作曲,オンライン音楽フェス,YouTube Premiere,AI Music Festival,2026,ロゴ,ガイドライン,利用規約,ブランド">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://fes.wistaria-addict.com/vol1/logo-guideline.html">
+<meta property="og:title" content="ロゴガイドライン | 底辺AI音楽フェス">
+<meta property="og:description" content="公式ロゴの使用ガイドライン。利用規約・使用例・禁止事項。">
+<meta property="og:image" content="https://fes.wistaria-addict.com/ogp_1200x630.png">
+<meta property="og:url" content="https://fes.wistaria-addict.com/vol1/logo-guideline.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="第一回 底辺AI音楽フェス 〜産まれてきてスミマセン〜">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ロゴガイドライン | 底辺AI音楽フェス">
+<meta name="twitter:description" content="底辺AI音楽フェス ロゴガイドライン公開。">
+<meta name="twitter:image" content="https://fes.wistaria-addict.com/ogp_1200x630.png">
+<title>ロゴガイドライン | 底辺AI音楽フェス</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#030303;
+  --bg2:#0a0a0a;
+  --bg3:#151515;
+  --accent:#E94560;
+  --accent2:#ff6b81;
+  --blue:#0f3460;
+  --text:#f0f0f0;
+  --sub:#999;
+  --dim:#555;
+  --mono:'JetBrains Mono',monospace;
+  --sans:'Noto Sans JP',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.8;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none;transition:color .2s}
+a:hover{color:var(--accent2)}
+::selection{background:var(--accent);color:#fff}
+
+/* HEADER */
+.header{
+  border-bottom:1px solid #222;
+  padding:0 2rem;height:52px;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;background:rgba(3,3,3,.95);backdrop-filter:blur(12px);z-index:100;
+}
+.header-left{display:flex;align-items:center;gap:1rem}
+.header-back{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-family:var(--mono);font-size:.7rem;color:var(--sub);
+  text-decoration:none;padding:.35rem .8rem;
+  border:1px solid #222;border-radius:4px;
+  transition:all .25s;letter-spacing:.03em;
+}
+.header-back:hover{border-color:var(--accent);color:var(--accent)}
+.header-back svg{width:14px;height:14px;transition:transform .25s}
+.header-back:hover svg{transform:translateX(-2px)}
+.header-tag{
+  font-family:var(--mono);font-size:.65rem;color:var(--accent);
+  border:1px solid var(--accent);padding:.12rem .5rem;letter-spacing:.05em;
+}
+.header-title{font-size:.8rem;color:var(--sub);letter-spacing:.04em;display:none}
+@media(min-width:600px){.header-title{display:block}}
+
+/* HERO */
+.hero{
+  padding:6rem 2rem 4rem;text-align:center;
+  background:linear-gradient(180deg,var(--bg) 0%,rgba(233,69,96,.04) 50%,var(--bg) 100%);
+  position:relative;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,.01) 2px,rgba(255,255,255,.01) 4px);
+  pointer-events:none;
+}
+.hero h1{
+  font-size:clamp(1.5rem,4vw,2.5rem);font-weight:900;letter-spacing:.06em;
+  margin-bottom:.5rem;
+}
+.hero h1 span{color:var(--accent)}
+.hero-sub{color:var(--sub);font-size:.9rem;font-family:var(--mono)}
+
+/* SECTION */
+.section{max-width:900px;margin:0 auto;padding:4rem 2rem}
+.section+.section{border-top:1px solid #1a1a1a}
+.sec-num{font-family:var(--mono);font-size:.7rem;color:var(--accent);letter-spacing:.1em;margin-bottom:.5rem}
+.sec-title{font-size:1.4rem;font-weight:900;margin-bottom:1.5rem;letter-spacing:.04em}
+
+/* DOWNLOAD CARDS */
+.dl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-bottom:2rem}
+.dl-card{
+  background:var(--bg2);border:1px solid #222;border-radius:8px;overflow:hidden;
+  transition:border-color .3s,transform .2s;
+}
+.dl-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.dl-preview{
+  display:flex;align-items:center;justify-content:center;
+  padding:2rem;min-height:160px;position:relative;
+}
+.dl-preview.dark-bg{background:#030303}
+.dl-preview.light-bg{background:#f0f0f0}
+.dl-preview.accent-bg{background:var(--accent)}
+.dl-preview img{max-width:160px;max-height:100px;object-fit:contain}
+.dl-info{padding:1rem 1.2rem;border-top:1px solid #222}
+.dl-name{font-weight:700;font-size:.9rem;margin-bottom:.3rem}
+.dl-meta{font-family:var(--mono);font-size:.7rem;color:var(--dim)}
+.dl-btn{
+  display:inline-block;margin-top:.8rem;
+  font-family:var(--mono);font-size:.75rem;
+  color:var(--accent);border:1px solid var(--accent);
+  padding:.4rem 1rem;border-radius:4px;
+  transition:background .2s,color .2s;letter-spacing:.02em;
+}
+.dl-btn:hover{background:var(--accent);color:#fff}
+
+/* COLOR PALETTE */
+.palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1.5rem 0}
+.color-card{border-radius:8px;overflow:hidden;border:1px solid #222}
+.color-swatch{height:80px}
+.color-info{padding:.8rem 1rem;background:var(--bg2)}
+.color-name{font-weight:700;font-size:.85rem;margin-bottom:.2rem}
+.color-code{font-family:var(--mono);font-size:.75rem;color:var(--sub)}
+
+/* RULES */
+.rules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin:1.5rem 0}
+.rule-card{background:var(--bg2);border:1px solid #222;border-radius:8px;padding:1.5rem}
+.rule-label{
+  display:inline-block;font-family:var(--mono);font-size:.7rem;font-weight:700;
+  padding:.15rem .6rem;border-radius:3px;margin-bottom:.8rem;letter-spacing:.06em;
+}
+.rule-label.ok{background:rgba(46,204,113,.15);color:#2ecc71;border:1px solid rgba(46,204,113,.3)}
+.rule-label.ng{background:rgba(233,69,96,.15);color:var(--accent);border:1px solid rgba(233,69,96,.3)}
+.rule-card p{font-size:.85rem;color:var(--sub);line-height:1.7}
+.rule-card ul{list-style:none;padding:0;margin-top:.5rem}
+.rule-card li{font-size:.85rem;color:var(--sub);padding:.2rem 0;padding-left:1.2rem;position:relative}
+.rule-card li::before{content:'';position:absolute;left:0;top:.65rem;width:6px;height:6px;border-radius:50%}
+.rule-card.ok-card li::before{background:#2ecc71}
+.rule-card.ng-card li::before{background:var(--accent)}
+
+/* CREDIT */
+.credit-box{
+  background:var(--bg3);border:1px solid #222;border-radius:8px;padding:1.5rem;
+  font-family:var(--mono);font-size:.8rem;line-height:1.8;
+  margin:1rem 0;position:relative;overflow:hidden;
+}
+.credit-box::before{
+  content:'COPY';position:absolute;top:.8rem;right:.8rem;
+  font-size:.6rem;color:var(--dim);letter-spacing:.08em;
+}
+.credit-box code{color:var(--accent2);background:rgba(233,69,96,.1);padding:.1rem .3rem;border-radius:3px}
+
+/* FOOTER */
+.footer{
+  border-top:1px solid #1a1a1a;padding:2.5rem 2rem;text-align:center;
+  font-size:.75rem;color:var(--dim);font-family:var(--mono);
+}
+.footer a{color:var(--sub)}
+.footer-return{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--mono);font-size:.8rem;color:var(--accent);
+  text-decoration:none;padding:.6rem 1.8rem;
+  border:1px solid var(--accent);border-radius:4px;
+  transition:all .3s;letter-spacing:.04em;
+}
+.footer-return:hover{background:var(--accent);color:#fff}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .section{padding:3rem 1.2rem}
+  .hero{padding:4rem 1.2rem 3rem}
+  .dl-grid,.rules-grid,.palette{grid-template-columns:1fr}
+}
+
+/* ════ GNAV ════ */
+.gnav{position:fixed;top:0;left:0;right:0;z-index:8000;background:rgba(3,3,3,.95);border-bottom:1px solid #151515;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);height:48px;display:flex;align-items:center;padding:0 1.2rem;transition:opacity .5s,transform .5s}
+.gnav-logo{font-family:'Space Mono','Courier New',monospace;font-size:.5rem;letter-spacing:.06em;color:#E94560;text-decoration:none;white-space:nowrap;line-height:1.3;flex:none;margin-right:auto}
+.gnav-logo span{display:block;font-size:.38rem;color:#555;margin-top:1px;letter-spacing:.04em}
+.gnav-links{display:flex;align-items:stretch;height:48px;margin-left:.5rem}
+.gnav-link{font-family:'Space Mono','Courier New',monospace;font-size:.48rem;letter-spacing:.06em;color:#555;text-decoration:none;display:flex;align-items:center;padding:0 .55rem;border-left:1px solid #111;position:relative;transition:color .2s;white-space:nowrap}
+.gnav-link:last-child{border-right:1px solid #111}
+.gnav-link:hover,.gnav-link.gnav-cur{color:#E94560}
+.gnav-link.gnav-cur::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:#E94560}
+.gnav-badge{font-size:.34rem;background:#E94560;color:#030303;padding:1px 4px;border-radius:2px;margin-left:4px;font-weight:bold;animation:gnav-pulse 2s ease-in-out infinite}
+@keyframes gnav-pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.gnav-sns{display:flex;align-items:center;gap:.35rem;margin-left:.5rem;flex:none}
+.gnav-sns a{width:28px;height:28px;border:1px solid #1a1a1a;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:.6rem;color:#555;text-decoration:none;transition:all .2s}
+.gnav-sns a:hover{border-color:#E94560;color:#E94560}
+.gnav-ham{display:none;flex-direction:column;justify-content:center;gap:5px;margin-left:auto;padding:.4rem;cursor:pointer;flex:none;background:none;border:none}
+.gnav-ham span{display:block;width:20px;height:1px;background:#666;transition:all .28s;transform-origin:center}
+.gnav-ham.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.gnav-ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.gnav-ham.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.gnav-drawer{position:fixed;top:48px;left:0;right:0;z-index:7999;background:rgba(5,5,5,.99);border-bottom:1px solid #1a1a1a;transform:translateY(-6px);opacity:0;pointer-events:none;transition:all .22s cubic-bezier(.4,0,.2,1);max-height:calc(100dvh - 48px);overflow-y:auto}
+.gnav-drawer.open{transform:translateY(0);opacity:1;pointer-events:auto}
+.gnav-ditem{display:flex;align-items:center;gap:.6rem;padding:.75rem 1.4rem;font-family:'Space Mono','Courier New',monospace;font-size:.55rem;letter-spacing:.08em;color:#555;border-bottom:1px solid #0d0d0d;text-decoration:none;transition:color .2s;min-height:48px}
+.gnav-ditem::before{content:'';width:4px;height:4px;background:#E94560;border-radius:50%;flex:none;opacity:.45}
+.gnav-ditem:hover,.gnav-ditem.gnav-cur{color:#E94560}
+.gnav-ditem.gnav-cur::before{opacity:1}
+.gnav-dext{margin-left:auto;font-size:.42rem;color:#333}
+.gnav-ov{display:none;position:fixed;inset:0;z-index:7998}
+.gnav-ov.open{display:block}
+@media(max-width:768px){.gnav-links,.gnav-sns{display:none}.gnav-ham{display:flex}}
+
+</style>
+</head>
+<body>
+<!-- ARCHIVE BANNER -->
+<div id="archive-banner" style="position:fixed;top:0;left:0;right:0;z-index:99999;background:linear-gradient(90deg,#1a1a2e,#16213e);color:#e8e8e8;text-align:center;padding:8px 16px;font-family:sans-serif;font-size:13px;letter-spacing:.5px;border-bottom:2px solid #e94560;box-shadow:0 2px 12px rgba(233,69,96,.3)">
+  📁 これは<strong style="color:#e94560">第一回（2026年4月）</strong>のアーカイブです。
+  <a href="/" style="color:#4ecdc4;text-decoration:underline;margin-left:8px;font-weight:bold">▶ サマテイ（第二回）はこちら</a>
+</div>
+<div style="height:38px"></div>
+
+
+<nav class="gnav" id="gnav">
+  <a href="/" class="gnav-logo">底辺AI音楽フェス<span>〜産まれてきてスミマセン〜</span></a>
+  <div class="gnav-links">
+    <a href="/" class="gnav-link">TOP</a>
+    <a href="/vol1/artists.html" class="gnav-link">ARTISTS</a>
+    <a href="/vol1/vote.html" class="gnav-link">VOTE<span class="gnav-badge">期待！</span></a>
+    <a href="/vol1/teihendon.html" class="gnav-link">底辺どん</a>
+    <a href="/vol1/goods.html" class="gnav-link">GOODS</a>
+    <a href="/vol1/cm.html" class="gnav-link">CM</a>
+    <a href="/vol1/logo-guideline.html" class="gnav-link gnav-cur">LOGO</a>
+    <a href="/vol1/gotochi-map.html" class="gnav-link">MAP</a>
+  </div>
+  <div class="gnav-sns">
+    <a href="https://x.com/teihen_ai_music" target="_blank" rel="noopener">𝕏</a>
+    <a href="https://www.youtube.com/@%E5%BA%95%E8%BE%BAAI%E9%9F%B3%E6%A5%BD%E3%83%95%E3%82%A7%E3%82%B9official" target="_blank" rel="noopener">▶</a>
+  </div>
+  <button class="gnav-ham" id="gnav-ham" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="gnav-drawer" id="gnav-drawer">
+  <a href="/" class="gnav-ditem">TOP</a>
+  <a href="/vol1/artists.html" class="gnav-ditem">ARTISTS</a>
+  <a href="/vol1/vote.html" class="gnav-ditem">VOTE<span class="gnav-badge">期待！</span></a>
+  <a href="/vol1/teihendon.html" class="gnav-ditem">底辺どん</a>
+  <a href="/vol1/goods.html" class="gnav-ditem">GOODS</a>
+  <a href="/vol1/cm.html" class="gnav-ditem">CM</a>
+  <a href="/vol1/logo-guideline.html" class="gnav-ditem gnav-cur">LOGO</a>
+  <a href="/vol1/timetable.html" class="gnav-ditem">タイムテーブル</a>
+  <a href="/vol1/gotochi-map.html" class="gnav-ditem">MAP</a>
+  <a href="https://x.com/teihen_ai_music" class="gnav-ditem" target="_blank" rel="noopener">𝕏 公式Twitter<span class="gnav-dext">↗</span></a>
+  <a href="https://www.youtube.com/@%E5%BA%95%E8%BE%BAAI%E9%9F%B3%E6%A5%BD%E3%83%95%E3%82%A7%E3%82%B9official" class="gnav-ditem" target="_blank" rel="noopener">▶ YouTube<span class="gnav-dext">↗</span></a>
+</div>
+<div class="gnav-ov" id="gnav-ov"></div>
+
+  <span class="header-title">底辺AI音楽フェス ロゴガイドライン</span>
+</div>
+
+<div class="hero">
+  <h1>LOGO <span>GUIDELINE</span></h1>
+  <p class="hero-sub">// 底辺AI音楽フェス 〜産まれてきてスミマセン〜</p>
+</div>
+
+<!-- ===================== DOWNLOAD ===================== -->
+<div class="section">
+  <div class="sec-num">// 01</div>
+  <h2 class="sec-title">ロゴダウンロード</h2>
+  <p style="color:var(--sub);margin-bottom:2rem;font-size:.9rem">
+    告知・レポート・配信素材などにご利用いただけます。用途に合わせてお選びください。
+  </p>
+
+  <div class="dl-grid">
+    <div class="dl-card">
+      <div class="dl-preview dark-bg">
+        <img src="/img/logo_transparent_1024px.png" alt="ロゴ 1024px 暗い背景でのプレビュー">
+      </div>
+      <div class="dl-info">
+        <div class="dl-name">ロゴ（大）</div>
+        <div class="dl-meta">PNG / 1024×1024 / 透過</div>
+        <a href="/img/logo_transparent_1024px.png" download class="dl-btn">↓ DOWNLOAD</a>
+      </div>
+    </div>
+
+    <div class="dl-card">
+      <div class="dl-preview dark-bg">
+        <img src="/img/logo_transparent_512px.png" alt="ロゴ 512px 暗い背景でのプレビュー">
+      </div>
+      <div class="dl-info">
+        <div class="dl-name">ロゴ（小）</div>
+        <div class="dl-meta">PNG / 512×512 / 透過</div>
+        <a href="/img/logo_transparent_512px.png" download class="dl-btn">↓ DOWNLOAD</a>
+      </div>
+    </div>
+
+    <div class="dl-card">
+      <div class="dl-preview light-bg">
+        <img src="/img/logo_transparent_1024px.png" alt="ロゴ 明るい背景でのプレビュー">
+      </div>
+      <div class="dl-info">
+        <div class="dl-name">明るい背景での使用例</div>
+        <div class="dl-meta">※ 暗い背景での使用を推奨</div>
+      </div>
+    </div>
+
+    <div class="dl-card">
+      <div class="dl-preview dark-bg">
+        <img src="/img/kanji_tei_1024px.png" alt="漢字ロゴ「底」1024px">
+      </div>
+      <div class="dl-info">
+        <div class="dl-name">漢字ロゴ「底」（大）</div>
+        <div class="dl-meta">PNG / 1024×1024</div>
+        <a href="/img/kanji_tei_1024px.png" download class="dl-btn">↓ DOWNLOAD</a>
+      </div>
+    </div>
+
+    <div class="dl-card">
+      <div class="dl-preview dark-bg">
+        <img src="/img/kanji_tei_512px.png" alt="漢字ロゴ「底」512px">
+      </div>
+      <div class="dl-info">
+        <div class="dl-name">漢字ロゴ「底」（小）</div>
+        <div class="dl-meta">PNG / 512×512</div>
+        <a href="/img/kanji_tei_512px.png" download class="dl-btn">↓ DOWNLOAD</a>
+      </div>
+    </div>
+
+    <div class="dl-card">
+      <div class="dl-preview dark-bg">
+        <img src="/img/kanji_hen_1024px.png" alt="漢字ロゴ「辺」1024px">
+      </div>
+      <div class="dl-info">
+        <div class="dl-name">漢字ロゴ「辺」（大）</div>
+        <div class="dl-meta">PNG / 1024×1024</div>
+        <a href="/img/kanji_hen_1024px.png" download class="dl-btn">↓ DOWNLOAD</a>
+      </div>
+    </div>
+
+    <div class="dl-card">
+      <div class="dl-preview dark-bg">
+        <img src="/img/kanji_hen_512px.png" alt="漢字ロゴ「辺」512px">
+      </div>
+      <div class="dl-info">
+        <div class="dl-name">漢字ロゴ「辺」（小）</div>
+        <div class="dl-meta">PNG / 512×512</div>
+        <a href="/img/kanji_hen_512px.png" download class="dl-btn">↓ DOWNLOAD</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== COLOR ===================== -->
+<div class="section">
+  <div class="sec-num">// 02</div>
+  <h2 class="sec-title">カラーパレット</h2>
+  <p style="color:var(--sub);margin-bottom:2rem;font-size:.9rem">
+    ブランドの世界観を維持するために、以下のカラーを基準にご使用ください。
+  </p>
+
+  <div class="palette">
+    <div class="color-card">
+      <div class="color-swatch" style="background:#FFFFFF;border-bottom:1px solid #333"></div>
+      <div class="color-info">
+        <div class="color-name">ロゴ本体</div>
+        <div class="color-code">#FFFFFF / rgb(255,255,255)</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#030303"></div>
+      <div class="color-info">
+        <div class="color-name">推奨背景色</div>
+        <div class="color-code">#030303 / rgb(3,3,3)</div>
+      </div>
+    </div>
+  </div>
+
+  <p style="color:var(--sub);margin-top:1rem;font-size:.85rem">
+    ロゴはモノクロ（白）です。暗い背景上での使用を想定しています。<br>
+    以下はサイト全体のブランドカラーです。告知素材などの配色の参考にしてください。
+  </p>
+
+  <div class="palette" style="margin-top:1.5rem">
+    <div class="color-card">
+      <div class="color-swatch" style="background:#E94560"></div>
+      <div class="color-info">
+        <div class="color-name">Accent Red</div>
+        <div class="color-code">#E94560 / rgb(233,69,96)</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#ff6b81"></div>
+      <div class="color-info">
+        <div class="color-name">Sub Pink</div>
+        <div class="color-code">#ff6b81 / rgb(255,107,129)</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#0f3460"></div>
+      <div class="color-info">
+        <div class="color-name">Deep Blue</div>
+        <div class="color-code">#0f3460 / rgb(15,52,96)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== RULES ===================== -->
+<div class="section">
+  <div class="sec-num">// 03</div>
+  <h2 class="sec-title">使用ルール</h2>
+
+  <div class="rules-grid">
+    <div class="rule-card ok-card">
+      <div class="rule-label ok">OK — 使用可能</div>
+      <ul>
+        <li>SNS（X / Discord / YouTube）での告知・拡散</li>
+        <li>個人ブログや配信画面での紹介</li>
+        <li>出演者による「出演します」告知</li>
+        <li>フェスの感想・レポート記事</li>
+        <li>暗い背景上にロゴを配置</li>
+        <li>サイズ変更（縦横比を維持すること）</li>
+      </ul>
+    </div>
+
+    <div class="rule-card ng-card">
+      <div class="rule-label ng">NG — 禁止事項</div>
+      <ul>
+        <li>ロゴの色を変更する</li>
+        <li>ロゴを変形・回転・歪める</li>
+        <li>縦横比を変えて引き伸ばす</li>
+        <li>ロゴに影・枠線・エフェクトを追加</li>
+        <li>他ブランドのロゴと合成する</li>
+        <li>商用利用（グッズ販売など）</li>
+        <li>フェスと無関係の用途に使用</li>
+        <li>誹謗中傷・差別的な文脈での使用</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="color:var(--dim);font-size:.8rem;margin-top:1rem">
+    ※ 判断に迷う場合は、主催者（<a href="https://x.com/Denmnmnmmma">@DEN_MA</a>）までお問い合わせください。
+  </p>
+</div>
+
+<!-- ===================== CREDIT ===================== -->
+<div class="section">
+  <div class="sec-num">// 04</div>
+  <h2 class="sec-title">クレジット表記</h2>
+  <p style="color:var(--sub);margin-bottom:1.5rem;font-size:.9rem">
+    ロゴを使用する際は、可能な範囲で以下のいずれかのクレジットを記載してください。（必須ではありませんが推奨です）
+  </p>
+
+  <div class="credit-box">
+    <strong style="color:var(--text)">日本語（フル）</strong><br>
+    底辺AI音楽フェス 〜産まれてきてスミマセン〜<br>
+    公式サイト: <code>https://fes.wistaria-addict.com/</code><br>
+    主催: 貯水TANK（<code>@DEN_MA</code>）
+  </div>
+
+  <div class="credit-box">
+    <strong style="color:var(--text)">日本語（短縮）</strong><br>
+    底辺AI音楽フェス <code>https://fes.wistaria-addict.com/</code>
+  </div>
+
+  <div class="credit-box">
+    <strong style="color:var(--text)">英語</strong><br>
+    Teihen AI Music Fes &#8211; Online AI Music Festival<br>
+    <code>https://fes.wistaria-addict.com/</code>
+  </div>
+
+  <div class="credit-box">
+    <strong style="color:var(--text)">SNS向けハッシュタグ</strong><br>
+    <code>#底辺AI音楽フェス</code>&nbsp; <code>#産まれてきてスミマセン</code>&nbsp; <code>#AI音楽</code>
+  </div>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <a href="/" class="footer-return">← 公式サイトに戻る</a>
+  <div style="margin-top:1.2rem">
+    &copy; 2026 底辺AI音楽フェス実行委員会 / 
+    <a href="https://fes.wistaria-addict.com/">公式サイト</a> / 
+    <a href="https://x.com/Denmnmnmmma">X (@DEN_MA)</a>
+  </div>
+<div class="ft-nav">
+  <a href="/">TOP</a>
+  <a href="/vol1/artists.html">ARTISTS</a>
+  <a href="/vol1/vote.html">VOTE</a>
+  <a href="/vol1/teihendon.html">底辺どん</a>
+  <a href="/vol1/goods.html">GOODS</a>
+  <a href="/vol1/cm.html">CM</a>
+  <a href="/vol1/timetable.html">TIMETABLE</a>
+  <a href="/vol1/logo-guideline.html">LOGO GUIDELINE</a>
+  <a href="/vol1/gotochi-map.html">ご当地MAP</a>
+  <a href="https://x.com/teihen_ai_music" target="_blank" rel="noopener">X (公式)</a>
+  <a href="https://www.youtube.com/@%E5%BA%95%E8%BE%BAAI%E9%9F%B3%E6%A5%BD%E3%83%95%E3%82%A7%E3%82%B9official" target="_blank" rel="noopener">YOUTUBE</a>
+</div>
+</footer>
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXJ7WD8MJ7"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXJ7WD8MJ7', {
+  'page_title': '底辺AI音楽フェス ロゴガイドライン'
+});
+
+// ロゴダウンロード計測
+document.querySelectorAll('.dl-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var fileName = this.getAttribute('href').split('/').pop();
+    gtag('event', 'logo_download', {
+      'event_category': 'download',
+      'event_label': fileName,
+      'file_name': fileName
+    });
+  });
+});
+</script>
+
+<script>
+
+/* ── GNAV ── */
+(function(){
+  var ham=document.getElementById('gnav-ham'),
+      drawer=document.getElementById('gnav-drawer'),
+      ov=document.getElementById('gnav-ov');
+  function close(){ham.classList.remove('open');drawer.classList.remove('open');ov.classList.remove('open')}
+  ham.addEventListener('click',function(){var o=drawer.classList.toggle('open');ham.classList.toggle('open',o);ov.classList.toggle('open',o)});
+  ov.addEventListener('click',close);
+  drawer.querySelectorAll('a').forEach(function(a){if(!a.target)a.addEventListener('click',close)});
+})();
+
+</script>
+</body>
+</html>

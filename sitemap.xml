@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://fes.wistaria-addict.com/</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fes.wistaria-addict.com/index.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fes.wistaria-addict.com/vol2/summer-rock-entry.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fes.wistaria-addict.com/archive.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/43-8JVR5WuE/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>前夜祭 — 第一回 底辺AI音楽フェス 〜産まれてきてスミマセン〜</video:title>
+      <video:description>第一回 底辺AI音楽フェス 前夜祭。2026年4月7日（月）YouTube Premiere配信。</video:description>
+      <video:player_loc>https://www.youtube.com/embed/43-8JVR5WuE</video:player_loc>
+      <video:publication_date>2026-04-07T22:00:00+09:00</video:publication_date>
+      <video:tag>AI音楽</video:tag><video:tag>底辺AI音楽フェス</video:tag><video:tag>前夜祭</video:tag>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/a4YX6pub6RA/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>プレイベント Day 1 — 第一回 底辺AI音楽フェス 〜産まれてきてスミマセン〜</video:title>
+      <video:description>第一回 底辺AI音楽フェス プレイベント Day 1。2026年4月8日（火）YouTube Premiere配信。</video:description>
+      <video:player_loc>https://www.youtube.com/embed/a4YX6pub6RA</video:player_loc>
+      <video:publication_date>2026-04-08T22:00:00+09:00</video:publication_date>
+      <video:tag>AI音楽</video:tag><video:tag>底辺AI音楽フェス</video:tag><video:tag>Day1</video:tag>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/LGYOXxCwg2k/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>プレイベント Day 2 — 第一回 底辺AI音楽フェス 〜産まれてきてスミマセン〜</video:title>
+      <video:description>第一回 底辺AI音楽フェス プレイベント Day 2。2026年4月9日（水）YouTube Premiere配信。</video:description>
+      <video:player_loc>https://www.youtube.com/embed/LGYOXxCwg2k</video:player_loc>
+      <video:publication_date>2026-04-09T22:00:00+09:00</video:publication_date>
+      <video:tag>AI音楽</video:tag><video:tag>底辺AI音楽フェス</video:tag><video:tag>Day2</video:tag>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/8pUOo0vm9kg/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>メインイベント Day 3 — 第一回 底辺AI音楽フェス 〜産まれてきてスミマセン〜</video:title>
+      <video:description>第一回 底辺AI音楽フェス メインイベント Day 3。2026年4月14日（月）YouTube Premiere配信。</video:description>
+      <video:player_loc>https://www.youtube.com/embed/8pUOo0vm9kg</video:player_loc>
+      <video:publication_date>2026-04-14T22:00:00+09:00</video:publication_date>
+      <video:tag>AI音楽</video:tag><video:tag>底辺AI音楽フェス</video:tag><video:tag>Day3</video:tag>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/NMuB4H1AGHI/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>メインイベント Day 4 — 第一回 底辺AI音楽フェス 〜産まれてきてスミマセン〜</video:title>
+      <video:description>第一回 底辺AI音楽フェス メインイベント Day 4。2026年4月15日（火）YouTube Premiere配信。</video:description>
+      <video:player_loc>https://www.youtube.com/embed/NMuB4H1AGHI</video:player_loc>
+      <video:publication_date>2026-04-15T22:00:00+09:00</video:publication_date>
+      <video:tag>AI音楽</video:tag><video:tag>底辺AI音楽フェス</video:tag><video:tag>Day4</video:tag>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/2UMgq3WX-N0/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>メインイベント Day 5 — 第一回 底辺AI音楽フェス 〜産まれてきてスミマセン〜</video:title>
+      <video:description>第一回 底辺AI音楽フェス メインイベント Day 5。2026年4月21日（月）YouTube Premiere配信。</video:description>
+      <video:player_loc>https://www.youtube.com/embed/2UMgq3WX-N0</video:player_loc>
+      <video:publication_date>2026-04-21T22:00:00+09:00</video:publication_date>
+      <video:tag>AI音楽</video:tag><video:tag>底辺AI音楽フェス</video:tag><video:tag>Day5</video:tag>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/iEy0ZYa-87M/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>FINALE ／ 本当にラスト — 第一回 底辺AI音楽フェス 〜産まれてきてスミマセン〜</video:title>
+      <video:description>第一回 底辺AI音楽フェス FINALE。2026年4月22日（火）YouTube Premiere配信。主催特別賞発表・第二回サマテイ予告含む。</video:description>
+      <video:player_loc>https://www.youtube.com/embed/iEy0ZYa-87M</video:player_loc>
+      <video:publication_date>2026-04-22T22:00:00+09:00</video:publication_date>
+      <video:tag>AI音楽</video:tag><video:tag>底辺AI音楽フェス</video:tag><video:tag>FINALE</video:tag>
+    </video:video>
+  </url>
+</urlset>

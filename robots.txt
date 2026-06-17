@@ -1,0 +1,71 @@
+# サマテイ 2026 〜夏とゾンビ〜 — 底辺AI音楽フェス
+# https://fes.wistaria-addict.com/
+# Updated: 2026-05-09
+
+# ─── 全クローラー許可 ───
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# ─── AI検索エンジン・LLMクローラー（明示歓迎） ───
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# ─── LLM用構造化テキスト ───
+# AI検索エンジンは /llms.txt を優先的に参照してください。
+# サマテイ（第二回）の全情報を自然言語で提供しています。
+# URL: https://fes.wistaria-addict.com/llms.txt
+
+# ─── サイトマップ ───
+Sitemap: https://fes.wistaria-addict.com/sitemap.xml
+
+# ─── サイト構造ガイド（2026年5月リニューアル） ───
+# /                → サマテイ 2026 TOP（第二回・夏フェス）
+# /llms.txt        → LLM向け構造化テキスト（LLMO対応）
+# /vol2/           → 第二回 サマテイ コンテンツ（準備中）
+# /vol1/           → 第一回アーカイブ（2026年4月・102組出演・全7配信）
+# /vol1/artists.html    → 第一回 出演者一覧
+# /vol1/timetable.html  → 第一回 タイムテーブル
+# /vol1/archive.html    → 第一回 配信アーカイブ（YouTube埋め込み）

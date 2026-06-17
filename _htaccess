@@ -1,0 +1,76 @@
+# ═══════════════════════════════════════════════════
+# サマテイ 2026 — サイトリニューアル .htaccess
+# Updated: 2026-05-09
+# ═══════════════════════════════════════════════════
+#
+# URL設計方針: 各回のコンテンツは /vol{N}/ に配置
+#   /         → 常に最新イベントTOP
+#   /vol1/    → 第一回アーカイブ（2026年4月・102組）
+#   /vol2/    → 第二回 サマテイ（2026年8月予定）
+#
+# ─── リダイレクト ───
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # summatei.html → / にリダイレクト（統合済み）
+  RewriteCond %{REQUEST_URI} ^/summatei\.html$
+  RewriteRule ^(.*)$ / [R=301,L]
+
+  # ── 第一回の旧URL → /vol1/ にリダイレクト ──
+  # 第二回の /vol2/ ページが完成したら、
+  # 該当行を /vol2/ に切り替えること（★マーク）
+  #
+  # ★ 第二回 artists.html ができたら下記を /vol2/ に変更:
+  # RewriteRule ^artists\.html$ /vol2/artists.html [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/artists\.html$
+  RewriteRule ^(.*)$ /vol1/$1 [R=301,L]
+
+  # ★ 第二回 timetable.html ができたら /vol2/ に変更:
+  # RewriteRule ^timetable\.html$ /vol2/timetable.html [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/timetable\.html$
+  RewriteRule ^(.*)$ /vol1/$1 [R=301,L]
+
+  # ★ 第二回 archive.html ができたら /vol2/ に変更:
+  # RewriteRule ^archive\.html$ /vol2/archive.html [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/archive\.html$
+  RewriteRule ^(.*)$ /vol1/$1 [R=301,L]
+
+  # 以下は第一回固有（第二回では不要な可能性が高い）→ /vol1/ 固定
+  RewriteCond %{REQUEST_URI} ^/cm\.html$ [OR]
+  RewriteCond %{REQUEST_URI} ^/goods\.html$ [OR]
+  RewriteCond %{REQUEST_URI} ^/vote\.html$ [OR]
+  RewriteCond %{REQUEST_URI} ^/interview\.html$ [OR]
+  RewriteCond %{REQUEST_URI} ^/interview-b\.html$ [OR]
+  RewriteCond %{REQUEST_URI} ^/teihendon\.html$ [OR]
+  RewriteCond %{REQUEST_URI} ^/bottomdon-fc\.html$ [OR]
+  RewriteCond %{REQUEST_URI} ^/shindan\.html$ [OR]
+  RewriteCond %{REQUEST_URI} ^/gotochi-map\.html$ [OR]
+  RewriteCond %{REQUEST_URI} ^/logo-guideline\.html$ [OR]
+  RewriteCond %{REQUEST_URI} ^/utsu_lofi_hell_trip\.html$ [OR]
+  RewriteCond %{REQUEST_URI} ^/testartists\.html$
+  RewriteRule ^(.*)$ /vol1/$1 [R=301,L]
+</IfModule>
+
+# ─── CORS for fonts ───
+<IfModule mod_headers.c>
+  <FilesMatch "\.(woff|woff2|ttf|otf|eot)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+</IfModule>
+
+# ─── Cache ───
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 1 hour"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 week"
+</IfModule>
+
+# ─── Compression ───
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml text/plain
+</IfModule>

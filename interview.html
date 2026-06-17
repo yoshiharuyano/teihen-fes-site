@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="第一回 底辺AI音楽フェス 主催者事後インタビュー。謎の鳩MC 鳩レイバー が、冥土長こと貯水TANKと、神様ことWistaria Addictに全てを問う。スタジオ収録完全記録。">
+<meta name="keywords" content="底辺AI音楽フェス,インタビュー,貯水TANK,Wistaria Addict,鳩レイバー,主催者,AI音楽,事後レポート,2026">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://fes.wistaria-addict.com/interview.html">
+<meta property="og:title" content="主催者インタビュー | 第一回 底辺AI音楽フェス">
+<meta property="og:description" content="鳩が司会する収録スタジオで、冥土長と神様が全てを語った。鳩レイバー presents.">
+<meta property="og:image" content="https://fes.wistaria-addict.com/img/interview/hero_wide.jpg">
+<meta property="og:url" content="https://fes.wistaria-addict.com/interview.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="第一回 底辺AI音楽フェス 〜産まれてきてスミマセン〜">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="主催者インタビュー | 底辺AI音楽フェス 2026">
+<meta name="twitter:description" content="「……で。なぜそれを？」— 謎の鳩MCが、主催2名を問い詰める。">
+<meta name="twitter:image" content="https://fes.wistaria-addict.com/img/interview/hero_wide.jpg">
+<title>主催者インタビュー | 第一回 底辺AI音楽フェス</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Black+Han+Sans&family=Share+Tech+Mono&family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#050505;--fg:#e8e8e8;--sub:#888;--m:#444;--dim:#2a2a2a;
+  --r:#e94560;--r2:#ff6b81;--gold:#f0c040;--teal:#3abfbf;--pigeon:#9fa8b5;
+  --dark:#0a0a0a;--card:#0c0c0c;
+  --mono:'Share Tech Mono',monospace;
+  --head:'Noto Sans JP',sans-serif;
+  --display:'Black Han Sans',sans-serif;
+  --serif:'Zen Old Mincho',serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--head);line-height:1.85;overflow-x:hidden;font-weight:400}
+
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:999;opacity:.5}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:100;background:rgba(5,5,5,.95);backdrop-filter:blur(16px);border-bottom:1px solid #111;padding:.8rem clamp(1rem,4vw,3rem);display:flex;align-items:center;justify-content:space-between}
+.hdr-back{display:flex;align-items:center;gap:.5rem;color:var(--sub);font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-decoration:none;transition:color .3s}
+.hdr-back:hover{color:var(--r)}
+.hdr-badge{font-family:var(--mono);font-size:.55rem;color:var(--r);background:rgba(233,69,96,.1);border:1px solid rgba(233,69,96,.3);padding:.3rem .8rem;border-radius:2px;letter-spacing:.15em}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid #0f0f0f}
+.hero-img-wrap{position:relative;width:100%;aspect-ratio:1024/572;overflow:hidden;background:#000}
+.hero-img-wrap img{width:100%;height:100%;object-fit:cover;filter:saturate(0.9) contrast(1.05)}
+.hero-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,5,.15) 0%,transparent 40%,transparent 50%,rgba(5,5,5,.9) 100%);pointer-events:none}
+.hero-scanlines{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.08) 3px,rgba(0,0,0,.08) 4px);pointer-events:none;z-index:2;mix-blend-mode:multiply}
+.hero-label{position:absolute;top:1.2rem;left:1.2rem;z-index:3;font-family:var(--mono);font-size:.55rem;color:var(--r);letter-spacing:.28em;background:rgba(5,5,5,.7);padding:.4rem .9rem;border:1px solid rgba(233,69,96,.4)}
+.hero-label::before{content:'● ';color:var(--r);animation:blink 1.2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.hero-corner{position:absolute;font-family:var(--mono);font-size:.5rem;color:rgba(255,255,255,.5);letter-spacing:.15em;z-index:3}
+.hero-corner.tr{top:1.2rem;right:1.2rem}
+.hero-corner.br{bottom:1.2rem;right:1.2rem}
+
+.hero-content{max-width:1100px;margin:0 auto;padding:3rem clamp(1.5rem,5vw,4rem) 4rem;position:relative}
+.hero-meta{display:flex;gap:1.5rem;align-items:center;margin-bottom:2rem;flex-wrap:wrap}
+.hero-tag{font-family:var(--mono);font-size:.6rem;color:var(--r);border:1px solid rgba(233,69,96,.35);padding:.4rem 1rem;border-radius:2px;letter-spacing:.22em}
+.hero-date{font-family:var(--mono);font-size:.65rem;color:var(--sub);letter-spacing:.12em}
+.hero-date::before{content:'// ';color:var(--r)}
+.hero-issue{margin-left:auto;font-family:var(--mono);font-size:.55rem;color:var(--m);letter-spacing:.15em}
+
+.hero-kicker{font-family:var(--serif);font-size:clamp(.9rem,2vw,1.15rem);font-weight:700;color:var(--r);margin-bottom:1rem;letter-spacing:.04em}
+.hero-title{font-family:var(--display);font-size:clamp(2.2rem,7vw,5.5rem);line-height:.98;letter-spacing:.02em;color:#fff;margin-bottom:1.5rem}
+.hero-title .accent{color:var(--r);display:inline-block;position:relative}
+.hero-title .accent::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:6px;background:var(--r);opacity:.2}
+.hero-sub{font-family:var(--serif);font-size:clamp(1rem,2.2vw,1.25rem);font-weight:400;color:var(--sub);max-width:850px;line-height:1.85;margin-bottom:2.5rem}
+.hero-sub em{color:var(--fg);font-style:normal;font-weight:700;border-bottom:1px dotted var(--r)}
+
+.hero-credits{display:flex;gap:1.5rem;flex-wrap:wrap;padding:1.2rem 0;border-top:1px dashed #1e1e1e}
+.credit{display:flex;align-items:center;gap:.7rem}
+.credit-img{width:48px;height:48px;border-radius:50%;background:#222;flex-shrink:0;overflow:hidden;border:2px solid #1a1a1a}
+.credit-img img{width:100%;height:100%;object-fit:cover}
+.credit-info{min-width:0}
+.credit-role{font-family:var(--mono);font-size:.5rem;letter-spacing:.15em;margin-bottom:.1rem;color:var(--r)}
+.credit-name{font-family:var(--head);font-size:.8rem;font-weight:900;color:var(--fg)}
+.credit.tank .credit-role{color:var(--r)}
+.credit.wist .credit-role{color:var(--gold)}
+.credit.pigeon .credit-role{color:var(--pigeon)}
+
+/* SECTION */
+.section{padding:clamp(4rem,7vw,5.5rem) clamp(1.5rem,5vw,4rem);max-width:1100px;margin:0 auto;border-top:1px solid #0f0f0f}
+.sec-num{font-family:var(--mono);font-size:.55rem;color:var(--r);letter-spacing:.28em;margin-bottom:.6rem;display:flex;align-items:center;gap:.8rem}
+.sec-num::after{content:'';flex:1;max-width:200px;height:1px;background:linear-gradient(to right,rgba(233,69,96,.3),transparent)}
+.sec-title{font-family:var(--display);font-size:clamp(1.8rem,5vw,3.2rem);line-height:1.05;margin-bottom:2.5rem;color:#fff}
+
+/* PROFILES */
+.profiles{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.2rem;margin-bottom:1rem}
+@media(max-width:820px){.profiles{grid-template-columns:1fr}}
+.profile-card{background:var(--card);border:1px solid #141414;border-radius:4px;position:relative;overflow:hidden}
+.profile-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--r),rgba(233,69,96,.1),transparent);z-index:2}
+.profile-card.gold::before{background:linear-gradient(to right,var(--gold),rgba(240,192,64,.1),transparent)}
+.profile-card.pigeon::before{background:linear-gradient(to right,var(--pigeon),rgba(159,168,181,.1),transparent)}
+
+.profile-photo{width:100%;aspect-ratio:4/3;overflow:hidden;background:#111;position:relative}
+.profile-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.95) contrast(1.02)}
+.profile-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(5,5,5,.6));pointer-events:none}
+.profile-body{padding:1.5rem clamp(1.1rem,2.5vw,1.6rem)}
+.profile-num{position:absolute;top:.9rem;right:1rem;font-family:var(--mono);font-size:.55rem;color:rgba(255,255,255,.6);letter-spacing:.15em;background:rgba(5,5,5,.6);padding:.2rem .5rem;border-radius:2px;z-index:2}
+.profile-role-tag{display:inline-block;font-family:var(--mono);font-size:.5rem;color:var(--r);background:rgba(233,69,96,.08);border:1px solid rgba(233,69,96,.2);padding:.2rem .6rem;border-radius:2px;letter-spacing:.18em;margin-bottom:.9rem}
+.profile-card.gold .profile-role-tag{color:var(--gold);background:rgba(240,192,64,.08);border-color:rgba(240,192,64,.2)}
+.profile-card.pigeon .profile-role-tag{color:var(--pigeon);background:rgba(159,168,181,.08);border-color:rgba(159,168,181,.25)}
+.profile-name{font-family:var(--display);font-size:clamp(1.4rem,3.5vw,1.8rem);line-height:1;color:#fff;margin-bottom:.3rem;letter-spacing:.02em}
+.profile-handle{font-family:var(--mono);font-size:.6rem;color:var(--sub);letter-spacing:.08em;margin-bottom:1.2rem}
+.profile-handle a{color:inherit;text-decoration:none;transition:color .3s}
+.profile-handle a:hover{color:var(--r)}
+
+.profile-meta{display:grid;grid-template-columns:auto 1fr;gap:.35rem .8rem;margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px dashed #1e1e1e;font-size:.78rem}
+.pm-k{font-family:var(--mono);font-size:.5rem;color:var(--sub);letter-spacing:.12em;padding-top:.15rem}
+.pm-v{color:var(--fg);font-weight:500;font-size:.78rem;line-height:1.5}
+.pm-v.red{color:var(--r)}
+.pm-v.gold{color:var(--gold)}
+.pm-v.mono{font-family:var(--mono);font-size:.7rem}
+
+.profile-desc{font-size:.82rem;line-height:1.8;color:#b0b0b0}
+.profile-desc strong{color:var(--fg);font-weight:700}
+.profile-desc em{color:var(--r);font-style:normal;font-weight:700;padding:0 .1em}
+.profile-card.gold .profile-desc em{color:var(--gold)}
+.profile-card.pigeon .profile-desc em{color:var(--pigeon)}
+
+/* STUDIO SHOTS */
+.studio{padding:0;border-top:1px solid #0f0f0f;background:#030303}
+.studio-inner{max-width:1300px;margin:0 auto;padding:clamp(3rem,5vw,4rem) clamp(1rem,4vw,3rem)}
+.studio-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:.8rem;margin-top:1.5rem}
+.studio-grid .st-a{grid-column:1/8;aspect-ratio:16/7}
+.studio-grid .st-b{grid-column:8/13;aspect-ratio:1/1}
+.studio-grid .st-c{grid-column:1/6;aspect-ratio:1/1}
+.studio-grid .st-d{grid-column:6/13;aspect-ratio:16/7}
+@media(max-width:720px){
+  .studio-grid{grid-template-columns:1fr}
+  .studio-grid > *{grid-column:1/-1!important;aspect-ratio:4/3!important}
+}
+.st-frame{position:relative;overflow:hidden;border:1px solid #111;background:#111}
+.st-frame img{width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.02);transition:transform .8s ease}
+.st-frame:hover img{transform:scale(1.03)}
+.st-frame::after{content:attr(data-label);position:absolute;bottom:.6rem;left:.8rem;font-family:var(--mono);font-size:.5rem;color:rgba(255,255,255,.85);letter-spacing:.15em;background:rgba(5,5,5,.6);padding:.2rem .6rem;backdrop-filter:blur(4px)}
+
+/* INTERVIEW */
+.intv{padding:clamp(4rem,7vw,6rem) 0;border-top:1px solid #0f0f0f;background:linear-gradient(180deg,transparent,rgba(233,69,96,.015),transparent)}
+.intv-wrap{max-width:800px;margin:0 auto;padding:0 clamp(1.5rem,5vw,2rem)}
+
+.intv-intro{font-family:var(--serif);font-size:clamp(.95rem,1.8vw,1.05rem);line-height:2;color:#aaa;border-left:3px solid var(--r);padding:.3rem 0 .3rem 1.5rem;margin-bottom:4rem;font-weight:400}
+.intv-intro strong{color:var(--fg);font-weight:700}
+
+.scene-note{font-family:var(--mono);font-size:.55rem;color:var(--sub);letter-spacing:.15em;text-align:center;margin:3rem 0 2.5rem;padding:.6rem 1.2rem;border-top:1px dashed #1a1a1a;border-bottom:1px dashed #1a1a1a}
+.scene-note::before{content:'// ';color:var(--r)}
+
+.qa{margin-bottom:3.5rem;position:relative}
+.q{display:flex;gap:1.2rem;margin-bottom:1.3rem;align-items:flex-start;padding:.9rem 1.2rem;background:rgba(159,168,181,.04);border-left:3px solid rgba(159,168,181,.3);border-radius:0 4px 4px 0}
+.q-who{flex-shrink:0;display:flex;flex-direction:column;align-items:center;min-width:54px}
+.q-avatar{width:44px;height:44px;border-radius:50%;background:#222;overflow:hidden;border:1.5px solid rgba(159,168,181,.4);margin-bottom:.25rem}
+.q-avatar img{width:100%;height:100%;object-fit:cover}
+.q-label{font-family:var(--mono);font-size:.45rem;color:var(--pigeon);letter-spacing:.1em;text-align:center}
+.q-body{flex:1;padding-top:.2rem}
+.q-number{font-family:var(--mono);font-size:.55rem;color:var(--pigeon);letter-spacing:.2em;margin-bottom:.3rem}
+.q-text{font-family:var(--serif);font-size:clamp(.95rem,1.9vw,1.12rem);font-weight:700;line-height:1.65;color:#fff;letter-spacing:.01em}
+.q-text em{color:var(--pigeon);font-style:normal}
+
+.a{padding-left:0;margin-bottom:1rem}
+
+.speaker{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.2rem;padding-left:1rem}
+.speaker-avatar{flex-shrink:0;width:44px;height:44px;border-radius:50%;background:#222;overflow:hidden;border:1.5px solid #1a1a1a;margin-top:.15rem}
+.speaker-avatar img{width:100%;height:100%;object-fit:cover}
+.speaker-body{flex:1;min-width:0}
+.speaker-meta{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.3rem;flex-wrap:wrap}
+.speaker-name{font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.1em}
+.speaker-role{font-family:var(--mono);font-size:.48rem;color:var(--m);letter-spacing:.12em}
+.speaker-text{font-size:.93rem;line-height:1.95;color:#ccc;padding-left:0}
+.speaker-text em{color:var(--fg);font-style:normal;font-weight:700}
+
+.speaker.tank .speaker-avatar{border-color:rgba(233,69,96,.45)}
+.speaker.tank .speaker-name{color:var(--r)}
+.speaker.wist .speaker-avatar{border-color:rgba(240,192,64,.45)}
+.speaker.wist .speaker-name{color:var(--gold)}
+.speaker.pigeon .speaker-avatar{border-color:rgba(159,168,181,.5)}
+.speaker.pigeon .speaker-name{color:var(--pigeon)}
+
+/* Pigeon short comment */
+.pigeon-beat{display:flex;align-items:center;gap:.8rem;margin:1rem 0 1.2rem;padding:.5rem 1rem;background:rgba(159,168,181,.03);border-left:2px solid rgba(159,168,181,.25);border-radius:0 3px 3px 0}
+.pigeon-beat .speaker-avatar{width:32px;height:32px;border-width:1px}
+.pigeon-beat-text{font-family:var(--serif);font-size:.88rem;color:var(--pigeon);font-weight:700;letter-spacing:.02em}
+
+@media(max-width:600px){
+  .speaker{padding-left:0}
+  .q{padding:.7rem 1rem}
+}
+
+/* Pull quote */
+.pull{margin:4rem 0;padding:2.5rem clamp(1.5rem,4vw,3rem);background:linear-gradient(135deg,rgba(233,69,96,.05),transparent);border-left:4px solid var(--r);border-radius:0 4px 4px 0;position:relative}
+.pull::before{content:'"';position:absolute;top:-.5rem;left:1rem;font-family:var(--display);font-size:6rem;color:rgba(233,69,96,.25);line-height:1;pointer-events:none}
+.pull.gold{background:linear-gradient(135deg,rgba(240,192,64,.05),transparent);border-left-color:var(--gold)}
+.pull.gold::before{color:rgba(240,192,64,.25)}
+.pull.pigeon{background:linear-gradient(135deg,rgba(159,168,181,.05),transparent);border-left-color:var(--pigeon)}
+.pull.pigeon::before{color:rgba(159,168,181,.3)}
+.pull-text{font-family:var(--serif);font-size:clamp(1.15rem,2.6vw,1.55rem);font-weight:700;line-height:1.5;color:#fff;margin-left:2rem;letter-spacing:.01em}
+.pull-attr{font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;margin-top:1rem;margin-left:2rem;color:var(--r)}
+.pull.gold .pull-attr{color:var(--gold)}
+.pull.pigeon .pull-attr{color:var(--pigeon)}
+
+/* IMAGE BREAK inside interview */
+.img-break{margin:3rem 0;position:relative;max-width:640px}
+.img-break img{width:100%;display:block;filter:saturate(.92) contrast(1.03)}
+.img-break .cap{font-family:var(--mono);font-size:.55rem;color:var(--sub);letter-spacing:.12em;margin-top:.6rem;padding-left:.4rem;border-left:2px solid var(--r)}
+
+/* OUTRO */
+.outro{max-width:820px;margin:0 auto;padding:3rem clamp(1.5rem,5vw,3rem);text-align:center;border-top:1px solid #0f0f0f}
+.outro-tag{font-family:var(--mono);font-size:.55rem;color:var(--sub);letter-spacing:.25em;margin-bottom:1rem}
+.outro-title{font-family:var(--display);font-size:clamp(1.5rem,4vw,2.5rem);color:var(--r);margin-bottom:1rem;line-height:1.1}
+.outro-body{font-family:var(--serif);font-size:.95rem;color:#aaa;line-height:2;margin-bottom:2rem}
+.outro-meta{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:1.5rem}
+.outro-meta span{font-family:var(--mono);font-size:.55rem;color:var(--m);letter-spacing:.12em;padding:.3rem .8rem;border:1px solid #1a1a1a;border-radius:2px}
+
+.share{margin-top:2rem;display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap}
+.share a{font-family:var(--mono);font-size:.62rem;color:var(--sub);letter-spacing:.1em;padding:.6rem 1.2rem;border:1px solid #1a1a1a;border-radius:2px;text-decoration:none;transition:all .3s}
+.share a:hover{border-color:var(--r);color:var(--r);background:rgba(233,69,96,.05)}
+
+/* FOOTER */
+.footer{border-top:1px solid #0f0f0f;padding:3.5rem clamp(1.5rem,5vw,4rem);text-align:center;margin-top:3rem}
+.footer-msg{font-family:var(--display);font-size:1.3rem;color:var(--r);margin-bottom:.5rem;letter-spacing:.02em}
+.footer-sub{font-family:var(--mono);font-size:.58rem;color:var(--sub);letter-spacing:.15em;margin-bottom:2rem}
+.ft-nav{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.ft-nav a{font-family:var(--mono);font-size:.58rem;color:var(--m);text-decoration:none;padding:.4rem .85rem;border:1px solid #1a1a1a;border-radius:2px;letter-spacing:.08em;transition:all .3s}
+.ft-nav a:hover{border-color:var(--r);color:var(--r)}
+.ft-copy{font-family:var(--mono);font-size:.5rem;color:#2a2a2a;letter-spacing:.08em}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="hdr">
+  <a href="/" class="hdr-back">← BACK TO HOME</a>
+  <span class="hdr-badge">鳩レイバー — EP.01</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img-wrap">
+    <img src="/img/interview/hero_wide.jpg" alt="底辺AI音楽フェス主催者インタビュー スタジオ">
+    <div class="hero-scanlines"></div>
+    <div class="hero-label">REC // POST-EVENT INTERVIEW</div>
+    <div class="hero-corner tr">鳩レイバー<br>AI MUSIC FESTIVAL</div>
+    <div class="hero-corner br">EP.01 / 2026.04</div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-meta">
+      <span class="hero-tag">// FOUNDERS × MC</span>
+      <span class="hero-date">2026.04 — POST-EVENT</span>
+      <span class="hero-issue">// VOL.01</span>
+    </div>
+
+    <div class="hero-kicker">鳩レイバー presents　主催者対談</div>
+    <h1 class="hero-title">
+      産まれてきて<br><span class="accent">スミマセン</span>、<br>でも、<br>やってよかった。
+    </h1>
+    <p class="hero-sub">
+      謎の鳩MC <em>鳩レイバー</em> が仕切るスタジオで、<br>
+      <em>冥土長</em>こと貯水TANKと、<em>神様</em>ことWistaria Addictが、<br>
+      102組・全6日程のフェスの全てを語った、収録時間2時間超の完全記録。
+    </p>
+
+    <div class="hero-credits">
+      <div class="credit tank">
+        <div class="credit-img"><img src="/img/interview/tank.jpg" alt="貯水TANK"></div>
+        <div class="credit-info">
+          <div class="credit-role">// GUEST A — MAID CHIEF</div>
+          <div class="credit-name">貯水TANK</div>
+        </div>
+      </div>
+      <div class="credit wist">
+        <div class="credit-img"><img src="/img/interview/wist.jpg" alt="Wistaria Addict"></div>
+        <div class="credit-info">
+          <div class="credit-role">// GUEST B — GOD</div>
+          <div class="credit-name">Wistaria Addict</div>
+        </div>
+      </div>
+      <div class="credit pigeon">
+        <div class="credit-img"><img src="/img/interview/pigeon_mic.jpg" alt="鳩レイバー"></div>
+        <div class="credit-info">
+          <div class="credit-role">// MC — ???</div>
+          <div class="credit-name">鳩レイバー</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFILES -->
+<section class="section">
+  <div class="sec-num">// 01 &nbsp; CAST</div>
+  <h2 class="sec-title">スタジオに、<br>集まった三者。</h2>
+
+  <div class="profiles">
+    <!-- 貯水TANK -->
+    <div class="profile-card">
+      <div class="profile-photo">
+        <img src="/img/interview/tank.jpg" alt="貯水TANK">
+        <span class="profile-num">NO.000</span>
+      </div>
+      <div class="profile-body">
+        <div class="profile-role-tag">MAID CHIEF / 冥土長</div>
+        <div class="profile-name">貯水TANK</div>
+        <div class="profile-handle"><a href="https://x.com/Denmnmnmmma" target="_blank" rel="noopener">@Denmnmnmmma (X)</a></div>
+
+        <div class="profile-meta">
+          <div class="pm-k">ROLE</div><div class="pm-v">表の主催 / 世界観・動画編集・指揮</div>
+          <div class="pm-k">FLOOR</div><div class="pm-v red">B💩💩💩（最下層）</div>
+          <div class="pm-k">底辺度</div><div class="pm-v gold">10 / 10</div>
+          <div class="pm-k">SUNO</div><div class="pm-v mono">@gyokubura</div>
+          <div class="pm-k">UDIO</div><div class="pm-v mono">DEN_MA</div>
+        </div>
+
+        <p class="profile-desc">
+          自称<em>「AI音楽歴1年半・月間再生2桁代の真性ガチャ戦士」</em>。底辺の肩書きを自らブランドに昇華した作家肌の仕掛け人で、今回のフェスのコピー・世界観・キャラ類を中心に担当。加えて、<strong>全出演者の動画の最終編集・書き出し</strong>、動画サポートメンバーの勧誘、そして<strong>動画周り全体の指揮</strong>という、実は最も泥くさい工程のすべてを背負った。"糞プロンプトで Suno に挑む" と言いつつ、出てきた曲をちゃんと笑いに変えて出荷できる胆力の持ち主。
+        </p>
+      </div>
+    </div>
+
+    <!-- Wistaria Addict -->
+    <div class="profile-card gold">
+      <div class="profile-photo">
+        <img src="/img/interview/wist.jpg" alt="Wistaria Addict">
+        <span class="profile-num">NO.055</span>
+      </div>
+      <div class="profile-body">
+        <div class="profile-role-tag">GOD / 神様</div>
+        <div class="profile-name">Wistaria Addict</div>
+        <div class="profile-handle"><a href="https://x.com/WistariaAddict" target="_blank" rel="noopener">@WistariaAddict (X)</a></div>
+
+        <div class="profile-meta">
+          <div class="pm-k">ROLE</div><div class="pm-v">裏の主催 / マーケ・IP戦略PM</div>
+          <div class="pm-k">FLOOR</div><div class="pm-v red">BXXX</div>
+          <div class="pm-k">底辺度</div><div class="pm-v gold">9 / 10</div>
+          <div class="pm-k">SUNO</div><div class="pm-v mono"><a href="https://suno.com/@wistariaddict" target="_blank" rel="noopener" style="color:inherit">@wistariaddict</a></div>
+          <div class="pm-k">NOTE</div><div class="pm-v mono"><a href="https://note.com/wistariaaddict" target="_blank" rel="noopener" style="color:inherit">wistariaaddict</a></div>
+        </div>
+
+        <p class="profile-desc">
+          Suno で<strong>190曲超</strong>を投下する<em>lo-fi dark bubblegum</em>系作家で、代表曲「Bittersweet Gravity」「蒼白な朝」「Falling in the Neon Rewrite」「We Fell in Sugar Blue Silence」。<strong>note でSUNO V5.0〜V5.1のレコメンド挙動を解析</strong>してしまう理論派。フェスでは、<em>LUCYさん発のキャラクター「底辺どん」をミーム化</em>し、X / YouTube / TikTok / Spotify への<strong>プレイリスト展開、マーケティング戦略、IP戦略のPM</strong>を一手に担当した。"神様なのに労働してる" のが肩書きの由来。
+        </p>
+      </div>
+    </div>
+
+    <!-- 鳩レイバー -->
+    <div class="profile-card pigeon">
+      <div class="profile-photo">
+        <img src="/img/interview/pigeon_mic.jpg" alt="鳩レイバー">
+        <span class="profile-num">NO.???</span>
+      </div>
+      <div class="profile-body">
+        <div class="profile-role-tag">MC / 司会</div>
+        <div class="profile-name">鳩レイバー</div>
+        <div class="profile-handle">— &nbsp; 身元不明</div>
+
+        <div class="profile-meta">
+          <div class="pm-k">ROLE</div><div class="pm-v">司会・インタビュアー</div>
+          <div class="pm-k">SPECIES</div><div class="pm-v">ドバト（就労中）</div>
+          <div class="pm-k">OUTFIT</div><div class="pm-v">黄色スウェット / ピンクスニーカー</div>
+          <div class="pm-k">ATTITUDE</div><div class="pm-v red">寡黙・核心突き型</div>
+          <div class="pm-k">出身</div><div class="pm-v">不明（駅前という説あり）</div>
+        </div>
+
+        <p class="profile-desc">
+          どこから現れたのか誰も知らない、<em>謎の鳩MC</em>。名前の由来も不明だが、本人いわく「とにかくいま労働中」とのこと。口数は極端に少なく、発話は「……で。」「なぜそれを？」「…ふむ。」「クルッポー。」のいずれかに集約される。しかし<strong>質問のキレ味だけは一級</strong>で、ゲスト二人が思わず本音を漏らすたびに、橙色の眼だけ微動だにせずこちらを見る。首の羽は虹色。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDIO SHOTS -->
+<section class="studio">
+  <div class="studio-inner">
+    <div class="sec-num">// 02 &nbsp; STUDIO</div>
+    <h2 class="sec-title" style="margin-bottom:.5rem">収録、<br>スタジオは、<br>夜の22時。</h2>
+    <p style="color:var(--sub);max-width:640px;line-height:1.8;font-size:.88rem">撮影は全日程終了の直後、都内某所の防音スタジオにて。ピジョン照明、キーボード、分子模型、そして彼ら3人。鳩の眼は常に収録中。</p>
+
+    <div class="studio-grid">
+      <div class="st-frame st-a" data-label="// SHOT 01 — STAGE OVERVIEW"><img src="/img/interview/studio.jpg" alt="スタジオ俯瞰"></div>
+      <div class="st-frame st-b" data-label="// SHOT 02 — MC CLOSE-UP"><img src="/img/interview/pigeon_mic.jpg" alt="鳩MCのクローズアップ"></div>
+      <div class="st-frame st-c" data-label="// SHOT 03 — 3人対談"><img src="/img/interview/scene.jpg" alt="3人対談"></div>
+      <div class="st-frame st-d" data-label="// SHOT 04 — HOST GESTURE"><img src="/img/interview/pigeon_hand.jpg" alt="鳩MCが質問する"></div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERVIEW -->
+<section class="intv">
+  <div class="intv-wrap">
+    <div class="sec-num" style="margin-bottom:.6rem">// 03 &nbsp; INTERVIEW</div>
+    <h2 class="sec-title" style="margin-bottom:2.5rem">102組を動かした、<br>最下層の6日間。</h2>
+
+    <div class="intv-intro">
+      2026年4月7日の前夜祭から、メインイベント最終日まで。<strong>全6日程・102組</strong>が出演した第一回 底辺AI音楽フェスは、AI音楽シーンに突如現れ、静かに、しかし確実に一つの時代を作った。全てが終わったあと、主催二人がスタジオに呼び出された。そこで待っていたのは、黄色いスウェットに身を包んだ、一羽の鳩だった。
+    </div>
+
+    <!-- SCENE 1 -->
+    <div class="scene-note">— SCENE 01 — いきなり本題へ</div>
+
+    <div class="qa">
+      <div class="q">
+        <div class="q-who">
+          <div class="q-avatar"><img src="/img/interview/pigeon_mic.jpg" alt="鳩レイバー"></div>
+          <div class="q-label">鳩<br>レイバー</div>
+        </div>
+        <div class="q-body">
+          <div class="q-number">Q.01</div>
+          <div class="q-text">……で。<em>なぜ、フェスを。</em></div>
+        </div>
+      </div>
+      <div class="a">
+        <div class="speaker tank">
+          <div class="speaker-avatar"><img src="/img/interview/tank.jpg" alt="貯水TANK"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">貯水TANK</span><span class="speaker-role">// MAID CHIEF</span></div>
+            <div class="speaker-text">いきなり質問が短いな（笑）。えーと…月間再生2桁代のAI音楽クリエイターとして、「誰も聴いてくれないなら、自分たちで祭りにするしかない」って思ったのがキッカケです。最初は完全に冗談で「底辺AI音楽フェスとか面白くね？」って Wistaria さんに投げたんですよ。</div>
+          </div>
+        </div>
+        <div class="speaker wist">
+          <div class="speaker-avatar"><img src="/img/interview/wist.jpg" alt="Wistaria"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">Wistaria Addict</span><span class="speaker-role">// GOD</span></div>
+            <div class="speaker-text">そしたら私、<em>「あ、これは逃がしたらダメなやつだ」</em>って直感しちゃって。すでに持ってた <em>wistaria-addict.com</em> に <em>fes.</em> のサブドメインを切って、そこを足場にしようと。冗談を冗談のまま放置できない性分なので…。</div>
+          </div>
+        </div>
+        <div class="pigeon-beat">
+          <div class="speaker-avatar"><img src="/img/interview/pigeon_eye.jpg" alt="鳩レイバー"></div>
+          <div class="pigeon-beat-text">……で、そこから、どう動いた。</div>
+        </div>
+        <div class="speaker wist">
+          <div class="speaker-avatar"><img src="/img/interview/wist.jpg" alt="Wistaria"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">Wistaria Addict</span><span class="speaker-role">// GOD</span></div>
+            <div class="speaker-text">場所は用意できた。でも私はサイト実装そのものは専門じゃないので、<strong>HP制作は別途"制作陣"にお願いした</strong>んです。すごい人たちで、X でバズってるネタをほぼリアルタイムで拾ってサイトに反映してくれる。<em>あの速度がなかったら、今回のフェスの勢いは絶対に作れなかった</em>です。</div>
+          </div>
+        </div>
+        <div class="pigeon-beat">
+          <div class="speaker-avatar"><img src="/img/interview/pigeon_eye.jpg" alt="鳩レイバー"></div>
+          <div class="pigeon-beat-text">……<em>見えない労働者</em>が、いる。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="qa">
+      <div class="q">
+        <div class="q-who">
+          <div class="q-avatar"><img src="/img/interview/pigeon_mic.jpg" alt="鳩レイバー"></div>
+          <div class="q-label">鳩<br>レイバー</div>
+        </div>
+        <div class="q-body">
+          <div class="q-number">Q.02</div>
+          <div class="q-text">タイトルの「<em>産まれてきてスミマセン</em>」。<br>…太宰。</div>
+        </div>
+      </div>
+      <div class="a">
+        <div class="speaker tank">
+          <div class="speaker-avatar"><img src="/img/interview/tank.jpg" alt="貯水TANK"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">貯水TANK</span><span class="speaker-role">// MAID CHIEF</span></div>
+            <div class="speaker-text">よくそんな一行で気付きますね鳩さん…。そうです、太宰治の『二十世紀旗手』の一節で。AI音楽やってるだけで <em>「ズルい」「クリエイターじゃない」</em> って視線を浴びることが、この1年半で嫌になるほどあって。だったら、こっちが先に謝っちゃえばいいんじゃないかと。<em>先回りの自己卑下</em>って、意外と強いんですよ。</div>
+          </div>
+        </div>
+        <div class="speaker wist">
+          <div class="speaker-avatar"><img src="/img/interview/wist.jpg" alt="Wistaria"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">Wistaria Addict</span><span class="speaker-role">// GOD</span></div>
+            <div class="speaker-text">「AI使ってスミマセン。でも、聴いて。」というコピーが貯水さんから出てきた瞬間に、「これだ」って確信しました。<strong>謝罪＋懇願</strong>、日本語最強の組み合わせです。</div>
+          </div>
+        </div>
+        <div class="pigeon-beat">
+          <div class="speaker-avatar"><img src="/img/interview/pigeon_eye.jpg" alt="鳩レイバー"></div>
+          <div class="pigeon-beat-text">……クルッポー。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PULL 1 -->
+    <div class="pull">
+      <div class="pull-text">先回りの自己卑下って、意外と強いんですよ。</div>
+      <div class="pull-attr">— 貯水TANK</div>
+    </div>
+
+    <!-- SCENE 2 -->
+    <div class="scene-note">— SCENE 02 — 役割と、肩書き</div>
+
+    <!-- Q3 -->
+    <div class="qa">
+      <div class="q">
+        <div class="q-who">
+          <div class="q-avatar"><img src="/img/interview/pigeon_mic.jpg" alt="鳩レイバー"></div>
+          <div class="q-label">鳩<br>レイバー</div>
+        </div>
+        <div class="q-body">
+          <div class="q-number">Q.03</div>
+          <div class="q-text">冥土長、と、神様。<em>役割分担を。</em></div>
+        </div>
+      </div>
+      <div class="a">
+        <div class="speaker tank">
+          <div class="speaker-avatar"><img src="/img/interview/tank.jpg" alt="貯水TANK"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">貯水TANK</span><span class="speaker-role">// MAID CHIEF</span></div>
+            <div class="speaker-text">僕は、表の主催として<em>世界観・コピー・キャラ周り</em>を振りまくのと、あと実は地味にデカいのが<em>動画周り全般の指揮</em>です。出演者から上がってきた音源の<strong>最終編集と書き出し</strong>、動画サポートメンバーの勧誘、各日の MP4 を YouTube Premiere に渡すまでのライン管理…。全部こっちで握ってました。</div>
+          </div>
+        </div>
+        <div class="speaker wist">
+          <div class="speaker-avatar"><img src="/img/interview/wist.jpg" alt="Wistaria"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">Wistaria Addict</span><span class="speaker-role">// GOD</span></div>
+            <div class="speaker-text">私は<em>マーケティングとIP戦略のPM</em>です。<strong>LICYさん発の「底辺どん」をどうミーム化するか</strong>、X・YouTube・TikTok・Spotify で<strong>プレイリストをどう育てるか</strong>、誰と誰をどのタイミングで絡ませるか…そういう設計の方。あと、サイトは別途<strong>制作陣</strong>がいて、X でバズったネタを拾ってリアルタイムに更新してくれるので、私はそのハブに立つ感じでした。</div>
+          </div>
+        </div>
+        <div class="pigeon-beat">
+          <div class="speaker-avatar"><img src="/img/interview/pigeon_eye.jpg" alt="鳩レイバー"></div>
+          <div class="pigeon-beat-text">……<em>誰も、寝てない。</em></div>
+        </div>
+        <div class="speaker tank">
+          <div class="speaker-avatar"><img src="/img/interview/tank.jpg" alt="貯水TANK"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">貯水TANK</span><span class="speaker-role">// MAID CHIEF</span></div>
+            <div class="speaker-text">寝てません。僕、Premiere Pro と睨み合って、Wistaria さんは X のタイムラインと睨み合って、制作陣はコードと睨み合って。<em>役割分担というか、睨み合う対象の分担</em>です。</div>
+          </div>
+        </div>
+        <div class="speaker wist">
+          <div class="speaker-avatar"><img src="/img/interview/wist.jpg" alt="Wistaria"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">Wistaria Addict</span><span class="speaker-role">// GOD</span></div>
+            <div class="speaker-text">肩書きが「神様」なのも、全知全能だからじゃなくて、<em>神様でも労働させられる世界観</em>だからです。このフェス、神にすら休みをくれない。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="qa">
+      <div class="q">
+        <div class="q-who">
+          <div class="q-avatar"><img src="/img/interview/pigeon_mic.jpg" alt="鳩レイバー"></div>
+          <div class="q-label">鳩<br>レイバー</div>
+        </div>
+        <div class="q-body">
+          <div class="q-number">Q.04</div>
+          <div class="q-text">B💩💩💩階、BXXX階。<br>…<em>なぜそれを？</em></div>
+        </div>
+      </div>
+      <div class="a">
+        <div class="speaker tank">
+          <div class="speaker-avatar"><img src="/img/interview/tank.jpg" alt="貯水TANK"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">貯水TANK</span><span class="speaker-role">// MAID CHIEF</span></div>
+            <div class="speaker-text">アーティスト一覧に「全員 customFloor（住んでる階）と customTitle（肩書き）を持たせよう」って Wistaria さんが言い出したので…。じゃあ僕は最下層の更に下、うんこマーク3つでいきますって。</div>
+          </div>
+        </div>
+        <div class="speaker wist">
+          <div class="speaker-avatar"><img src="/img/interview/wist.jpg" alt="Wistaria"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">Wistaria Addict</span><span class="speaker-role">// GOD</span></div>
+            <div class="speaker-text">データ構造として「階」と「肩書き」があると、全員に自虐と自己設定を同時に書かせられるので。あれ、<strong>参加者が自分で自分の底辺度を決められる</strong>ってのが結構大事で。自己申告制の"底辺度"も同じ思想です。</div>
+          </div>
+        </div>
+        <div class="pigeon-beat">
+          <div class="speaker-avatar"><img src="/img/interview/pigeon_eye.jpg" alt="鳩レイバー"></div>
+          <div class="pigeon-beat-text">……<em>設計書に、ユーモアが住んでる。</em></div>
+        </div>
+        <div class="speaker wist">
+          <div class="speaker-avatar"><img src="/img/interview/wist.jpg" alt="Wistaria"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">Wistaria Addict</span><span class="speaker-role">// GOD</span></div>
+            <div class="speaker-text">いまのフレーズ、あとで使わせてもらってもいいですか。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMG BREAK -->
+    <div class="img-break">
+      <img src="/img/interview/scene.jpg" alt="3人対談シーン">
+      <div class="cap">// STUDIO B — 22:41 / 二人はスタジオの青ソファで、向かい合う黄色い鳩に問われ続けた。</div>
+    </div>
+
+    <!-- SCENE 3 -->
+    <div class="scene-note">— SCENE 03 — 本番、キツかった瞬間</div>
+
+    <!-- Q5 -->
+    <div class="qa">
+      <div class="q">
+        <div class="q-who">
+          <div class="q-avatar"><img src="/img/interview/pigeon_mic.jpg" alt="鳩レイバー"></div>
+          <div class="q-label">鳩<br>レイバー</div>
+        </div>
+        <div class="q-body">
+          <div class="q-number">Q.05</div>
+          <div class="q-text">一番、死にかけた瞬間は。</div>
+        </div>
+      </div>
+      <div class="a">
+        <div class="speaker tank">
+          <div class="speaker-avatar"><img src="/img/interview/tank.jpg" alt="貯水TANK"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">貯水TANK</span><span class="speaker-role">// MAID CHIEF</span></div>
+            <div class="speaker-text">Day3 の 22:00 配信開始、その<em>5分前</em>に YouTube Premiere の設定で引っかかりが出た時。心臓止まりかけました。あとはもう、単純に<em>動画書き出し地獄</em>ですね。動画サポート枠の WAV 提出期限の翌週、<strong>50本以上の WAV＋歌詞＋画像</strong>を順番に動画化する作業が自分に全部乗ってきて。毎晩2時まで MP4 エンコードして、朝起きたら次のファイルが Discord に10本届いてる。</div>
+          </div>
+        </div>
+        <div class="speaker wist">
+          <div class="speaker-avatar"><img src="/img/interview/wist.jpg" alt="Wistaria"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">Wistaria Addict</span><span class="speaker-role">// GOD</span></div>
+            <div class="speaker-text">私はマーケ側なので、ジャンルが違うキツさで…。<em>底辺どんを各プラットフォームでミーム化していく戦略</em>が、本番直前の2週間で同時多発的に走ったんですよ。X で拡散する画像、YouTube Shorts 用の縦動画、TikTok 尺、Spotify のプレイリストのジャケ…全部<strong>「明日までに形にしてください」</strong>の積み上げ。LICYさんが生み落としたキャラを、どうやって102組の文脈に接続するか、夜な夜な考えてました。</div>
+          </div>
+        </div>
+        <div class="pigeon-beat">
+          <div class="speaker-avatar"><img src="/img/interview/pigeon_eye.jpg" alt="鳩レイバー"></div>
+          <div class="pigeon-beat-text">……報酬は。</div>
+        </div>
+        <div class="speaker tank">
+          <div class="speaker-avatar"><img src="/img/interview/tank.jpg" alt="貯水TANK"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">貯水TANK</span><span class="speaker-role">// MAID CHIEF</span></div>
+            <div class="speaker-text">ゼロです。全員無料です。でも各アーティストから「ありがとうございます」って Discord に DM が来るたびに、「<em>もう一本いけるな</em>」って回復してました。</div>
+          </div>
+        </div>
+        <div class="pigeon-beat">
+          <div class="speaker-avatar"><img src="/img/interview/pigeon_eye.jpg" alt="鳩レイバー"></div>
+          <div class="pigeon-beat-text">……それを、神様という。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PULL 2 -->
+    <div class="pull gold">
+      <div class="pull-text">「ありがとう」が来るたびに、<br>"もう一本いけるな" って回復してました。</div>
+      <div class="pull-attr">— 貯水TANK</div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="qa">
+      <div class="q">
+        <div class="q-who">
+          <div class="q-avatar"><img src="/img/interview/pigeon_mic.jpg" alt="鳩レイバー"></div>
+          <div class="q-label">鳩<br>レイバー</div>
+        </div>
+        <div class="q-body">
+          <div class="q-number">Q.06</div>
+          <div class="q-text">102組。<em>刺さった曲。</em></div>
+        </div>
+      </div>
+      <div class="a">
+        <div class="speaker tank">
+          <div class="speaker-avatar"><img src="/img/interview/tank.jpg" alt="貯水TANK"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">貯水TANK</span><span class="speaker-role">// MAID CHIEF</span></div>
+            <div class="speaker-text">南黒山ソイヤさんの「底辺未満」。あのタイトル、完全にうちのコンセプトを倒しにきてて最高でした。あと、出演者3人で同テーマ「奈落の徒花」を勝手に競作してた件は、こっちが頼んでないのに盛り上がってて、<em>フェス前にもうフェス</em>って感じで。</div>
+          </div>
+        </div>
+        <div class="speaker wist">
+          <div class="speaker-avatar"><img src="/img/interview/wist.jpg" alt="Wistaria"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">Wistaria Addict</span><span class="speaker-role">// GOD</span></div>
+            <div class="speaker-text">私は MoMu &amp; TeaSteam と高宮ルアリエさんの応援ソング。「応援してもらえてる実感」がある曲って、やっぱり違うんですよ。あと、テケテンさんが<strong>「Wistariaさんがボツにしたキャラ」で CM作ってきた件</strong>…。</div>
+          </div>
+        </div>
+        <div class="pigeon-beat">
+          <div class="speaker-avatar"><img src="/img/interview/pigeon_eye.jpg" alt="鳩レイバー"></div>
+          <div class="pigeon-beat-text">……ボツ案、拾うのか。</div>
+        </div>
+        <div class="speaker wist">
+          <div class="speaker-avatar"><img src="/img/interview/wist.jpg" alt="Wistaria"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">Wistaria Addict</span><span class="speaker-role">// GOD</span></div>
+            <div class="speaker-text">拾われました。笑いました。<em>底辺は、ゴミすら愛する文化</em>だとそのとき確信しました。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENE 4 -->
+    <div class="scene-note">— SCENE 04 — Suno、レコメンド、そしてミーム宇宙</div>
+
+    <!-- Q7 -->
+    <div class="qa">
+      <div class="q">
+        <div class="q-who">
+          <div class="q-avatar"><img src="/img/interview/pigeon_mic.jpg" alt="鳩レイバー"></div>
+          <div class="q-label">鳩<br>レイバー</div>
+        </div>
+        <div class="q-body">
+          <div class="q-number">Q.07</div>
+          <div class="q-text">Wistaria さん。<br>noteで<em>「SUNO V5.0〜V5.1 の挙動」</em>を書いてますね。<br>…<em>あれは、なぜ？</em></div>
+        </div>
+      </div>
+      <div class="a">
+        <div class="speaker wist">
+          <div class="speaker-avatar"><img src="/img/interview/wist.jpg" alt="Wistaria"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">Wistaria Addict</span><span class="speaker-role">// GOD</span></div>
+            <div class="speaker-text">鳩さん、note まで読んでるんですか…。<br>V5 になってから、みんな「伸びない」「似た曲欄が変わった」って言い出して。自分の <em>Bittersweet Gravity</em> が1ヶ月で跳ねた瞬間があって、その時のデータから <strong>「Sunoはタイトル・ムード・テンポでクラスタ判定してる」</strong>っていう仮説に辿り着いたんです。</div>
+          </div>
+        </div>
+        <div class="speaker wist">
+          <div class="speaker-avatar"><img src="/img/interview/wist.jpg" alt="Wistaria"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">Wistaria Addict</span><span class="speaker-role">// GOD</span></div>
+            <div class="speaker-text">つまり "世界観が毎回違いすぎる人"ほど、Suno 上では伸びにくい。<em>Glow / Melt / Sugar / Sweet / Chocolate / Dream / Petal</em> みたいに、タイトルで世界観を固定するのが大事で。</div>
+          </div>
+        </div>
+        <div class="speaker tank">
+          <div class="speaker-avatar"><img src="/img/interview/tank.jpg" alt="貯水TANK"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">貯水TANK</span><span class="speaker-role">// MAID CHIEF</span></div>
+            <div class="speaker-text">で、僕は糞プロンプトで世界観が毎回バラバラなんで、<em>永久に底辺</em>ってわけです。</div>
+          </div>
+        </div>
+        <div class="pigeon-beat">
+          <div class="speaker-avatar"><img src="/img/interview/pigeon_eye.jpg" alt="鳩レイバー"></div>
+          <div class="pigeon-beat-text">……アルゴリズムも、底辺を選んでいる。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="qa">
+      <div class="q">
+        <div class="q-who">
+          <div class="q-avatar"><img src="/img/interview/pigeon_mic.jpg" alt="鳩レイバー"></div>
+          <div class="q-label">鳩<br>レイバー</div>
+        </div>
+        <div class="q-body">
+          <div class="q-number">Q.08</div>
+          <div class="q-text">底辺どん、鬱さぎ、パギャンどん…。<em>この世界観、どこまで広げる。</em></div>
+        </div>
+      </div>
+      <div class="a">
+        <div class="speaker wist">
+          <div class="speaker-avatar"><img src="/img/interview/wist.jpg" alt="Wistaria"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">Wistaria Addict</span><span class="speaker-role">// GOD</span></div>
+            <div class="speaker-text">「鬱さぎ Lo-fi 地獄Trip」は月1〜隔月ペースで定期配信化を考えてます。企画書はもう書きました。あと、<strong>底辺どんってそもそも LICYさんから生まれたキャラ</strong>なんですけど、私がそれを X / YouTube / TikTok / Spotify に広げていったら、いま SORA のプロフィールで動画が勝手に増えていく現象が起きてて、もう私たちのコントロールを離れつつあります…。<em>生みの親は LICYさん、育ての親は私、放流したら自走した</em>、みたいな状態です。</div>
+          </div>
+        </div>
+        <div class="speaker tank">
+          <div class="speaker-avatar"><img src="/img/interview/tank.jpg" alt="貯水TANK"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">貯水TANK</span><span class="speaker-role">// MAID CHIEF</span></div>
+            <div class="speaker-text"><em>「ご当地どん」</em>構想もあります。北海道の雪国どん、沖縄のビーチどん、名古屋のエビフライどん、東京のタワマンに住めない底辺どん。妄想は無限に広がります。</div>
+          </div>
+        </div>
+        <div class="pigeon-beat">
+          <div class="speaker-avatar"><img src="/img/interview/pigeon_eye.jpg" alt="鳩レイバー"></div>
+          <div class="pigeon-beat-text">……タワマンに住めない底辺どんは、<em>切ない。</em></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PULL 3 -->
+    <div class="pull pigeon">
+      <div class="pull-text">設計書に、<br>ユーモアが住んでる。</div>
+      <div class="pull-attr">— 鳩レイバー</div>
+    </div>
+
+    <!-- SCENE 5 -->
+    <div class="scene-note">— SCENE 05 — 次回、そして、最後に</div>
+
+    <!-- Q9 -->
+    <div class="qa">
+      <div class="q">
+        <div class="q-who">
+          <div class="q-avatar"><img src="/img/interview/pigeon_mic.jpg" alt="鳩レイバー"></div>
+          <div class="q-label">鳩<br>レイバー</div>
+        </div>
+        <div class="q-body">
+          <div class="q-number">Q.09</div>
+          <div class="q-text">第二回。<br>……<em>やるのか。</em></div>
+        </div>
+      </div>
+      <div class="a">
+        <div class="speaker tank">
+          <div class="speaker-avatar"><img src="/img/interview/tank.jpg" alt="貯水TANK"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">貯水TANK</span><span class="speaker-role">// MAID CHIEF</span></div>
+            <div class="speaker-text">やります。もう半分告知してます（笑）。ただ、次はもうちょっと<em>自分たちに優しい運営</em>にしたいです。今回、本当に寝てないので。次の動画サポート係、マジで増やしたい。<strong>Premiere Pro が触れる底辺、Discord に集合してください</strong>。</div>
+          </div>
+        </div>
+        <div class="speaker wist">
+          <div class="speaker-avatar"><img src="/img/interview/wist.jpg" alt="Wistaria"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">Wistaria Addict</span><span class="speaker-role">// GOD</span></div>
+            <div class="speaker-text">第二回のタイトルは「底辺 Plus」か「底辺2：産まれ直してスミマセン」か、絶賛会議中。私の方は、<em>底辺どんIPをもう少し真面目に育てたい</em>と思ってます。Spotify のプレイリスト、TikTok の連載、YouTube Shortsで出演者の名刺代わりになる 30秒動画シリーズ…。<strong>マーケ側で手を貸せる底辺</strong>もめちゃくちゃ募集中です。</div>
+          </div>
+        </div>
+        <div class="pigeon-beat">
+          <div class="speaker-avatar"><img src="/img/interview/pigeon_eye.jpg" alt="鳩レイバー"></div>
+          <div class="pigeon-beat-text">……司会、<em>募集するか？</em></div>
+        </div>
+        <div class="speaker tank">
+          <div class="speaker-avatar"><img src="/img/interview/tank.jpg" alt="貯水TANK"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">貯水TANK</span><span class="speaker-role">// MAID CHIEF</span></div>
+            <div class="speaker-text">鳩さん、やります？</div>
+          </div>
+        </div>
+        <div class="pigeon-beat">
+          <div class="speaker-avatar"><img src="/img/interview/pigeon_eye.jpg" alt="鳩レイバー"></div>
+          <div class="pigeon-beat-text">……ふむ。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="qa">
+      <div class="q">
+        <div class="q-who">
+          <div class="q-avatar"><img src="/img/interview/pigeon_mic.jpg" alt="鳩レイバー"></div>
+          <div class="q-label">鳩<br>レイバー</div>
+        </div>
+        <div class="q-body">
+          <div class="q-number">Q.10</div>
+          <div class="q-text">最後に、<em>102組と、全視聴者へ。</em></div>
+        </div>
+      </div>
+      <div class="a">
+        <div class="speaker tank">
+          <div class="speaker-avatar"><img src="/img/interview/tank.jpg" alt="貯水TANK"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">貯水TANK</span><span class="speaker-role">// MAID CHIEF</span></div>
+            <div class="speaker-text">全員「底辺」って自称してくれて、ありがとうございました。でも、底辺じゃないよ。<em>ここに集まった時点で、もうトップです</em>。</div>
+          </div>
+        </div>
+        <div class="speaker wist">
+          <div class="speaker-avatar"><img src="/img/interview/wist.jpg" alt="Wistaria"></div>
+          <div class="speaker-body">
+            <div class="speaker-meta"><span class="speaker-name">Wistaria Addict</span><span class="speaker-role">// GOD</span></div>
+            <div class="speaker-text">AI 音楽をやる人って、これまで "一人で孤独に作ってる" 人が多かったと思うんです。でも、このフェスで 102 組が集まって、相互 CM を作ったり、テーマ曲を競作したり、Discord で夜中までチャットしたり──それって全部、"底辺" の証拠じゃなくて、<em>"仲間がいる" 証拠</em>でした。<br><br>産まれてきて、スミマセンじゃなくて。<em>ありがとう</em>、って、最後に言いたいです。</div>
+          </div>
+        </div>
+        <div class="pigeon-beat">
+          <div class="speaker-avatar"><img src="/img/interview/pigeon_eye.jpg" alt="鳩レイバー"></div>
+          <div class="pigeon-beat-text">……<em>録れました。</em>お疲れ様でした。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FINAL PULL -->
+    <div class="pull gold">
+      <div class="pull-text">"底辺" の証拠じゃなくて、<br>"仲間がいる" 証拠でした。</div>
+      <div class="pull-attr">— Wistaria Addict</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- OUTRO -->
+<section class="outro">
+  <div class="outro-tag">// END OF INTERVIEW — 鳩レイバー EP.01</div>
+  <h2 class="outro-title">産まれてきて、<br>ありがとう。</h2>
+  <p class="outro-body">
+    第一回 底辺AI音楽フェス 〜産まれてきてスミマセン〜 は無事、全日程を終えました。<br>
+    出演された102組のアーティスト、応援団員、視聴者、CM枠に投稿してくれた全員に。<br>
+    底辺どんの生みの親 <strong>LICYさん</strong>、サイトを裏で動かし続けた <strong>HP制作陣</strong>、動画サポートに駆けつけてくれたすべてのメンバーに、<br>
+    貯水TANK、Wistaria Addict、そして鳩MC 鳩レイバー から、心からの感謝を。
+  </p>
+  <div class="outro-meta">
+    <span>HOST — 鳩レイバー</span>
+    <span>GUESTS — 貯水TANK / Wistaria Addict</span>
+    <span>RECORDED 2026.04</span>
+    <span>VOL.01</span>
+  </div>
+
+  <div class="share">
+    <a href="https://twitter.com/intent/tweet?text=%E3%80%90%E4%B8%BB%E5%82%AC%E8%80%85%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%93%E3%83%A5%E3%83%BC%E3%80%91%E9%B3%A9MC%E3%81%8C%E5%BA%95%E8%BE%BAAI%E9%9F%B3%E6%A5%BD%E3%83%95%E3%82%A7%E3%82%B9%E4%B8%BB%E5%82%AC2%E5%90%8D%E3%82%92%E5%95%8F%E3%81%84%E8%A9%B0%E3%82%81%E3%81%9F%E3%80%82%0A%0A%23%E5%BA%95%E8%BE%BAAI%E9%9F%B3%E6%A5%BD%E3%83%95%E3%82%A7%E3%82%B9%0Ahttps%3A//fes.wistaria-addict.com/interview.html" target="_blank" rel="noopener">𝕏 シェア</a>
+    <a href="/">TOP に戻る</a>
+    <a href="/artists.html">出演者一覧</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-msg">産まれてきてスミマセン。</div>
+  <div class="footer-sub">TEIHEN AI MUSIC FES — POST EVENT ARCHIVE — 鳩レイバー EP.01</div>
+
+  <div class="ft-nav">
+    <a href="/">TOP</a>
+    <a href="/artists.html">ARTISTS</a>
+    <a href="/timetable.html">TIMETABLE</a>
+    <a href="/vote.html">VOTE</a>
+    <a href="/teihendon.html">底辺どん</a>
+    <a href="/goods.html">GOODS</a>
+    <a href="/cm.html">CM</a>
+    <a href="/logo-guideline.html">LOGO GUIDELINE</a>
+    <a href="/gotochi-map.html">ご当地MAP</a>
+    <a href="https://x.com/teihen_ai_music" target="_blank" rel="noopener">X (公式)</a>
+    <a href="https://www.youtube.com/@%E5%BA%95%E8%BE%BAAI%E9%9F%B3%E6%A5%BD%E3%83%95%E3%82%A7%E3%82%B9official" target="_blank" rel="noopener">YOUTUBE</a>
+  </div>
+
+  <div class="ft-copy">© 2026 底辺AI音楽フェス 〜産まれてきてスミマセン〜</div>
+</footer>
+
+</body>
+</html>

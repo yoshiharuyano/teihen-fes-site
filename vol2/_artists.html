@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出演予定アーティスト｜サマテイ 2026 〜夏とゾンビ〜</title>
+<meta name="description" content="サマテイ（底辺AI音楽フェスの夏フェス）出演予定アーティスト一覧（調整中）。出演・出演順は変更になる場合があります。">
+<meta property="og:title" content="ARTISTS｜サマテイ 2026 〜夏とゾンビ〜">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=Klee+One:wght@400;600&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Caveat:wght@500;700&family=Kosugi+Maru&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fdf8ec;--paper2:#fbf3e0;--paper3:#f5ead0;--paper-deep:#ebdcb6;
+  --sky:#cfe9f3;--sky2:#a8d4e8;--sea:#7ec4cf;--sea2:#4ea7b6;
+  --coral:#ff9aa8;--coral2:#ffb6c1;--pink:#fcd6dc;--sand:#f0d9a8;
+  --sun:#ffd97d;--sun2:#fce086;--mint:#b8e3c8;--lavender:#dcd0ee;
+  --zombie:#a8c89c;--zombie2:#8ab581;--bruise:#b48ee0;
+  --ink:#3d352f;--ink2:#5a4d44;--sub:#8a7a6c;--pencil:#7c6f63;
+  --line:#d8c8a8;--line2:#c4b18a;
+  --display:'Yusei Magic',cursive;--hand:'Klee One',serif;
+  --body:'Zen Maru Gothic','Hiragino Maru Gothic ProN',sans-serif;
+  --en:'Caveat',cursive;--kana:'Kosugi Maru','Zen Maru Gothic',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.9;font-weight:500;overflow-x:hidden}
+a{color:inherit}
+.skip{position:absolute;left:-9999px;top:0;background:var(--coral);color:#fff;padding:.5rem 1rem;font-family:var(--display);z-index:200}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(253,248,236,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:2px dashed var(--line);padding:.55rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.hdr-l{display:flex;align-items:center;gap:.6rem;min-width:0;flex:1}
+.hdr-tag{font-family:var(--en);font-size:.95rem;background:var(--zombie);color:var(--ink);padding:.05rem .55rem;border-radius:99px;border:2px solid var(--ink);transform:rotate(-3deg);flex-shrink:0;font-weight:700}
+.hdr-title{font-family:var(--display);font-size:.95rem;letter-spacing:.05em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hdr-r{display:flex;gap:.4rem;flex-shrink:0}
+.hdr-link{font-family:var(--hand);font-size:.78rem;color:var(--ink2);padding:.25rem .65rem;background:var(--paper2);border:1.5px solid var(--ink);border-radius:99px;transition:all .2s;text-decoration:none}
+.hdr-link:hover,.hdr-link.on{background:var(--sun);transform:translateY(-1px)}
+
+/* hero */
+.hero{max-width:1100px;margin:0 auto;padding:2.4rem clamp(1rem,4vw,2rem) .5rem;position:relative}
+.sec-num{display:inline-block;font-family:var(--en);font-size:1.05rem;font-weight:700;color:var(--ink);background:var(--sun2);padding:.05rem .8rem;border:1.5px solid var(--ink);border-radius:99px;transform:rotate(-2deg)}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,9vw,4.6rem);line-height:1;letter-spacing:.05em;margin:.7rem 0 .3rem}
+.hero h1 .en{font-family:var(--en);color:var(--coral);font-size:.55em;margin-left:.3em}
+.hero p{font-family:var(--hand);color:var(--ink2);font-size:.92rem;max-width:52ch}
+.hero p b{color:var(--coral);font-weight:700}
+.hero-note{font-family:var(--mono)!important;font-size:.62rem!important;color:var(--sub)!important;background:var(--paper2);border:1.5px dashed var(--line2);border-radius:8px;padding:.4rem .7rem;display:inline-block;margin-top:.7rem;max-width:none!important}
+.hero .deco{position:absolute;right:clamp(1rem,4vw,2rem);top:2rem;font-size:clamp(2rem,7vw,3.2rem);transform:rotate(8deg);opacity:.9}
+
+/* stats */
+.stats{max-width:1100px;margin:1.4rem auto 0;padding:0 clamp(1rem,4vw,2rem);display:flex;flex-wrap:wrap;gap:12px}
+.stat{background:var(--paper2);border:2px solid var(--ink);border-radius:8px;box-shadow:3px 4px 0 rgba(61,53,47,.15);padding:.6rem 1rem;min-width:96px;flex:1 1 0}
+.stat:nth-child(2n){transform:rotate(.6deg)}.stat:nth-child(3n){transform:rotate(-.7deg)}
+.stat .n{font-family:var(--display);font-size:1.8rem;line-height:1;color:var(--ink)}
+.stat .l{font-family:var(--en);font-size:.85rem;font-weight:700;color:var(--sea2)}
+
+/* controls */
+.ctrl{max-width:1100px;margin:1.6rem auto .4rem;padding:0 clamp(1rem,4vw,2rem);display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
+.search{position:relative;flex:1 1 220px}
+.search input{width:100%;font-family:var(--body);font-size:.85rem;color:var(--ink);background:var(--paper);border:2px solid var(--ink);border-radius:99px;padding:.5rem 1rem .5rem 2.2rem;outline:none}
+.search input::placeholder{color:var(--sub)}
+.search svg{position:absolute;left:.8rem;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--sub)}
+.filters{display:flex;gap:.4rem;flex-wrap:wrap}
+.fbtn{font-family:var(--hand);font-size:.8rem;color:var(--ink);background:var(--paper2);border:1.5px solid var(--ink);border-radius:99px;padding:.3rem .85rem;cursor:pointer;transition:all .2s}
+.fbtn.on{background:var(--coral);color:#fff;transform:translateY(-1px);box-shadow:2px 2px 0 rgba(61,53,47,.2)}
+.sortwrap{display:flex;align-items:center;gap:.4rem}
+.sortwrap label{font-family:var(--en);font-size:.85rem;color:var(--sea2);font-weight:700}
+.sortwrap select{font-family:var(--body);font-size:.78rem;color:var(--ink);background:var(--paper);border:2px solid var(--ink);border-radius:99px;padding:.35rem 1.6rem .35rem .8rem;cursor:pointer;outline:none;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%233d352f' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .6rem center}
+
+/* grid */
+.grid{max-width:1100px;margin:1rem auto 0;padding:0 clamp(1rem,4vw,2rem);display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.card{background:var(--paper2);border:2px solid var(--ink);border-radius:12px;box-shadow:4px 5px 0 rgba(61,53,47,.14);padding:1.2rem 1.2rem 1.3rem;display:flex;flex-direction:column;gap:.6rem;transition:transform .18s,box-shadow .18s;position:relative}
+.card:hover{transform:translate(-1px,-3px);box-shadow:6px 8px 0 rgba(61,53,47,.16)}
+.card .no{position:absolute;top:.7rem;right:.8rem;font-family:var(--en);font-size:1rem;font-weight:700;color:var(--ink);background:var(--sun);border:1.5px solid var(--ink);border-radius:99px;padding:0 .5rem;transform:rotate(3deg)}
+.avatar{width:74px;height:74px;border-radius:50%;border:2px solid var(--ink);background:var(--sky);box-shadow:2px 3px 0 rgba(61,53,47,.15);overflow:hidden;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:2rem;color:var(--ink2);flex-shrink:0;transform:rotate(-2deg)}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.name{font-family:var(--display);font-size:1.15rem;line-height:1.3;color:var(--ink);word-break:break-word}
+.depth-lbl{font-family:var(--en);font-size:.85rem;font-weight:700;color:var(--sea2)}
+.meter{display:flex;gap:3px;margin:.15rem 0 .1rem}
+.pip{flex:1;height:10px;border:1.2px solid var(--ink);border-radius:3px;background:var(--paper)}
+.pip.on{background:var(--sea)}
+.pip.on.deep{background:var(--coral)}
+.pip.on.x{background:var(--zombie2)}
+.depth-txt{font-family:var(--hand);font-size:.74rem;color:var(--ink2)}
+.tag{align-self:flex-start;font-family:var(--hand);font-size:.74rem;font-weight:600;padding:.18rem .7rem;border-radius:99px;border:1.5px solid var(--ink)}
+.tag.video{background:var(--coral2);color:var(--ink)}
+.tag.support{background:var(--sky2);color:var(--ink)}
+.sns{display:flex;align-items:center;justify-content:center;gap:.45rem;font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--ink);text-decoration:none;padding:.45rem;border:1.5px solid var(--ink);border-radius:8px;background:var(--paper);transition:all .2s}
+.sns:hover{background:var(--sun);transform:translateY(-1px)}
+.sns svg{width:16px;height:16px}
+.sns.none{color:var(--sub);background:var(--paper3);cursor:default;font-family:var(--hand);font-weight:600}
+.genre{font-family:var(--mono);font-size:.66rem;color:var(--sea2);line-height:1.45;word-break:break-word;margin-top:-.15rem}
+.comment{font-family:var(--hand);font-size:.78rem;color:var(--ink2);line-height:1.55;background:var(--paper3);border:1.5px solid var(--line);border-radius:8px;padding:.5rem .65rem;display:-webkit-box;-webkit-line-clamp:5;line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.links{display:flex;gap:8px;margin-top:auto}
+.links .sns{margin-top:0;flex:1 1 0;min-width:0;padding:.45rem .3rem}
+.sns.music{background:var(--pink)}
+.sns.music:hover{background:var(--coral2)}
+.empty{grid-column:1/-1;text-align:center;padding:3rem 1rem;font-family:var(--hand);color:var(--sub)}
+.empty .big{font-size:2.4rem;display:block;margin-bottom:.6rem}
+
+/* wave */
+.wave{width:100%;height:18px;margin:1.6rem 0 0;opacity:.55;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 18'><path d='M0 9 Q 7.5 0 15 9 T 30 9 T 45 9 T 60 9' stroke='%237ec4cf' stroke-width='2' fill='none' stroke-linecap='round'/></svg>");background-repeat:repeat-x;background-size:60px 18px}
+
+/* footer */
+footer{margin-top:3rem;padding:3rem 1rem 5rem;background:linear-gradient(180deg,transparent,var(--paper3));text-align:center}
+.ft-links{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin-bottom:1.5rem}
+.ft-links a{font-family:var(--display);font-size:.85rem;color:var(--ink);background:var(--paper);padding:.3rem .9rem;border:1.5px solid var(--ink);border-radius:99px;text-decoration:none;transition:all .2s}
+.ft-links a:hover{background:var(--sun)}
+.ft-meta{font-family:var(--hand);font-size:.78rem;color:var(--ink2);line-height:2}
+.ft-cute{font-family:var(--en);font-size:1.1rem;color:var(--coral);margin-top:.6rem}
+@media(max-width:600px){.grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}.card{padding:1rem}.avatar{width:60px;height:60px;font-size:1.6rem}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+
+<header class="hdr" role="banner">
+  <div class="hdr-l">
+    <span class="hdr-tag">2026.08</span>
+    <span class="hdr-title">サマテイ ♡ 夏とゾンビ</span>
+  </div>
+  <nav class="hdr-r" aria-label="サイト内ナビ">
+    <a class="hdr-link" href="/">TOP</a>
+    <a class="hdr-link on" href="/vol2/artists.html" aria-current="page">エントリー</a>
+    <a class="hdr-link" href="/timetable.html">日程</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <span class="sec-num">LINE-UP ✿</span>
+    <h1>出演予定<span class="en">line-up</span></h1>
+    <p>サマテイ 〜夏とゾンビ〜 の<b>出演予定アーティスト</b>です。現在<b>絶賛調整中</b>のため、出演者・出演順は変更になる場合があります。ゆる〜く、たのし〜く、最高かも...🏖🧟</p>
+    <p class="hero-note">※ 調整中につき変更の可能性があります（2026/6/9時点）。番号は応募順の仮エントリーNoです。</p>
+    <span class="deco">🩴</span>
+  </section>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="ctrl">
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" id="q" placeholder="アーティスト名で検索...">
+    </div>
+    <div class="filters" id="filters">
+      <button class="fbtn on" data-f="all">ALL</button>
+      <button class="fbtn" data-f="video">🎬 自作動画</button>
+      <button class="fbtn" data-f="support">🎧 サポート</button>
+    </div>
+    <div class="sortwrap">
+      <label>並び</label>
+      <select id="sort">
+        <option value="no">エントリー順</option>
+        <option value="depth-desc">底辺度↑（深い順）</option>
+        <option value="depth-asc">底辺度↓（浅い順）</option>
+        <option value="name">名前順</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="wave"></div>
+  <div class="grid" id="grid"><div class="empty"><span class="big">🌊</span>読み込み中...</div></div>
+</main>
+
+<footer role="contentinfo">
+  <nav class="ft-links" aria-label="フッターナビ">
+    <a href="/">TOP</a>
+    <a href="/artists.html">ARTISTS</a>
+    <a href="/timetable.html">TIMETABLE</a>
+    <a href="/teihendon.html">底辺どん</a>
+    <a href="https://x.com/teihen_ai_music">公式X</a>
+  </nav>
+  <div class="ft-meta">
+    <strong>サマテイ 2026 〜夏とゾンビ〜</strong> — 底辺AI音楽フェスの夏フェス<br>
+    ゆる〜く、たのし〜く、最高かも...<br>
+    主催：貯水TANK ／ © 2026 底辺AI音楽フェス実行委員会
+  </div>
+  <div class="ft-cute">see you on the beach 🧟♡</div>
+</footer>
+
+<script>
+var depthTitle={1:"すねまで",2:"ひざまで",3:"ももまで",4:"こしまで",5:"へそまで",6:"むねまで",7:"かたまで",8:"あごまで",9:"はなまで",10:"完全沈没 🧟"};
+var X_SVG='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>';
+var TT_SVG='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.51a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.43v-7.15a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-.81-1.52 4.81 4.81 0 01-.38-2.39z"/></svg>';
+var artists=[],q='',filter='all',sort='no';
+var grid=document.getElementById('grid'),statsEl=document.getElementById('stats');
+
+window.__iconErr=function(img){var e=['.jpg','.png','.jpeg','.webp','.gif'];var i=(parseInt(img.dataset.i||'0',10))+1;if(i<e.length){img.dataset.i=i;img.src=img.dataset.base+e[i];}else{img.style.display='none';img.parentNode.textContent=img.dataset.init||'?';}};
+function snsKind(u){u=(u||'').toLowerCase();return u.indexOf('tiktok')>-1?'TikTok':(u.indexOf('x.com')>-1||u.indexOf('twitter')>-1)?'X':'';}
+function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+function getList(){
+  var f=artists.filter(function(a){return filter==='all'||a.type===filter;});
+  if(q){f=f.filter(function(a){return a.name.toLowerCase().indexOf(q)>-1||(a.url||'').toLowerCase().indexOf(q)>-1||(a.genre||'').toLowerCase().indexOf(q)>-1;});}
+  f=f.slice();
+  if(sort==='name')f.sort(function(a,b){return a.name.localeCompare(b.name,'ja');});
+  else if(sort==='depth-desc')f.sort(function(a,b){return b.depth-a.depth||a.no.localeCompare(b.no);});
+  else if(sort==='depth-asc')f.sort(function(a,b){return a.depth-b.depth||a.no.localeCompare(b.no);});
+  else f.sort(function(a,b){return a.no.localeCompare(b.no);});
+  return f;
+}
+function renderStats(){
+  var v=artists.filter(function(a){return a.type==='video';}).length;
+  var s=artists.length-v;
+  var avg=artists.length?(artists.reduce(function(t,a){return t+a.depth;},0)/artists.length).toFixed(1):'0';
+  statsEl.innerHTML=
+    '<div class="stat"><div class="n">'+artists.length+'</div><div class="l">acts</div></div>'+
+    '<div class="stat"><div class="n">'+v+'</div><div class="l">🎬 自作</div></div>'+
+    '<div class="stat"><div class="n">'+s+'</div><div class="l">🎧 サポート</div></div>'+
+    '<div class="stat"><div class="n">'+avg+'</div><div class="l">📉 平均底辺度</div></div>';
+}
+function meter(d){
+  var h='';
+  for(var i=1;i<=10;i++){
+    var on=i<=d, cls='pip'+(on?' on':'')+(on&&i===10?' x':(on&&i>=8?' deep':''));
+    h+='<div class="'+cls+'"></div>';
+  }
+  return h;
+}
+function render(){
+  var f=getList();
+  if(!f.length){grid.innerHTML='<div class="empty"><span class="big">🐚</span>'+(q?'「'+esc(q)+'」に一致するエントリーがいません':'プレエントリーは近日公開予定です')+'</div>';return;}
+  grid.innerHTML=f.map(function(a){
+    var init=esc((a.name||'?').charAt(0));
+    var av=a.icon?'<img src="'+esc(a.icon)+'.jpg" data-base="'+esc(a.icon)+'" data-i="0" data-init="'+init+'" alt="'+esc(a.name)+'" onerror="__iconErr(this)">':init;
+    var k=snsKind(a.url);
+    var sns=k?'<a class="sns" href="'+esc(a.url)+'" target="_blank" rel="noopener">'+(k==='TikTok'?TT_SVG:X_SVG)+'<span>'+k+'</span></a>':'<div class="sns none">SNS未登録</div>';
+    var music=a.link?'<a class="sns music" href="'+esc(a.link)+'" target="_blank" rel="noopener">♪ <span>楽曲</span></a>':'';
+    var tag=a.type==='video'?'<span class="tag video">🎬 自作動画</span>':'<span class="tag support">🎧 サポート</span>';
+    var dt=depthTitle[a.depth]||'';
+    var genre=a.genre?'<div class="genre">♪ '+esc(a.genre)+'</div>':'';
+    var cmt=a.comment?'<div class="comment">'+esc(a.comment)+'</div>':'';
+    return '<div class="card"><span class="no">No.'+esc(a.no)+'</span>'+
+      '<div class="avatar">'+av+'</div>'+
+      '<div class="name">'+esc(a.name)+'</div>'+
+      genre+
+      '<div><div class="depth-lbl">底辺度</div><div class="meter">'+meter(a.depth)+'</div>'+
+      '<div class="depth-txt">'+a.depth+' / 10 — '+dt+'</div></div>'+
+      cmt+tag+
+      '<div class="links">'+music+sns+'</div></div>';
+  }).join('');
+}
+function boot(d){artists=(d||[]).filter(function(a){return a.show!==false;});renderStats();render();}
+document.getElementById('q').addEventListener('input',function(){q=this.value.trim().toLowerCase();render();});
+document.getElementById('sort').addEventListener('change',function(){sort=this.value;render();});
+document.getElementById('filters').addEventListener('click',function(e){
+  var b=e.target.closest('.fbtn');if(!b)return;
+  [].forEach.call(this.children,function(c){c.classList.remove('on');});
+  b.classList.add('on');filter=b.dataset.f;render();
+});
+fetch('artists.json?_='+Date.now())
+  .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
+  .then(boot)
+  .catch(function(e){
+    console.error('artists.json 読み込み失敗:',e);
+    grid.innerHTML='<div class="empty"><span class="big">🐚</span>artists.json を読み込めませんでした。<br>'+
+      'artists.html と同じ場所に artists.json を置き、Webサーバー経由で開いてください。<br>'+
+      '<span style="font-family:var(--mono);font-size:.7rem">(ローカル確認は: python -m http.server)</span></div>';
+  });
+</script>
+</body>
+</html>

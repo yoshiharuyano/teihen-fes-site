@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="底辺どんのご当地キャラクターが日本全国に出没中。各地域の底辺どんをインタラクティブマップで確認。呼ばれてないけど来ました。">
+<meta name="keywords" content="AI音楽,AI音楽フェス,底辺AI音楽フェス,Suno,Udio,AI作曲,オンライン音楽フェス,YouTube Premiere,AI Music Festival,2026,底辺どん,ご当地,日本地図,マスコット,インタラクティブマップ">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://fes.wistaria-addict.com/vol1/gotochi-map.html">
+<meta property="og:title" content="ご当地どん日本地図 | 底辺AI音楽フェス">
+<meta property="og:description" content="底辺どんのご当地キャラクターが日本全国に出没中。あなたの地域にも来ました。">
+<meta property="og:image" content="https://fes.wistaria-addict.com/ogp_1200x630.png">
+<meta property="og:url" content="https://fes.wistaria-addict.com/vol1/gotochi-map.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="第一回 底辺AI音楽フェス 〜産まれてきてスミマセン〜">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ご当地どん日本地図 | 底辺AI音楽フェス">
+<meta name="twitter:description" content="ご当地どん、日本全国に出没中。呼ばれてないけど来ました。">
+<meta name="twitter:image" content="https://fes.wistaria-addict.com/ogp_1200x630.png">
+<title>ご当地どん日本地図 | 底辺AI音楽フェス</title>
+<meta name="description" content="底辺どんのご当地キャラクターが日本全国に出没中。呼ばれてないけど来ました。">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#050505;--fg:#e8e8e8;--sub:#666;--m:#888;
+  --r:#e94560;
+  --dark:#0a0a0a;--bdr:#131313;
+  --mono:'Space Mono','Courier New',monospace;
+  --head:'Noto Sans JP',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--head);min-height:100vh;overflow-x:hidden;line-height:1.7}
+
+.hdr{
+  position:sticky;top:0;z-index:200;
+  background:rgba(5,5,5,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid #0f0f0f;
+  padding:.75rem clamp(1rem,4vw,3rem);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.hdr-back{
+  display:flex;align-items:center;gap:.45rem;
+  color:var(--sub);font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;
+  text-decoration:none;transition:color .25s;
+}
+.hdr-back:hover{color:var(--r)}
+.hdr-back svg{width:14px;height:14px;flex-shrink:0}
+.hdr-title{font-family:var(--mono);font-size:.58rem;color:#444;letter-spacing:.18em}
+
+.hero{
+  text-align:center;
+  padding:clamp(2.5rem,6vw,4rem) 1.5rem 1.5rem;
+  position:relative;overflow:hidden;
+}
+.hero-pre{font-family:var(--mono);font-size:.6rem;color:var(--r);letter-spacing:.22em;margin-bottom:.7rem}
+.hero h1{font-weight:900;font-size:clamp(1.6rem,5vw,2.8rem);letter-spacing:.04em;line-height:1.2;margin-bottom:.55rem}
+.hero h1 span{color:var(--r)}
+.hero-sub{font-size:.82rem;color:var(--sub);letter-spacing:.04em}
+.hero-count{
+  display:inline-flex;align-items:center;gap:.6rem;
+  margin-top:1.2rem;padding:.4rem 1.1rem;
+  border:1px solid #1a1a1a;border-radius:40px;
+  font-family:var(--mono);font-size:.62rem;color:var(--sub);letter-spacing:.12em;
+}
+.hero-count b{color:var(--r);font-size:1rem}
+
+.region-tabs{
+  display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;
+  padding:.8rem 1rem .5rem;
+  max-width:1100px;margin:0 auto;
+  position:relative;z-index:10;
+}
+.rtab{
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;
+  color:var(--sub);background:none;
+  border:1px solid #1e1e1e;border-radius:20px;
+  padding:.32rem .85rem;cursor:pointer;
+  transition:all .22s;white-space:nowrap;
+}
+.rtab:hover{border-color:#333;color:var(--fg)}
+.rtab.active{border-color:var(--r);color:var(--r);background:rgba(233,69,96,.07)}
+
+.map-section{max-width:1100px;margin:0 auto;padding:.5rem clamp(.5rem,2vw,2rem) 0;overflow:hidden}
+.map-label{font-family:var(--mono);font-size:.56rem;color:var(--m);letter-spacing:.15em;text-align:center;margin:.4rem 0 1rem}
+.japan-svg{width:100%;height:auto;display:block}
+
+.island{fill:#0d0d0d;stroke:#1d1d1d;stroke-width:1.2}
+.sea-label{fill:#3a3a3a;font-family:'Space Mono','Courier New',monospace;font-size:9px;letter-spacing:.1em}
+
+.pin-g{cursor:pointer}
+.pin-pulse{
+  fill:none;stroke:var(--r);stroke-width:1.5;opacity:.5;
+  animation:pulsePing 2.8s ease-out infinite;
+}
+.pin-pulse2{
+  fill:none;stroke:var(--r);stroke-width:1;opacity:.25;
+  animation:pulsePing 2.8s ease-out infinite .9s;
+}
+@keyframes pulsePing{
+  0%{transform:scale(1);opacity:.5}
+  100%{transform:scale(2.2);opacity:0}
+}
+.pin-bg{
+  fill:#0d0d0d;stroke:var(--r);stroke-width:1.8;
+  filter:drop-shadow(0 0 5px rgba(233,69,96,.4));
+  transition:stroke-width .2s;
+}
+.pin-g:hover .pin-bg{stroke-width:2.6;filter:drop-shadow(0 0 12px rgba(233,69,96,.8))}
+.pin-label{fill:#aaa;font-family:'Noto Sans JP',sans-serif;font-size:6.5px;font-weight:700;pointer-events:none}
+.pin-g:hover .pin-label{fill:var(--r)}
+
+/* POPUP */
+.overlay{
+  display:none;position:fixed;inset:0;z-index:500;
+  background:rgba(0,0,0,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  align-items:center;justify-content:center;padding:1rem;
+}
+.overlay.on{display:flex}
+.popup{
+  background:var(--dark);
+  border:1px solid #1e1e1e;border-top:3px solid var(--r);
+  border-radius:12px;overflow:hidden;
+  width:min(260px,70vw);
+  animation:popIn .28s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes popIn{from{opacity:0;transform:scale(.82) translateY(18px)}to{opacity:1;transform:scale(1) translateY(0)}}
+
+/* 9:16 portrait ratio image */
+.popup-img-wrap{
+  width:100%;
+  aspect-ratio:9/16;
+  overflow:hidden;
+  background:#111;
+  max-height:58vh;
+}
+.popup-img{width:100%;height:100%;object-fit:cover;display:block}
+
+.popup-body{padding:.85rem 1rem 1.1rem}
+.popup-reg{font-family:var(--mono);font-size:.56rem;color:var(--r);letter-spacing:.2em;margin-bottom:.28rem}
+.popup-name{font-size:1.3rem;font-weight:900;letter-spacing:.04em;margin-bottom:.15rem}
+.popup-catch{font-size:.7rem;color:var(--sub);font-family:var(--mono);line-height:1.6}
+.popup-close{
+  display:block;width:100%;margin-top:.8rem;padding:.5rem;
+  border:1px solid #1e1e1e;border-radius:6px;
+  background:none;color:var(--sub);
+  font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;
+  cursor:pointer;transition:all .25s;
+}
+.popup-close:hover{border-color:var(--r);color:var(--fg)}
+
+.map-hint{
+  text-align:center;font-family:var(--mono);font-size:.56rem;
+  color:#444;letter-spacing:.1em;margin:.6rem 0 1.5rem;
+}
+
+/* GRID */
+.grid-section{max-width:900px;margin:0 auto;padding:0 1rem 4rem}
+.grid-head{
+  display:flex;align-items:center;gap:.8rem;
+  border-bottom:1px solid #111;padding-bottom:.75rem;margin-bottom:1.1rem;
+}
+.grid-head-title{font-family:var(--mono);font-size:.6rem;color:var(--m);letter-spacing:.16em}
+.grid-line{flex:1;height:1px;background:#111}
+.char-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:.5rem}
+.char-card{
+  background:var(--dark);border:1px solid var(--bdr);border-radius:8px;
+  overflow:hidden;cursor:pointer;
+  transition:border-color .3s,transform .3s;
+}
+.char-card:hover{border-color:#252525;transform:translateY(-2px)}
+/* 9:16 portrait ratio */
+.char-card-imgwrap{width:100%;aspect-ratio:9/16;overflow:hidden;background:#111}
+.char-card-imgwrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.char-card:hover .char-card-imgwrap img{transform:scale(1.05)}
+.char-card-lbl{
+  padding:.3rem .4rem .4rem;
+  font-size:.58rem;font-weight:700;color:var(--sub);
+  text-align:center;font-family:var(--mono);letter-spacing:.04em;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+
+/* ─── ORIGIN CARD ─── */
+.origin-wrap{
+  max-width:520px;margin:1.2rem auto;
+  padding:0 1rem;
+}
+.origin-card{
+  display:flex;align-items:center;gap:0;
+  border:1px solid var(--r);border-left:4px solid var(--r);
+  border-radius:10px;overflow:hidden;
+  background:var(--dark);
+  cursor:pointer;transition:box-shadow .3s,transform .3s;
+  box-shadow:0 0 18px rgba(233,69,96,.12);
+}
+.origin-card:hover{box-shadow:0 0 32px rgba(233,69,96,.28);transform:translateY(-2px)}
+.origin-card-img{
+  width:80px;height:120px;flex-shrink:0;overflow:hidden;background:#111;
+}
+.origin-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.origin-card:hover .origin-card-img img{transform:scale(1.05)}
+.origin-card-body{padding:.9rem 1.1rem;display:flex;flex-direction:column;justify-content:center;gap:.4rem}
+.origin-tag{font-family:var(--mono);font-size:.52rem;color:var(--r);letter-spacing:.22em}
+.origin-name{font-size:1.5rem;font-weight:900;letter-spacing:.04em;line-height:1.2}
+.origin-name span{color:var(--r)}
+.origin-catch{font-family:var(--mono);font-size:.65rem;color:var(--sub);line-height:1.6}
+.origin-note{font-family:var(--mono);font-size:.5rem;color:#444;letter-spacing:.08em}
+
+.foot{
+  text-align:center;padding:1.8rem 1rem;
+  border-top:1px solid #0f0f0f;
+  font-family:var(--mono);font-size:.55rem;color:#555;letter-spacing:.12em;
+}
+.foot a{color:#555;text-decoration:none;transition:color .2s}
+.foot a:hover{color:var(--r)}
+
+/* ════ GNAV ════ */
+.gnav{position:fixed;top:0;left:0;right:0;z-index:8000;background:rgba(3,3,3,.95);border-bottom:1px solid #151515;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);height:48px;display:flex;align-items:center;padding:0 1.2rem;transition:opacity .5s,transform .5s}
+.gnav-logo{font-family:'Space Mono','Courier New',monospace;font-size:.5rem;letter-spacing:.06em;color:#E94560;text-decoration:none;white-space:nowrap;line-height:1.3;flex:none;margin-right:auto}
+.gnav-logo span{display:block;font-size:.38rem;color:#555;margin-top:1px;letter-spacing:.04em}
+.gnav-links{display:flex;align-items:stretch;height:48px;margin-left:.5rem}
+.gnav-link{font-family:'Space Mono','Courier New',monospace;font-size:.48rem;letter-spacing:.06em;color:#555;text-decoration:none;display:flex;align-items:center;padding:0 .55rem;border-left:1px solid #111;position:relative;transition:color .2s;white-space:nowrap}
+.gnav-link:last-child{border-right:1px solid #111}
+.gnav-link:hover,.gnav-link.gnav-cur{color:#E94560}
+.gnav-link.gnav-cur::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:#E94560}
+.gnav-badge{font-size:.34rem;background:#E94560;color:#030303;padding:1px 4px;border-radius:2px;margin-left:4px;font-weight:bold;animation:gnav-pulse 2s ease-in-out infinite}
+@keyframes gnav-pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.gnav-sns{display:flex;align-items:center;gap:.35rem;margin-left:.5rem;flex:none}
+.gnav-sns a{width:28px;height:28px;border:1px solid #1a1a1a;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:.6rem;color:#555;text-decoration:none;transition:all .2s}
+.gnav-sns a:hover{border-color:#E94560;color:#E94560}
+.gnav-ham{display:none;flex-direction:column;justify-content:center;gap:5px;margin-left:auto;padding:.4rem;cursor:pointer;flex:none;background:none;border:none}
+.gnav-ham span{display:block;width:20px;height:1px;background:#666;transition:all .28s;transform-origin:center}
+.gnav-ham.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.gnav-ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.gnav-ham.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.gnav-drawer{position:fixed;top:48px;left:0;right:0;z-index:7999;background:rgba(5,5,5,.99);border-bottom:1px solid #1a1a1a;transform:translateY(-6px);opacity:0;pointer-events:none;transition:all .22s cubic-bezier(.4,0,.2,1);max-height:calc(100dvh - 48px);overflow-y:auto}
+.gnav-drawer.open{transform:translateY(0);opacity:1;pointer-events:auto}
+.gnav-ditem{display:flex;align-items:center;gap:.6rem;padding:.75rem 1.4rem;font-family:'Space Mono','Courier New',monospace;font-size:.55rem;letter-spacing:.08em;color:#555;border-bottom:1px solid #0d0d0d;text-decoration:none;transition:color .2s;min-height:48px}
+.gnav-ditem::before{content:'';width:4px;height:4px;background:#E94560;border-radius:50%;flex:none;opacity:.45}
+.gnav-ditem:hover,.gnav-ditem.gnav-cur{color:#E94560}
+.gnav-ditem.gnav-cur::before{opacity:1}
+.gnav-dext{margin-left:auto;font-size:.42rem;color:#333}
+.gnav-ov{display:none;position:fixed;inset:0;z-index:7998}
+.gnav-ov.open{display:block}
+@media(max-width:768px){.gnav-links,.gnav-sns{display:none}.gnav-ham{display:flex}}
+
+</style>
+</head>
+<body>
+<!-- ARCHIVE BANNER -->
+<div id="archive-banner" style="position:fixed;top:0;left:0;right:0;z-index:99999;background:linear-gradient(90deg,#1a1a2e,#16213e);color:#e8e8e8;text-align:center;padding:8px 16px;font-family:sans-serif;font-size:13px;letter-spacing:.5px;border-bottom:2px solid #e94560;box-shadow:0 2px 12px rgba(233,69,96,.3)">
+  📁 これは<strong style="color:#e94560">第一回（2026年4月）</strong>のアーカイブです。
+  <a href="/" style="color:#4ecdc4;text-decoration:underline;margin-left:8px;font-weight:bold">▶ サマテイ（第二回）はこちら</a>
+</div>
+<div style="height:38px"></div>
+
+<nav class="gnav" id="gnav">
+  <a href="/" class="gnav-logo">底辺AI音楽フェス<span>〜産まれてきてスミマセン〜</span></a>
+  <div class="gnav-links">
+    <a href="/"                    class="gnav-link">TOP</a>
+    <a href="/vol1/artists.html"        class="gnav-link">ARTISTS</a>
+    <a href="/vol1/vote.html"           class="gnav-link">VOTE<span class="gnav-badge">期待！</span></a>
+    <a href="/vol1/teihendon.html"      class="gnav-link">底辺どん</a>
+    <a href="/vol1/goods.html"          class="gnav-link">GOODS</a>
+    <a href="/vol1/cm.html"             class="gnav-link">CM</a>
+    <a href="/vol1/logo-guideline.html" class="gnav-link">LOGO</a>
+    <a href="/vol1/gotochi-map.html"    class="gnav-link gnav-cur">MAP</a>
+  </div>
+  <div class="gnav-sns">
+    <a href="https://x.com/teihen_ai_music" target="_blank" rel="noopener">𝕏</a>
+    <a href="https://www.youtube.com/@%E5%BA%95%E8%BE%BAAI%E9%9F%B3%E6%A5%BD%E3%83%95%E3%82%A7%E3%82%B9official" target="_blank" rel="noopener">▶</a>
+  </div>
+  <button class="gnav-ham" id="gnav-ham" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="gnav-drawer" id="gnav-drawer">
+  <a href="/"                    class="gnav-ditem">TOP</a>
+  <a href="/vol1/artists.html"        class="gnav-ditem">ARTISTS</a>
+  <a href="/vol1/vote.html"           class="gnav-ditem">VOTE <span class="gnav-badge">期待！</span></a>
+  <a href="/vol1/teihendon.html"      class="gnav-ditem">底辺どん</a>
+  <a href="/vol1/goods.html"          class="gnav-ditem">GOODS</a>
+  <a href="/vol1/cm.html"             class="gnav-ditem">CM</a>
+  <a href="/vol1/logo-guideline.html" class="gnav-ditem">LOGO GUIDELINE</a>
+  <a href="/vol1/timetable.html" class="gnav-ditem">タイムテーブル</a>
+  <a href="/vol1/gotochi-map.html"    class="gnav-ditem gnav-cur">ご当地MAP</a>
+  <a href="https://x.com/teihen_ai_music" class="gnav-ditem" target="_blank" rel="noopener">𝕏 公式Twitter<span class="gnav-dext">↗</span></a>
+  <a href="https://www.youtube.com/@%E5%BA%95%E8%BE%BAAI%E9%9F%B3%E6%A5%BD%E3%83%95%E3%82%A7%E3%82%B9official" class="gnav-ditem" target="_blank" rel="noopener">▶ YouTube<span class="gnav-dext">↗</span></a>
+</div>
+<div class="gnav-ov" id="gnav-ov"></div>
+
+
+<section class="hero">
+  <p class="hero-pre">— GOTOCHI CHARACTER MAP —</p>
+  <h1>ご当地<span>どん</span><br>全国出没マップ</h1>
+  <p class="hero-sub">呼ばれてないけど、全国に来ました。</p>
+  <div class="hero-count">全国 <b>57</b> 体出没中</div>
+</section>
+
+<div class="map-section">
+  <svg class="japan-svg" viewBox="-20 20 560 640" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <clipPath id="cp0"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp1"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp2"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp3"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp4"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp5"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp6"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp7"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp8"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp9"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp10"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp11"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp12"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp13"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp14"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp15"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp16"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp17"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp18"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp19"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp20"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp21"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp22"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp23"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp24"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp25"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp26"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp27"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp28"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp29"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp30"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp31"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp32"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp33"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp35"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp36"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp37"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp38"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp39"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp40"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp41"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp42"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp43"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp44"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp45"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp46"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp47"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp48"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp49"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp50"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp52"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp53"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp54"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp55"><circle cx="0" cy="0" r="16"/></clipPath>
+      <clipPath id="cp56"><circle cx="0" cy="0" r="16"/></clipPath>
+    </defs>
+
+    <!-- 北海道 -->
+    <path class="island" d="M 356,108 L 362,90 L 374,72 L 390,60 L 408,54 L 428,53 L 446,57 L 461,66 L 472,80 L 476,96 L 472,114 L 460,126 L 442,134 L 422,136 L 402,130 L 385,118 L 370,108 Z"/>
+
+    <!-- 本州 -->
+    <path class="island" d="
+      M 418,142 L 436,150 L 448,162 L 456,178 L 460,196 L 462,216 L 462,238
+      L 461,258 L 459,274 L 456,286 L 450,298 L 441,310 L 430,320
+      L 416,332 L 401,342 L 385,350 L 368,354 L 351,352 L 336,346
+      L 322,336 L 310,326 L 298,317 L 283,310 L 267,305 L 251,302
+      L 236,304 L 222,310 L 211,320 L 203,332 L 200,345 L 204,357
+      L 210,365 L 218,370
+      L 232,358 L 248,350 L 265,345 L 281,341 L 295,337 L 308,332
+      L 320,326 L 330,318 L 338,308 L 343,297 L 344,285 L 341,273
+      L 337,260 L 334,246 L 334,232 L 336,218 L 341,206 L 349,195
+      L 360,186 L 372,180 L 385,176 L 398,174 L 410,173 L 418,172 Z
+    "/>
+
+    <!-- 四国 -->
+    <path class="island" d="M 236,358 L 255,352 L 274,349 L 293,349 L 309,354 L 320,363 L 324,375 L 318,388 L 306,397 L 290,403 L 272,404 L 255,398 L 242,388 L 235,375 Z"/>
+
+    <!-- 九州 -->
+    <path class="island" d="M 186,357 L 203,351 L 220,350 L 235,355 L 244,365 L 245,378 L 238,392 L 225,402 L 209,408 L 193,408 L 180,400 L 174,388 L 176,374 Z"/>
+
+    <!-- 淡路島 -->
+    <ellipse class="island" cx="303" cy="328" rx="6" ry="10" transform="rotate(-15,303,328)"/>
+    <!-- 佐渡島 -->
+    <ellipse class="island" cx="352" cy="216" rx="8" ry="4" transform="rotate(-25,352,216)"/>
+    <!-- 対馬 -->
+    <rect class="island" x="152" y="325" width="7" height="16" rx="3" transform="rotate(-10,152,325)"/>
+    <!-- 壱岐 -->
+    <circle class="island" cx="172" cy="353" r="4"/>
+    <!-- 種子島 -->
+    <rect class="island" x="218" y="415" width="5" height="16" rx="2.5"/>
+    <!-- 屋久島 -->
+    <circle class="island" cx="205" cy="434" r="6"/>
+    <!-- 奄美大島 -->
+    <ellipse class="island" cx="215" cy="460" rx="4" ry="9" transform="rotate(5,215,460)"/>
+
+    <!-- Ryukyu dotted -->
+    <line x1="205" y1="436" x2="162" y2="518" stroke="#151515" stroke-width="1" stroke-dasharray="3,6"/>
+
+    <!-- 沖縄本島 -->
+    <path class="island" d="M 126,528 L 140,522 L 155,520 L 166,524 L 169,533 L 163,542 L 148,546 L 134,544 Z"/>
+    <circle class="island" cx="107" cy="543" r="5"/>
+    <circle class="island" cx="93" cy="552" r="4"/>
+    <circle class="island" cx="174" cy="514" r="4"/>
+    <circle class="island" cx="182" cy="507" r="3"/>
+
+    <!-- Sea labels -->
+    <text class="sea-label" x="84" y="276" text-anchor="middle">日本海</text>
+    <text class="sea-label" x="484" y="240" text-anchor="middle">太平洋</text>
+    <text class="sea-label" x="282" y="450" text-anchor="middle">東シナ海</text>
+
+    <!-- ══════ PINS ══════ -->
+
+    <!-- 岩手 -->
+    <g class="pin-g" data-x="452" data-y="190" transform="translate(452,190)" onclick="openPopup(0)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18"/>
+      <circle class="pin-pulse2" cx="0" cy="0" r="18"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrAOSWbcAAGqDm?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp0)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">岩手</text>
+    </g>
+
+    <!-- 群馬 -->
+    <g class="pin-g" data-x="426" data-y="264" transform="translate(426,264)" onclick="openPopup(1)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:1s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDq7tGAbEAMKyb1?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp1)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">群馬</text>
+    </g>
+
+    <!-- 横浜 -->
+    <g class="pin-g" data-x="452" data-y="288" transform="translate(452,288)" onclick="openPopup(2)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:1.5s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrAOS5bEAAYHVK?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp2)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">横浜</text>
+    </g>
+
+    <!-- 千葉 -->
+    <g class="pin-g" data-x="468" data-y="274" transform="translate(468,274)" onclick="openPopup(3)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:2s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrAOSgbEAAa4mz?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp3)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">千葉</text>
+    </g>
+
+    <!-- 名古屋 -->
+    <g class="pin-g" data-x="382" data-y="316" transform="translate(382,316)" onclick="openPopup(4)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:2.5s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDq7tGAakAAdemG?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp4)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">名古屋</text>
+    </g>
+
+    <!-- 鳥取 -->
+    <g class="pin-g" data-x="258" data-y="314" transform="translate(258,314)" onclick="openPopup(8)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:3s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDq5Sjqa8AAVm9r?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp8)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">鳥取</text>
+    </g>
+
+    <!-- 京都 -->
+    <g class="pin-g" data-x="308" data-y="318" transform="translate(308,318)" onclick="openPopup(5)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:3.5s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrAjK-asAAFMHh?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp5)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">京都</text>
+    </g>
+
+    <!-- 大阪 -->
+    <g class="pin-g" data-x="323" data-y="334" transform="translate(323,334)" onclick="openPopup(6)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:4s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrAjK_bEAEqyyM?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp6)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">大阪</text>
+    </g>
+
+    <!-- 奈良 -->
+    <g class="pin-g" data-x="345" data-y="338" transform="translate(345,338)" onclick="openPopup(7)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:4.5s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrAjLDbEAECHkU?format=jpg&name=medium" x="-16" y="-16" width="32" height="32" clip-path="url(#cp7)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">奈良</text>
+    </g>
+
+    <!-- 岡山 -->
+    <g class="pin-g" data-x="277" data-y="342" transform="translate(277,342)" onclick="openPopup(9)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:5s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDq7tGGa8AAq2ST?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp9)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">岡山</text>
+    </g>
+
+    <!-- 福岡 -->
+    <g class="pin-g" data-x="206" data-y="358" transform="translate(206,358)" onclick="openPopup(10)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:5.5s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrAOTGbEAMyR8W?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp10)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">福岡</text>
+    </g>
+
+    <!-- 茨城 -->
+    <g class="pin-g" data-x="478" data-y="258" transform="translate(478,258)" onclick="openPopup(11)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:6s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrOxd6bEAAvj7L?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp11)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">茨城</text>
+    </g>
+
+    <!-- 愛知 -->
+    <g class="pin-g" data-x="400" data-y="306" transform="translate(400,306)" onclick="openPopup(12)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:6.5s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrOxd6bEAE1qIT?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp12)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">愛知</text>
+    </g>
+
+    <!-- 沖縄 -->
+    <g class="pin-g" data-x="148" data-y="533" transform="translate(148,533)" onclick="openPopup(13)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:7s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrOxd5bEAAtKyH?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp13)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">沖縄</text>
+    </g>
+
+    <!-- 神奈川 -->
+    <g class="pin-g" data-x="456" data-y="294" transform="translate(456,294)" onclick="openPopup(14)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:7.5s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrRxrDbYAABLxW?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp14)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">神奈川</text>
+    </g>
+
+    <!-- 埼玉 -->
+    <g class="pin-g" data-x="446" data-y="270" transform="translate(446,270)" onclick="openPopup(15)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:8s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrRxrCaoAAtV0G?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp15)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">埼玉</text>
+    </g>
+
+    <!-- 宮城 -->
+    <g class="pin-g" data-x="456" data-y="170" transform="translate(456,170)" onclick="openPopup(16)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:8.5s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrRxrJbQAAMiFZ?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp16)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">宮城</text>
+    </g>
+
+    <!-- 川越 -->
+    <g class="pin-g" data-x="435" data-y="278" transform="translate(435,278)" onclick="openPopup(17)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:9s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrX64ObEAEkPw8?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp17)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">川越</text>
+    </g>
+
+    <!-- 栃木 -->
+    <g class="pin-g" data-x="444" data-y="252" transform="translate(444,252)" onclick="openPopup(18)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:9.5s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrgag7a0AAik6h?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp18)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">栃木</text>
+    </g>
+
+    <!-- 新潟 -->
+    <g class="pin-g" data-x="358" data-y="226" transform="translate(358,226)" onclick="openPopup(19)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:10s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrgag9b0AE3CRd?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp19)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">新潟</text>
+    </g>
+
+    <!-- 秋田 -->
+    <g class="pin-g" data-x="418" data-y="158" transform="translate(418,158)" onclick="openPopup(20)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:10.5s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrgag6bMAEZyLr?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp20)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">秋田</text>
+    </g>
+
+    <!-- 高知 -->
+    <g class="pin-g" data-x="280" data-y="382" transform="translate(280,382)" onclick="openPopup(21)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:11s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrgahAbkAAcuGB?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp21)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">高知</text>
+    </g>
+
+    <!-- 鹿児島 -->
+    <g class="pin-g" data-x="214" data-y="418" transform="translate(214,418)" onclick="openPopup(22)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:11.5s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrwSF1bEAA4jw8?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp22)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">鹿児島</text>
+    </g>
+
+    <!-- 福井 -->
+    <g class="pin-g" data-x="340" data-y="292" transform="translate(340,292)" onclick="openPopup(23)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:12s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrwSF3aMAA8zyf?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp23)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">福井</text>
+    </g>
+
+    <!-- 島根 -->
+    <g class="pin-g" data-x="240" data-y="324" transform="translate(240,324)" onclick="openPopup(24)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:12.5s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrwSFwbsAABE4t?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp24)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">島根</text>
+    </g>
+
+    <!-- 福島 -->
+    <g class="pin-g" data-x="462" data-y="206" transform="translate(462,206)" onclick="openPopup(25)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:13s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrwSFxakAArV3z?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp25)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">福島</text>
+    </g>
+
+    <!-- 秋葉原 -->
+    <g class="pin-g" data-x="462" data-y="278" transform="translate(462,278)" onclick="openPopup(26)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:13.5s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrzoyjbQAAwTI5?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp26)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">秋葉原</text>
+    </g>
+
+    <!-- 練馬 -->
+    <g class="pin-g" data-x="447" data-y="272" transform="translate(447,272)" onclick="openPopup(27)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:14s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrzoyjawAEQQwe?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp27)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">練馬</text>
+    </g>
+
+    <!-- 東京 -->
+    <g class="pin-g" data-x="454" data-y="284" transform="translate(454,284)" onclick="openPopup(28)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:14.5s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDrzoylakAEuZwC?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp28)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">東京</text>
+    </g>
+
+    <!-- 太平洋 (Pacific ocean east of Honshu) -->
+    <g class="pin-g" data-x="510" data-y="300" transform="translate(510,300)" onclick="openPopup(29)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:15s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDuwAFXawAEyaWU?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp29)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">太平洋</text>
+    </g>
+
+    <!-- 和歌山 -->
+    <g class="pin-g" data-x="326" data-y="356" transform="translate(326,356)" onclick="openPopup(30)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:15.2s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDuwAFXawAAwsCj?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp30)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">和歌山</text>
+    </g>
+
+    <!-- 山梨 -->
+    <g class="pin-g" data-x="412" data-y="296" transform="translate(412,296)" onclick="openPopup(31)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:15.4s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDuwAFfbQAEfX74?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp31)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">山梨</text>
+    </g>
+
+    <!-- 宮崎 -->
+    <g class="pin-g" data-x="240" data-y="408" transform="translate(240,408)" onclick="openPopup(32)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:15.6s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDuwAFfb0AA5MEN?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp32)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">宮崎</text>
+    </g>
+
+    <!-- 舞浜 (Urayasu/Maihama, Chiba) -->
+    <g class="pin-g" data-x="476" data-y="286" transform="translate(476,286)" onclick="openPopup(33)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:15.8s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDsoEHEaQAAm6eP?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp33)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">舞浜</text>
+    </g>
+
+    <!-- 富山 -->
+    <g class="pin-g" data-x="362" data-y="272" transform="translate(362,272)" onclick="openPopup(35)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:16s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HD1mKPybUAA59bf?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp35)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">富山</text>
+    </g>
+
+    <!-- 石川 -->
+    <g class="pin-g" data-x="346" data-y="274" transform="translate(346,274)" onclick="openPopup(36)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:16.2s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HD1mKP-boAYJOTZ?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp36)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">石川</text>
+    </g>
+
+    <!-- 兵庫 -->
+    <g class="pin-g" data-x="296" data-y="334" transform="translate(296,334)" onclick="openPopup(37)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:16.4s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HD1hqn5aEAA7qAQ?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp37)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">兵庫</text>
+    </g>
+
+    <!-- 滋賀 -->
+    <g class="pin-g" data-x="338" data-y="314" transform="translate(338,314)" onclick="openPopup(38)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:16.6s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HD1hqn2bIAAiPVK?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp38)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">滋賀</text>
+    </g>
+
+    <!-- 三重 -->
+    <g class="pin-g" data-x="372" data-y="334" transform="translate(372,334)" onclick="openPopup(39)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:16.8s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HD1hqn3boAA_7TP?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp39)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">三重</text>
+    </g>
+
+    <!-- 大分 -->
+    <g class="pin-g" data-x="238" data-y="372" transform="translate(238,372)" onclick="openPopup(40)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:17s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HD1cr1DboAEx8ib?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp40)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">大分</text>
+    </g>
+
+    <!-- 熊本 -->
+    <g class="pin-g" data-x="214" data-y="394" transform="translate(214,394)" onclick="openPopup(41)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:17.2s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HD1cr1CboAQ8xzh?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp41)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">熊本</text>
+    </g>
+
+    <!-- 香川 -->
+    <g class="pin-g" data-x="294" data-y="364" transform="translate(294,364)" onclick="openPopup(42)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:17.4s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HD1cr1IboAA8IU2?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp42)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">香川</text>
+    </g>
+
+    <!-- 山口 -->
+    <g class="pin-g" data-x="222" data-y="350" transform="translate(222,350)" onclick="openPopup(43)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:17.6s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HD1cr1JbsAARdPc?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp43)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">山口</text>
+    </g>
+
+    <!-- 佐賀 -->
+    <g class="pin-g" data-x="194" data-y="368" transform="translate(194,368)" onclick="openPopup(44)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:17.8s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDxD6cya0AAaZpt?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp44)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">佐賀</text>
+    </g>
+
+    <!-- 徳島 -->
+    <g class="pin-g" data-x="308" data-y="376" transform="translate(308,376)" onclick="openPopup(45)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:18s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDxD6c2bAAAaFlw?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp45)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">徳島</text>
+    </g>
+
+    <!-- 長崎 -->
+    <g class="pin-g" data-x="178" data-y="378" transform="translate(178,378)" onclick="openPopup(46)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:18.2s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDxD6c0agAElw3_?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp46)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">長崎</text>
+    </g>
+
+    <!-- 愛媛 -->
+    <g class="pin-g" data-x="266" data-y="380" transform="translate(266,380)" onclick="openPopup(47)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:18.4s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDxD6czbUAAZ8Sk?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp47)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">愛媛</text>
+    </g>
+
+    <!-- 北海道 -->
+    <g class="pin-g" data-x="416" data-y="92" transform="translate(416,92)" onclick="openPopup(48)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:18.6s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDwk01xb0AAkOLa?format=jpg&name=medium" x="-16" y="-16" width="32" height="32" clip-path="url(#cp48)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">北海道</text>
+    </g>
+
+    <!-- 青森 -->
+    <g class="pin-g" data-x="444" data-y="150" transform="translate(444,150)" onclick="openPopup(49)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:18.8s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDwk01xaYAAGyLb?format=jpg&name=medium" x="-16" y="-16" width="32" height="32" clip-path="url(#cp49)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">青森</text>
+    </g>
+
+    <!-- 榛名町 (Gunma, Haruna) -->
+    <g class="pin-g" data-x="418" data-y="258" transform="translate(418,258)" onclick="openPopup(50)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:19s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDwk01vakAAzTwD?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp50)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">榛名町</text>
+    </g>
+
+    <!-- 多摩 (West Tokyo) -->
+    <g class="pin-g" data-x="440" data-y="290" transform="translate(440,290)" onclick="openPopup(52)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:19.4s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDsydYabsAALAn3?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp52)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">多摩</text>
+    </g>
+
+    <!-- 岐阜 -->
+    <g class="pin-g" data-x="372" data-y="296" transform="translate(372,296)" onclick="openPopup(53)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:19.6s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDskO-WaoAAVvIl?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp53)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">岐阜</text>
+    </g>
+
+    <!-- 山形 -->
+    <g class="pin-g" data-x="430" data-y="194" transform="translate(430,194)" onclick="openPopup(54)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:19.8s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDskO-UacAASYRv?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp54)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">山形</text>
+    </g>
+
+    <!-- 静岡 -->
+    <g class="pin-g" data-x="422" data-y="310" transform="translate(422,310)" onclick="openPopup(55)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:20s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDskO-UbgAAg-h9?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp55)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">静岡</text>
+    </g>
+
+    <!-- 長野 -->
+    <g class="pin-g" data-x="394" data-y="270" transform="translate(394,270)" onclick="openPopup(56)">
+      <circle class="pin-pulse" cx="0" cy="0" r="18" style="animation-delay:20.2s"/>
+      <circle class="pin-bg" cx="0" cy="0" r="17"/>
+      <image href="https://pbs.twimg.com/media/HDskO-WbAAE7jhu?format=jpg&name=large" x="-16" y="-16" width="32" height="32" clip-path="url(#cp56)" preserveAspectRatio="xMidYMid slice"/>
+      <text class="pin-label" x="0" y="30" text-anchor="middle">長野</text>
+    </g>
+
+  </svg>
+</div>
+
+<div class="region-tabs">
+  <button class="rtab active" onclick="zoomTo('all')">🗾 全体</button>
+  <button class="rtab" onclick="zoomTo('hokkaido')">北海道</button>
+  <button class="rtab" onclick="zoomTo('tohoku')">東北</button>
+  <button class="rtab" onclick="zoomTo('kanto')">関東</button>
+  <button class="rtab" onclick="zoomTo('shinetsu')">信越・北陸</button>
+  <button class="rtab" onclick="zoomTo('tokai')">東海</button>
+  <button class="rtab" onclick="zoomTo('kinki')">近畿・中国</button>
+  <button class="rtab" onclick="zoomTo('shikoku')">四国</button>
+  <button class="rtab" onclick="zoomTo('kyushu')">九州</button>
+  <button class="rtab" onclick="zoomTo('okinawa')">沖縄</button>
+</div>
+<p class="map-label" id="mapLabel">— エリアを選んで拡大 / キャラをタップで詳細 —</p>
+
+<!-- ORIGIN SPECIAL CARD -->
+<div class="origin-wrap">
+  <div class="origin-card" onclick="openOrigin()">
+    <div class="origin-card-img">
+      <img src="https://pbs.twimg.com/media/HDr3YDibMAAAo6E?format=jpg&name=large" alt="原点どん"/>
+    </div>
+    <div class="origin-card-body">
+      <p class="origin-tag">★ ORIGIN / 原点</p>
+      <p class="origin-name">原点<span>どん</span></p>
+      <p class="origin-catch">「呼ばれてないけど来ました」</p>
+      <p class="origin-note">— 地図に収まらない存在 —</p>
+    </div>
+  </div>
+  <div class="origin-card" onclick="openPopup(34)" style="margin-top:.6rem">
+    <div class="origin-card-img">
+      <img src="https://pbs.twimg.com/media/HD1oABeaIAA07wh?format=jpg&name=large" alt="奈落どん"/>
+    </div>
+    <div class="origin-card-body">
+      <p class="origin-tag">★ SPECIAL / 奈落</p>
+      <p class="origin-name">奈落<span>どん</span></p>
+      <p class="origin-catch">「呼ばれてないけど来ました」</p>
+      <p class="origin-note">— 地図の下にもいる —</p>
+    </div>
+  </div>
+  <div class="origin-card" onclick="openPopup(51)" style="margin-top:.6rem">
+    <div class="origin-card-img">
+      <img src="https://pbs.twimg.com/media/HDs48isawAAWyl2?format=jpg&name=large" alt="未来どん"/>
+    </div>
+    <div class="origin-card-body">
+      <p class="origin-tag">★ SPECIAL / 未来</p>
+      <p class="origin-name">未来<span>どん</span></p>
+      <p class="origin-catch">「呼ばれてないけど来ました」</p>
+      <p class="origin-note">— まだ来ていない場所にも —</p>
+    </div>
+  </div>
+</div>
+
+<div class="grid-section">
+  <div class="grid-head">
+    <span class="grid-head-title">ALL CHARACTERS — 57 GOTOCHI DON</span>
+    <span class="grid-line"></span>
+  </div>
+  <div class="char-grid" id="charGrid"></div>
+</div>
+
+<footer class="foot">
+  <p>© 底辺AI音楽フェス / <a href="teihendon.html">底辺どん</a> — <a href="index.html">フェストップへ</a></p>
+  <p style="margin-top:.35rem">呼ばれてないけど来ました。全国どこでも。</p>
+</footer>
+
+<!-- POPUP -->
+<div class="overlay" id="overlay" onclick="closePopup(event)">
+  <div class="popup" id="popupEl">
+    <div class="popup-img-wrap">
+      <img class="popup-img" id="popupImg" src="" alt=""/>
+    </div>
+    <div class="popup-body">
+      <p class="popup-reg" id="popupReg"></p>
+      <p class="popup-name" id="popupName"></p>
+      <p class="popup-catch" id="popupCatch"></p>
+      <button class="popup-close" onclick="closePopupBtn()">[ CLOSE ]</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const chars = [
+  { name:'岩手どん',   region:'IWATE / 岩手県',          img:'https://pbs.twimg.com/media/HDrAOSWbcAAGqDm?format=jpg&name=large' },
+  { name:'群馬どん',   region:'GUNMA / 群馬県',           img:'https://pbs.twimg.com/media/HDq7tGAbEAMKyb1?format=jpg&name=large' },
+  { name:'横浜どん',   region:'YOKOHAMA / 横浜市',        img:'https://pbs.twimg.com/media/HDrAOS5bEAAYHVK?format=jpg&name=large' },
+  { name:'千葉どん',   region:'CHIBA / 千葉県',           img:'https://pbs.twimg.com/media/HDrAOSgbEAAa4mz?format=jpg&name=large' },
+  { name:'名古屋どん', region:'NAGOYA / 名古屋市',        img:'https://pbs.twimg.com/media/HDq7tGAakAAdemG?format=jpg&name=large' },
+  { name:'京都どん',   region:'KYOTO / 京都府',           img:'https://pbs.twimg.com/media/HDrAjK-asAAFMHh?format=jpg&name=large' },
+  { name:'大阪どん',   region:'OSAKA / 大阪府',           img:'https://pbs.twimg.com/media/HDrAjK_bEAEqyyM?format=jpg&name=large' },
+  { name:'奈良どん',   region:'NARA / 奈良県',            img:'https://pbs.twimg.com/media/HDrAjLDbEAECHkU?format=jpg&name=medium' },
+  { name:'鳥取どん',   region:'TOTTORI / 鳥取県',         img:'https://pbs.twimg.com/media/HDq5Sjqa8AAVm9r?format=jpg&name=large' },
+  { name:'岡山どん',   region:'OKAYAMA / 岡山県',         img:'https://pbs.twimg.com/media/HDq7tGGa8AAq2ST?format=jpg&name=large' },
+  { name:'福岡どん',   region:'FUKUOKA / 福岡県',         img:'https://pbs.twimg.com/media/HDrAOTGbEAMyR8W?format=jpg&name=large' },
+  { name:'茨城どん',   region:'IBARAKI / 茨城県',         img:'https://pbs.twimg.com/media/HDrOxd6bEAAvj7L?format=jpg&name=large' },
+  { name:'愛知どん',   region:'AICHI / 愛知県',           img:'https://pbs.twimg.com/media/HDrOxd6bEAE1qIT?format=jpg&name=large' },
+  { name:'沖縄どん',   region:'OKINAWA / 沖縄県',         img:'https://pbs.twimg.com/media/HDrOxd5bEAAtKyH?format=jpg&name=large' },
+  { name:'神奈川どん', region:'KANAGAWA / 神奈川県',      img:'https://pbs.twimg.com/media/HDrRxrDbYAABLxW?format=jpg&name=large' },
+  { name:'埼玉どん',   region:'SAITAMA / 埼玉県',         img:'https://pbs.twimg.com/media/HDrRxrCaoAAtV0G?format=jpg&name=large' },
+  { name:'宮城どん',   region:'MIYAGI / 宮城県',          img:'https://pbs.twimg.com/media/HDrRxrJbQAAMiFZ?format=jpg&name=large' },
+  { name:'川越どん',   region:'KAWAGOE / 埼玉県川越市',   img:'https://pbs.twimg.com/media/HDrX64ObEAEkPw8?format=jpg&name=large' },
+  { name:'栃木どん',   region:'TOCHIGI / 栃木県',         img:'https://pbs.twimg.com/media/HDrgag7a0AAik6h?format=jpg&name=large' },
+  { name:'新潟どん',   region:'NIIGATA / 新潟県',         img:'https://pbs.twimg.com/media/HDrgag9b0AE3CRd?format=jpg&name=large' },
+  { name:'秋田どん',   region:'AKITA / 秋田県',           img:'https://pbs.twimg.com/media/HDrgag6bMAEZyLr?format=jpg&name=large' },
+  { name:'高知どん',   region:'KOCHI / 高知県',           img:'https://pbs.twimg.com/media/HDrgahAbkAAcuGB?format=jpg&name=large' },
+  { name:'鹿児島どん', region:'KAGOSHIMA / 鹿児島県',     img:'https://pbs.twimg.com/media/HDrwSF1bEAA4jw8?format=jpg&name=large' },
+  { name:'福井どん',   region:'FUKUI / 福井県',           img:'https://pbs.twimg.com/media/HDrwSF3aMAA8zyf?format=jpg&name=large' },
+  { name:'島根どん',   region:'SHIMANE / 島根県',         img:'https://pbs.twimg.com/media/HDrwSFwbsAABE4t?format=jpg&name=large' },
+  { name:'福島どん',   region:'FUKUSHIMA / 福島県',       img:'https://pbs.twimg.com/media/HDrwSFxakAArV3z?format=jpg&name=large' },
+  { name:'秋葉原どん', region:'AKIHABARA / 東京都秋葉原', img:'https://pbs.twimg.com/media/HDrzoyjbQAAwTI5?format=jpg&name=large' },
+  { name:'練馬どん',   region:'NERIMA / 東京都練馬区',    img:'https://pbs.twimg.com/media/HDrzoyjawAEQQwe?format=jpg&name=large' },
+  { name:'東京どん',   region:'TOKYO / 東京都',           img:'https://pbs.twimg.com/media/HDrzoylakAEuZwC?format=jpg&name=large' },
+  // index 29-56
+  { name:'太平洋どん', region:'PACIFIC OCEAN / 太平洋',   img:'https://pbs.twimg.com/media/HDuwAFXawAEyaWU?format=jpg&name=large' },
+  { name:'和歌山どん', region:'WAKAYAMA / 和歌山県',      img:'https://pbs.twimg.com/media/HDuwAFXawAAwsCj?format=jpg&name=large' },
+  { name:'山梨どん',   region:'YAMANASHI / 山梨県',       img:'https://pbs.twimg.com/media/HDuwAFfbQAEfX74?format=jpg&name=large' },
+  { name:'宮崎どん',   region:'MIYAZAKI / 宮崎県',        img:'https://pbs.twimg.com/media/HDuwAFfb0AA5MEN?format=jpg&name=large' },
+  { name:'舞浜どん',   region:'MAIHAMA / 千葉県浦安市',   img:'https://pbs.twimg.com/media/HDsoEHEaQAAm6eP?format=jpg&name=large' },
+  { name:'奈落どん',   region:'★ SPECIAL / 奈落',         img:'https://pbs.twimg.com/media/HD1oABeaIAA07wh?format=jpg&name=large' },
+  { name:'富山どん',   region:'TOYAMA / 富山県',          img:'https://pbs.twimg.com/media/HD1mKPybUAA59bf?format=jpg&name=large' },
+  { name:'石川どん',   region:'ISHIKAWA / 石川県',        img:'https://pbs.twimg.com/media/HD1mKP-boAYJOTZ?format=jpg&name=large' },
+  { name:'兵庫どん',   region:'HYOGO / 兵庫県',           img:'https://pbs.twimg.com/media/HD1hqn5aEAA7qAQ?format=jpg&name=large' },
+  { name:'滋賀どん',   region:'SHIGA / 滋賀県',           img:'https://pbs.twimg.com/media/HD1hqn2bIAAiPVK?format=jpg&name=large' },
+  { name:'三重どん',   region:'MIE / 三重県',             img:'https://pbs.twimg.com/media/HD1hqn3boAA_7TP?format=jpg&name=large' },
+  { name:'大分どん',   region:'OITA / 大分県',            img:'https://pbs.twimg.com/media/HD1cr1DboAEx8ib?format=jpg&name=large' },
+  { name:'熊本どん',   region:'KUMAMOTO / 熊本県',        img:'https://pbs.twimg.com/media/HD1cr1CboAQ8xzh?format=jpg&name=large' },
+  { name:'香川どん',   region:'KAGAWA / 香川県',          img:'https://pbs.twimg.com/media/HD1cr1IboAA8IU2?format=jpg&name=large' },
+  { name:'山口どん',   region:'YAMAGUCHI / 山口県',       img:'https://pbs.twimg.com/media/HD1cr1JbsAARdPc?format=jpg&name=large' },
+  { name:'佐賀どん',   region:'SAGA / 佐賀県',            img:'https://pbs.twimg.com/media/HDxD6cya0AAaZpt?format=jpg&name=large' },
+  { name:'徳島どん',   region:'TOKUSHIMA / 徳島県',       img:'https://pbs.twimg.com/media/HDxD6c2bAAAaFlw?format=jpg&name=large' },
+  { name:'長崎どん',   region:'NAGASAKI / 長崎県',        img:'https://pbs.twimg.com/media/HDxD6c0agAElw3_?format=jpg&name=large' },
+  { name:'愛媛どん',   region:'EHIME / 愛媛県',           img:'https://pbs.twimg.com/media/HDxD6czbUAAZ8Sk?format=jpg&name=large' },
+  { name:'北海道どん', region:'HOKKAIDO / 北海道',        img:'https://pbs.twimg.com/media/HDwk01xb0AAkOLa?format=jpg&name=medium' },
+  { name:'青森どん',   region:'AOMORI / 青森県',          img:'https://pbs.twimg.com/media/HDwk01xaYAAGyLb?format=jpg&name=medium' },
+  { name:'榛名町どん', region:'HARUNA / 群馬県榛名町',    img:'https://pbs.twimg.com/media/HDwk01vakAAzTwD?format=jpg&name=large' },
+  { name:'未来どん',   region:'★ SPECIAL / 未来',         img:'https://pbs.twimg.com/media/HDs48isawAAWyl2?format=jpg&name=large' },
+  { name:'多摩どん',   region:'TAMA / 東京都多摩',        img:'https://pbs.twimg.com/media/HDsydYabsAALAn3?format=jpg&name=large' },
+  { name:'岐阜どん',   region:'GIFU / 岐阜県',            img:'https://pbs.twimg.com/media/HDskO-WaoAAVvIl?format=jpg&name=large' },
+  { name:'山形どん',   region:'YAMAGATA / 山形県',        img:'https://pbs.twimg.com/media/HDskO-UacAASYRv?format=jpg&name=large' },
+  { name:'静岡どん',   region:'SHIZUOKA / 静岡県',        img:'https://pbs.twimg.com/media/HDskO-UbgAAg-h9?format=jpg&name=large' },
+  { name:'長野どん',   region:'NAGANO / 長野県',          img:'https://pbs.twimg.com/media/HDskO-WbAAE7jhu?format=jpg&name=large' },
+];
+
+// ── Region zoom definitions
+const REGIONS = {
+  all:     { vb: '-20 20 560 640',  label: '— エリアを選んで拡大 / キャラをタップで詳細 —' },
+  hokkaido:{ vb: '340 48 165 105',  label: '北海道エリア — 北海道' },
+  tohoku:  { vb: '385 135 110 100', label: '東北エリア — 青森・秋田・山形・宮城・岩手・福島' },
+  kanto:   { vb: '400 238 120 90',  label: '関東エリア — 栃木・茨城・群馬・榛名町・埼玉・川越・多摩・練馬・東京・秋葉原・千葉・舞浜・横浜・神奈川' },
+  shinetsu:{ vb: '300 200 130 100', label: '信越・北陸エリア — 新潟・富山・石川・福井・長野' },
+  tokai:   { vb: '330 265 130 95',  label: '東海エリア — 岐阜・山梨・名古屋・愛知・静岡・三重' },
+  kinki:   { vb: '200 280 175 110', label: '近畿・中国エリア — 滋賀・兵庫・鳥取・島根・京都・大阪・奈良・和歌山・岡山・山口・福井' },
+  shikoku: { vb: '205 335 165 95',  label: '四国エリア — 香川・徳島・愛媛・高知' },
+  kyushu:  { vb: '138 320 155 125', label: '九州エリア — 福岡・佐賀・長崎・大分・熊本・宮崎・鹿児島' },
+  okinawa: { vb: '55 490 185 100',  label: '沖縄エリア — 沖縄' },
+};
+
+const svg = document.querySelector('.japan-svg');
+let animReq = null;
+
+function lerp(a, b, t){ return a + (b - a) * t; }
+
+const FULL_VB_W = 560; // base viewBox width
+
+function scalePins(vbWidth){
+  // pins look right at full view; shrink proportionally when zoomed in
+  const s = vbWidth / FULL_VB_W;
+  document.querySelectorAll('.pin-g').forEach(g => {
+    const x = parseFloat(g.dataset.x);
+    const y = parseFloat(g.dataset.y);
+    g.setAttribute('transform', `translate(${x},${y}) scale(${s})`);
+  });
+}
+
+function animateViewBox(from, to, dur=500){
+  if(animReq) cancelAnimationFrame(animReq);
+  const start = performance.now();
+  const f = from.split(' ').map(Number);
+  const t = to.split(' ').map(Number);
+  function step(now){
+    const p = Math.min((now - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    const vals = f.map((v,i) => lerp(v, t[i], ease));
+    svg.setAttribute('viewBox', vals.join(' '));
+    scalePins(vals[2]); // vals[2] = current width
+    if(p < 1) animReq = requestAnimationFrame(step);
+  }
+  animReq = requestAnimationFrame(step);
+}
+
+let currentVB = REGIONS.all.vb;
+
+function zoomTo(key){
+  const r = REGIONS[key];
+  animateViewBox(currentVB, r.vb);
+  currentVB = r.vb;
+  document.getElementById('mapLabel').textContent = r.label;
+  document.querySelectorAll('.rtab').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.rtab[onclick="zoomTo('${key}')"]`).classList.add('active');
+}
+
+// ── Grid build
+const grid = document.getElementById('charGrid');
+chars.forEach((c, i) => {
+  const d = document.createElement('div');
+  d.className = 'char-card';
+  d.innerHTML = `<div class="char-card-imgwrap"><img src="${c.img}" alt="${c.name}" loading="lazy"></div><div class="char-card-lbl">${c.name}</div>`;
+  d.onclick = () => openPopup(i);
+  grid.appendChild(d);
+});
+
+function openOrigin() {
+  document.getElementById('popupImg').src = 'https://pbs.twimg.com/media/HDr3YDibMAAAo6E?format=jpg&name=large';
+  document.getElementById('popupImg').alt = '原点どん';
+  document.getElementById('popupReg').textContent = '★ ORIGIN / 原点';
+  document.getElementById('popupName').textContent = '原点どん';
+  document.getElementById('popupCatch').textContent = '「呼ばれてないけど来ました」';
+  document.getElementById('overlay').classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+
+function openPopup(i) {
+  const c = chars[i];
+  document.getElementById('popupImg').src = c.img;
+  document.getElementById('popupImg').alt = c.name;
+  document.getElementById('popupReg').textContent = c.region;
+  document.getElementById('popupName').textContent = c.name;
+  document.getElementById('popupCatch').textContent = '「呼ばれてないけど来ました」';
+  document.getElementById('overlay').classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+function closePopup(e) { if(e && e.target !== document.getElementById('overlay')) return; _close(); }
+function closePopupBtn() { _close(); }
+function _close() {
+  document.getElementById('overlay').classList.remove('on');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key==='Escape') _close(); });
+</script>
+
+<div class="ft-nav">
+  <a href="/">TOP</a>
+  <a href="/vol1/artists.html">ARTISTS</a>
+  <a href="/vol1/vote.html">VOTE</a>
+  <a href="/vol1/teihendon.html">底辺どん</a>
+  <a href="/vol1/goods.html">GOODS</a>
+  <a href="/vol1/cm.html">CM</a>
+  <a href="/vol1/timetable.html">TIMETABLE</a>
+  <a href="/vol1/logo-guideline.html">LOGO GUIDELINE</a>
+  <a href="/vol1/gotochi-map.html">ご当地MAP</a>
+  <a href="https://x.com/teihen_ai_music" target="_blank" rel="noopener">X (公式)</a>
+  <a href="https://www.youtube.com/@%E5%BA%95%E8%BE%BAAI%E9%9F%B3%E6%A5%BD%E3%83%95%E3%82%A7%E3%82%B9official" target="_blank" rel="noopener">YOUTUBE</a>
+</div>
+<script>
+/* ── GNAV ── */
+(function(){
+  var ham=document.getElementById('gnav-ham'),
+      drawer=document.getElementById('gnav-drawer'),
+      ov=document.getElementById('gnav-ov');
+  function close(){ham.classList.remove('open');drawer.classList.remove('open');ov.classList.remove('open')}
+  ham.addEventListener('click',function(){var o=drawer.classList.toggle('open');ham.classList.toggle('open',o);ov.classList.toggle('open',o)});
+  ov.addEventListener('click',close);
+  drawer.querySelectorAll('a').forEach(function(a){if(!a.target)a.addEventListener('click',close)});
+})();
+</script>
+</body>
+</html>

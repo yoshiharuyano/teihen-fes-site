@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARTIST 出演予定アーティスト｜サマテイ 2026 〜夏とゾンビ〜</title>
+<meta name="description" content="サマテイ 2026 出演予定アーティスト（調整中）。出演・出演順は変更になる場合があります。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Caveat:wght@600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--red:#e0533f;--pink:#f7e0db;--ink:#23323d;--ink2:#5a6b78;--leaf:#6fa85a;--leaf2:#5b9447;
+  --disp:'Yusei Magic',cursive;--body:'Zen Maru Gothic',sans-serif;--en:'Caveat',cursive;--mono:'JetBrains Mono',monospace;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;background:#fff}
+
+/* 左：固定夏空ヒーロー */
+.hero{position:fixed;left:0;top:0;width:38vw;height:100vh;overflow:hidden;z-index:1;
+  background:linear-gradient(180deg,#3f93cd 0%,#62b1e2 30%,#9fd2ef 56%,#cde9f8 78%,#eef7fc 100%)}
+.hero .clouds{position:absolute;inset:0;opacity:.92;filter:blur(.5px);pointer-events:none;
+  background:radial-gradient(180px 54px at 24% 18%,#fff 58%,transparent 60%),radial-gradient(230px 66px at 32% 22%,#fff 58%,transparent 60%),radial-gradient(150px 46px at 76% 14%,#fff 58%,transparent 60%),radial-gradient(200px 60px at 86% 24%,#fff 56%,transparent 60%),radial-gradient(190px 56px at 16% 72%,#fff 50%,transparent 60%)}
+.hero .rainbow{position:absolute;left:50%;bottom:-38%;transform:translateX(-50%);width:150%;aspect-ratio:1;border-radius:50%;opacity:.5;pointer-events:none;
+  background:radial-gradient(circle at 50% 100%,transparent 0 56%,#ff9aa8 56% 57.5%,#ffce8a 57.5% 59%,#fff2a0 59% 60.5%,#b8e3c8 60.5% 62%,#a8d4e8 62% 63.5%,#c4b8e8 63.5% 65%,transparent 65%)}
+.hero .hill{position:absolute;left:-10%;right:-10%;bottom:0;height:90px;background:radial-gradient(120% 100% at 50% 100%,var(--leaf) 0 60%,var(--leaf2) 60% 100%);border-radius:50% 50% 0 0/100% 100% 0 0}
+.hero .logo{position:absolute;left:8%;bottom:24%;width:62%;max-width:380px;filter:drop-shadow(0 4px 9px rgba(0,0,0,.2))}
+.hero .logo-fallback{position:absolute;left:8%;bottom:24%;font-family:var(--disp);color:var(--red);font-size:clamp(2.6rem,5vw,4.6rem);line-height:.9;text-shadow:0 3px 8px rgba(0,0,0,.18)}
+
+/* 右側 = メイン（白） */
+.main{margin-left:38vw;min-height:100vh;display:flex;align-items:flex-start}
+.center{flex:1 1 auto;min-width:0;border-right:1px solid #eee}
+.topbar{background:var(--red);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding:.5rem 1rem;position:sticky;top:0;z-index:5}
+.topbar a.tk{font-family:var(--body);font-weight:700;font-size:.7rem;color:var(--red);background:#fff;border-radius:5px;padding:.28rem .65rem;text-decoration:none;white-space:nowrap}
+.topbar .wm{font-family:var(--disp);font-size:1.05rem;letter-spacing:.05em}
+.heading{text-align:center;padding:1.8rem 1rem .4rem}
+.heading h1{font-family:var(--disp);font-size:clamp(1.8rem,5vw,2.6rem);letter-spacing:.08em;display:inline-block;border-bottom:3px solid var(--ink);padding-bottom:.25rem}
+.heading .sub{font-weight:700;font-size:.85rem;color:var(--ink2);margin-top:.5rem}
+.tabs{display:flex;gap:0;justify-content:center;padding:1.2rem clamp(.6rem,2vw,1.4rem) .4rem;flex-wrap:wrap}
+.tab{font-family:var(--body);font-weight:700;color:var(--ink2);background:var(--pink);border:none;border-right:2px solid #fff;padding:.55rem 1.1rem;cursor:pointer;text-align:center;line-height:1.2}
+.tab:last-child{border-right:none}
+.tab .t1{font-size:.95rem;display:block}.tab .t2{font-family:var(--mono);font-size:.5rem;letter-spacing:.05em;color:var(--ink2)}
+.tab.on{background:var(--red);color:#fff}.tab.on .t2{color:#ffd9d1}
+.selbar{text-align:center;margin:1rem 0 .2rem}
+.selbar .big{font-family:var(--disp);font-size:1.5rem;color:var(--ink)}
+.selbar .cnt{font-family:var(--en);font-size:1.1rem;color:var(--red);font-weight:700;margin-left:.4em}
+.rule{height:2px;background:var(--red);max-width:560px;margin:.8rem auto 0}
+.search{max-width:560px;margin:1rem auto 0;position:relative;padding:0 clamp(.6rem,2vw,1.4rem)}
+.search input{width:100%;font-family:var(--body);font-size:.8rem;color:var(--ink);background:#f6f6f4;border:1.5px solid #ddd;border-radius:99px;padding:.5rem 1rem .5rem 2.2rem;outline:none}
+.search svg{position:absolute;left:calc(clamp(.6rem,2vw,1.4rem) + .8rem);top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--ink2)}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1rem,2.5vw,1.8rem) clamp(1.2rem,3vw,2.4rem);padding:1.4rem clamp(.8rem,2.5vw,2rem) 4rem;max-width:560px;margin:0 auto}
+.card{position:relative;display:block;text-decoration:none;color:inherit;transition:transform .15s}
+.card:hover{transform:translateY(-3px)}
+.ph{position:relative;aspect-ratio:1/1;background:#efefec;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph .ini{font-family:var(--disp);font-size:2.2rem;color:#fff;background:linear-gradient(135deg,#ffd97d,#ff9aa8);width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.ribbon{position:absolute;top:0;left:0;width:58px;height:58px;overflow:hidden;z-index:2;pointer-events:none}
+.ribbon span{position:absolute;top:11px;left:-23px;transform:rotate(-45deg);background:var(--red);color:#fff;font-family:var(--en);font-weight:700;font-size:.62rem;letter-spacing:.05em;width:90px;text-align:center;padding:.05rem 0;box-shadow:0 1px 2px rgba(0,0,0,.25)}
+.nm{font-size:.84rem;font-weight:700;color:#222;margin-top:.5rem;line-height:1.4;word-break:break-word}
+.tag{display:inline-block;font-family:var(--mono);font-size:.52rem;color:#fff;border-radius:3px;padding:.02rem .3rem;margin-left:.3em;vertical-align:.12em}
+.tag.video{background:var(--red)}.tag.support{background:#4ea7b6}
+.nodata{grid-column:1/-1;text-align:center;padding:3rem;font-family:var(--en);font-size:1.3rem;color:var(--ink2)}
+.foot-note{max-width:560px;margin:0 auto;padding:0 1rem 3rem;font-family:var(--mono);font-size:.58rem;color:var(--ink2);line-height:2;text-align:center}
+
+/* 右ナビ */
+.rail{flex:0 0 210px;width:210px;padding:1.4rem 1rem 2rem;position:sticky;top:0;align-self:flex-start}
+.follow{display:flex;align-items:center;gap:.6rem;justify-content:flex-end;margin-bottom:1.4rem}
+.follow .lbl{font-family:var(--en);font-weight:700;font-size:.85rem;color:var(--ink2);writing-mode:vertical-rl;letter-spacing:.1em}
+.follow .ics{display:flex;flex-direction:column;gap:.5rem}
+.follow a{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;background:var(--ink);color:#fff;transition:transform .15s}
+.follow a:hover{transform:scale(1.08)}.follow a svg{width:16px;height:16px;fill:currentColor}
+.rail nav a{display:flex;align-items:center;gap:.55rem;font-family:var(--body);font-weight:700;font-size:.9rem;color:var(--ink);padding:.62rem .2rem;border-bottom:1px solid #e7e7e3;text-decoration:none}
+.rail nav a:hover{color:var(--red)}.rail nav a.on{color:var(--red)}
+.rail nav a.dim{color:#bcc4ca;pointer-events:none}
+.rail nav a .ic{width:1.3em;text-align:center}.rail nav a .mini{font-family:var(--mono);font-size:.5rem;color:#bcc4ca;margin-left:auto}
+.rail .org{margin-top:1.4rem;font-family:var(--mono);font-size:.52rem;color:var(--ink2);text-align:center;line-height:1.9}
+
+@media(max-width:960px){
+  .hero{position:static;width:100%;height:auto;min-height:260px}
+  .hero .logo,.hero .logo-fallback{position:static;display:block;margin:1.5rem auto;width:55%}
+  .main{margin-left:0;flex-direction:column}
+  .center{border-right:none;width:100%}
+  .rail{position:static;width:100%;flex:none;border-top:1px solid #eee}
+  .follow{justify-content:center}.follow .lbl{writing-mode:horizontal-tb}
+  .rail nav{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center}
+  .rail nav a{border:1.5px solid var(--ink);border-radius:99px;padding:.35rem .8rem;font-size:.78rem}
+  .rail nav a.dim,.rail nav a .mini{display:none}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="clouds"></div><div class="rainbow"></div><div class="hill"></div>
+  <img class="logo" src="/vol2/img/summatei-logo.png" alt="サマテイ 2026" onerror="this.style.display='none';document.getElementById('lf').style.display='block';">
+  <div id="lf" class="logo-fallback" style="display:none">サマテイ<br>2026</div>
+</header>
+
+<div class="main">
+  <div class="center">
+    <div class="topbar">
+      <a class="tk" href="https://t.co/klV04QJXly" target="_blank" rel="noopener">🎤 プレエントリー</a>
+      <span class="wm">サマテイ 2026</span><span style="width:80px"></span>
+    </div>
+    <div class="heading"><h1>ARTIST</h1><div class="sub">出演予定アーティスト（調整中）</div></div>
+    <div class="tabs" id="tabs">
+      <button class="tab on" data-f="all"><span class="t1">ALL</span><span class="t2">すべて</span></button>
+      <button class="tab" data-f="video"><span class="t1">🎬 自作</span><span class="t2">VIDEO</span></button>
+      <button class="tab" data-f="support"><span class="t1">🎧 サポート</span><span class="t2">SUPPORT</span></button>
+    </div>
+    <div class="selbar"><span class="big" id="selname">ALL</span><span class="cnt" id="cnt"></span></div>
+    <div class="rule"></div>
+    <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><input id="q" placeholder="名前で検索..."></div>
+    <div class="grid" id="grid"><div class="nodata">読み込み中...</div></div>
+    <div class="foot-note">※五十音順 ／ 出演予定アーティスト（2026/6/9時点・調整中）。出演・出演順は変更になる場合があります。</div>
+  </div>
+
+  <aside class="rail">
+    <div class="follow">
+      <span class="lbl">FOLLOW US</span>
+      <div class="ics">
+        <a href="https://x.com/teihen_ai_music" target="_blank" rel="noopener" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg></a>
+      </div>
+    </div>
+    <nav>
+      <a href="/"><span class="ic">🏠</span>TOP</a>
+      <a href="/#news"><span class="ic">📰</span>新着情報</a>
+      <a class="on" href="/vol2/artists.html" aria-current="page"><span class="ic">🎤</span>出演アーティスト</a>
+      <a class="dim"><span class="ic">⏰</span>タイムテーブル<span class="mini">準備中</span></a>
+      <a href="https://t.co/klV04QJXly" target="_blank" rel="noopener"><span class="ic">🎫</span>プレエントリー</a>
+      <a class="dim"><span class="ic">🧺</span>グッズ<span class="mini">準備中</span></a>
+      <a href="/#faq"><span class="ic">❓</span>FAQ</a>
+      <a href="/vol1/"><span class="ic">🧟</span>第一回ARCHIVE</a>
+    </nav>
+    <div class="org">サマテイ 2026<br>〜夏とゾンビ〜<br>主催：貯水TANK</div>
+  </aside>
+</div>
+
+<script>
+var NEW_NOS={'J-084':1,'J-085':1,'J-086':1};
+var TYPENAME={all:'ALL',video:'🎬 自作動画',support:'🎧 サポート'};
+var artists=[],filter='all',q='';
+var grid=document.getElementById('grid'),cnt=document.getElementById('cnt'),selname=document.getElementById('selname');
+function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function toKata(s){return (s||'').replace(/[\u3041-\u3096]/g,function(c){return String.fromCharCode(c.charCodeAt(0)+0x60);});}
+function kcmp(a,b){return toKata(a.kana).localeCompare(toKata(b.kana),'ja');}
+window.__iconErr=function(img){var e=['.jpg','.png','.jpeg','.webp','.gif'];var i=(parseInt(img.dataset.i||'0',10))+1;if(i<e.length){img.dataset.i=i;img.src=img.dataset.base+e[i];}else{var p=img.parentNode;p.innerHTML='<span class="ini">'+(img.dataset.init||'?')+'</span>';}};
+function render(){
+  var f=artists.filter(function(a){return (filter==='all'||a.type===filter)&&(!q||a.name.toLowerCase().indexOf(q)>-1||toKata(a.kana).indexOf(toKata(q))>-1);});
+  f.sort(kcmp);
+  selname.textContent=TYPENAME[filter];cnt.textContent=f.length+' acts';
+  if(!f.length){grid.innerHTML='<div class="nodata">該当なし 🐚</div>';return;}
+  grid.innerHTML=f.map(function(a){
+    var init=esc((a.name||'?').charAt(0));
+    var rib=NEW_NOS[a.no]?'<div class="ribbon"><span>NEW</span></div>':'';
+    var ph=a.icon?'<div class="ph"><img src="'+esc(a.icon)+'.jpg" data-base="'+esc(a.icon)+'" data-i="0" data-init="'+init+'" alt="'+esc(a.name)+'" onerror="__iconErr(this)"></div>'
+                 :'<div class="ph"><span class="ini">'+init+'</span></div>';
+    var op=a.url?'href="'+esc(a.url)+'" target="_blank" rel="noopener"':'';
+    return '<a class="card" '+op+'>'+rib+ph+'<div class="nm">'+esc(a.name)+'</div></a>';
+  }).join('');
+}
+document.getElementById('q').addEventListener('input',function(){q=this.value.trim().toLowerCase();render();});
+document.getElementById('tabs').addEventListener('click',function(e){var b=e.target.closest('.tab');if(!b)return;[].forEach.call(this.querySelectorAll('.tab'),function(c){c.classList.remove('on');});b.classList.add('on');filter=b.dataset.f;render();});
+fetch('artists.json?_='+Date.now()).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();})
+  .then(function(d){artists=(d||[]).filter(function(a){return a.show!==false;});render();})
+  .catch(function(e){grid.innerHTML='<div class="nodata">artists.json を読み込めませんでした<br>（サーバー上の同じ場所に置いてください）</div>';console.error(e);});
+</script>
+</body>
+</html>

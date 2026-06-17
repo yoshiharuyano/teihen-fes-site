@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARTIST（お試し・グリッド版）｜サマテイ 2026</title>
+<meta name="description" content="サマテイ プレエントリー一覧（五十音順グリッド・お試し版）。出演・出演順は確定ではありません。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Caveat:wght@500;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf6ec;--paper:#fff;--line:#e7dcc4;--line2:#d8c8a8;
+  --ink:#332d27;--ink2:#5a4d44;--sub:#9a8a78;
+  --coral:#ff7d92;--coral2:#ff9aa8;--sea:#4ea7b6;--sun:#ffd97d;--zombie:#8ab581;
+  --disp:'Yusei Magic',cursive;--body:'Zen Maru Gothic',sans-serif;--en:'Caveat',cursive;--mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:clamp(1.5rem,4vw,3rem) clamp(.8rem,3vw,1.6rem)}
+
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-bottom:3px solid var(--ink);padding-bottom:.8rem}
+.head h1{font-family:var(--disp);font-weight:400;font-size:clamp(2.2rem,7vw,3.4rem);line-height:1;letter-spacing:.06em}
+.head h1 .jp{font-family:var(--body);font-weight:900;font-size:.32em;letter-spacing:.1em;margin-left:.6em;color:var(--ink2);vertical-align:.5em}
+.head .cnt{font-family:var(--en);font-size:1.4rem;font-weight:700;color:var(--coral)}
+.note{font-family:var(--mono);font-size:.66rem;color:var(--sub);margin-top:.7rem;letter-spacing:.02em;line-height:1.8}
+
+.tabs{display:flex;gap:.3rem;flex-wrap:wrap;margin:1.3rem 0 .3rem;border-bottom:1.5px solid var(--line)}
+.tab{font-family:var(--body);font-weight:700;font-size:.82rem;color:var(--sub);background:none;border:none;padding:.55rem .9rem;cursor:pointer;position:relative;letter-spacing:.03em}
+.tab.on{color:var(--ink)}
+.tab.on::after{content:'';position:absolute;left:.6rem;right:.6rem;bottom:-1.5px;height:3px;background:var(--coral);border-radius:3px}
+.tools{display:flex;gap:.7rem;align-items:center;flex-wrap:wrap;margin:1rem 0 .4rem}
+.search{position:relative;flex:1 1 200px}
+.search input{width:100%;font-family:var(--body);font-size:.82rem;color:var(--ink);background:var(--paper);border:1.5px solid var(--line2);border-radius:99px;padding:.45rem .9rem .45rem 2rem;outline:none}
+.search svg{position:absolute;left:.7rem;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--sub)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(116px,1fr));gap:clamp(.6rem,1.6vw,1rem);margin-top:1rem}
+.grp{grid-column:1/-1;display:flex;align-items:center;gap:.7rem;margin:1.3rem 0 .2rem}
+.grp span{font-family:var(--disp);font-size:1.2rem;color:var(--coral);background:var(--paper);border:2px solid var(--ink);border-radius:50%;width:2rem;height:2rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.grp::after{content:'';flex:1;height:2px;background:var(--line2)}
+
+.tile{display:flex;flex-direction:column;gap:.4rem;transition:transform .15s}
+.tile:hover{transform:translateY(-3px)}
+.tile.nolink{cursor:default}.tile.nolink:hover{transform:none}
+.ph{position:relative;aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:linear-gradient(135deg,var(--sun),var(--coral2));border:1.5px solid var(--line2);display:flex;align-items:center;justify-content:center}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph .ini{font-family:var(--disp);font-size:1.8rem;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.15)}
+.ph .dot{position:absolute;top:.4rem;right:.4rem;width:.7rem;height:.7rem;border-radius:50%;border:1.5px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.1)}
+.ph .dot.video{background:var(--coral)}.ph .dot.support{background:var(--sea)}
+.nm{font-size:.74rem;font-weight:700;line-height:1.35;color:var(--ink);word-break:break-word}
+.kn{font-family:var(--mono);font-size:.58rem;color:var(--sub);margin-top:-.25rem}
+.empty{grid-column:1/-1;text-align:center;padding:3rem;color:var(--sub);font-family:var(--en);font-size:1.3rem}
+
+.foot{margin-top:3rem;border-top:1.5px solid var(--line);padding-top:1.2rem;font-family:var(--mono);font-size:.62rem;color:var(--sub);line-height:1.9}
+.foot a{color:var(--coral);font-weight:700}
+.legend{display:flex;gap:1.2rem;font-family:var(--body);font-size:.72rem;color:var(--ink2);margin:.6rem 0 0;flex-wrap:wrap}
+.legend i{display:inline-block;width:.7rem;height:.7rem;border-radius:50%;margin-right:.3rem;vertical-align:-1px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="head">
+    <h1>ARTIST<span class="jp">出演アーティスト（予定）</span></h1>
+    <span class="cnt" id="cnt"></span>
+  </header>
+  <p class="note">※五十音順 ／ これはプレエントリー（応募）一覧です。出演・出演順は確定ではありません。</p>
+
+  <div class="tabs" id="tabs">
+    <button class="tab on" data-f="all">ALL</button>
+    <button class="tab" data-f="video">🎬 自作動画</button>
+    <button class="tab" data-f="support">🎧 サポート</button>
+  </div>
+  <div class="tools">
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input id="q" type="text" placeholder="名前で検索...">
+    </div>
+    <div class="legend"><span><i style="background:var(--coral)"></i>自作動画</span><span><i style="background:var(--sea)"></i>サポート</span></div>
+  </div>
+
+  <div class="grid" id="grid"><div class="empty">読み込み中...</div></div>
+
+  <div class="foot">
+    SOURCE: サマテイ 2026 プレエントリー一覧（お試し・グリッド版）／ <a href="/vol2/artists.html">通常版（カード）はこちら</a><br>
+    ※出演アーティスト・出演順は変更になる場合があります。
+  </div>
+</div>
+
+<script>
+var artists=[],filter='all',q='';
+var grid=document.getElementById('grid'),cntEl=document.getElementById('cnt');
+function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function toKata(s){return (s||'').replace(/[\u3041-\u3096]/g,function(c){return String.fromCharCode(c.charCodeAt(0)+0x60);});}
+var ROWS=[['ア','アァイィウゥエェオォヴ'],['カ','カガキギクグケゲコゴ'],['サ','サザシジスズセゼソゾ'],['タ','タダチヂッツヅテデトド'],['ナ','ナニヌネノ'],['ハ','ハバパヒビピフブプヘベペホボポ'],['マ','マミムメモ'],['ヤ','ヤャユュヨョ'],['ラ','ラリルレロ'],['ワ','ワヲヰヱ']];
+function rowOf(kana){
+  var k=toKata((kana||'').replace(/^[\s\u3000]+/,''));var c=k.charAt(0);
+  for(var i=0;i<ROWS.length;i++){if(ROWS[i][1].indexOf(c)>-1)return [i,ROWS[i][0]];}
+  return [99,'A-Z #'];   // 英数字・記号など
+}
+function sortKey(a){var r=rowOf(a.kana);return r[0];}
+window.__iconErr=function(img){var e=['.jpg','.png','.jpeg','.webp','.gif'];var i=(parseInt(img.dataset.i||'0',10))+1;if(i<e.length){img.dataset.i=i;img.src=img.dataset.base+e[i];}else{img.style.display='none';img.parentNode.innerHTML='<span class="ini">'+(img.dataset.init||'?')+'</span>'+img.parentNode.querySelector('.dot').outerHTML;}};
+
+function render(){
+  var f=artists.filter(function(a){return (filter==='all'||a.type===filter)&&(!q||a.name.toLowerCase().indexOf(q)>-1||toKata(a.kana).indexOf(toKata(q))>-1);});
+  f.sort(function(a,b){var ra=rowOf(a.kana),rb=rowOf(b.kana);if(ra[0]!==rb[0])return ra[0]-rb[0];return toKata(a.kana).localeCompare(toKata(b.kana),'ja');});
+  cntEl.textContent=f.length+' acts';
+  if(!f.length){grid.innerHTML='<div class="empty">該当なし 🐚</div>';return;}
+  var html='',curRow=null;
+  f.forEach(function(a){
+    var r=rowOf(a.kana);
+    if(r[0]!==curRow){curRow=r[0];html+='<div class="grp"><span>'+r[1].charAt(0)+'</span></div>';}
+    var init=esc((a.name||'?').charAt(0));
+    var dot='<span class="dot '+a.type+'"></span>';
+    var ph=a.icon?'<img src="'+esc(a.icon)+'.jpg" data-base="'+esc(a.icon)+'" data-i="0" data-init="'+init+'" alt="'+esc(a.name)+'" onerror="__iconErr(this)">'+dot
+                 :'<span class="ini">'+init+'</span>'+dot;
+    var op=a.url?'href="'+esc(a.url)+'" target="_blank" rel="noopener"':'';
+    html+='<a class="tile'+(a.url?'':' nolink')+'" '+op+'><div class="ph">'+ph+'</div><div class="nm">'+esc(a.name)+'</div></a>';
+  });
+  grid.innerHTML=html;
+}
+document.getElementById('q').addEventListener('input',function(){q=this.value.trim().toLowerCase();render();});
+document.getElementById('tabs').addEventListener('click',function(e){var b=e.target.closest('.tab');if(!b)return;[].forEach.call(this.children,function(c){c.classList.remove('on');});b.classList.add('on');filter=b.dataset.f;render();});
+fetch('artists.json?_='+Date.now()).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();})
+  .then(function(d){artists=(d||[]).filter(function(a){return a.show!==false;});render();})
+  .catch(function(e){grid.innerHTML='<div class="empty">artists.json を読み込めませんでした（サーバー上に同じ場所へ配置してください）</div>';console.error(e);});
+</script>
+</body>
+</html>

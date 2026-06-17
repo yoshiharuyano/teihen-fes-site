@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="あなたの底辺AI音楽クリエイター度を診断！全10問の診断で底辺レベルが判明。結果をXでシェアして底辺の輪を広げよう。">
+<meta name="keywords" content="AI音楽,AI音楽フェス,底辺AI音楽フェス,Suno,Udio,AI作曲,オンライン音楽フェス,YouTube Premiere,AI Music Festival,2026,底辺度診断,診断,バイラル,AI音楽クリエイター診断">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://fes.wistaria-addict.com/shindan.html">
+<meta property="og:title" content="底辺度診断 〜あなたの底辺度は何%？〜">
+<meta property="og:description" content="全10問の診断でAI音楽クリエイターとしての底辺レベルが判明。結果をXでシェアしよう。">
+<meta property="og:image" content="https://fes.wistaria-addict.com/ogp_1200x630.png">
+<meta property="og:url" content="https://fes.wistaria-addict.com/shindan.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="第一回 底辺AI音楽フェス 〜産まれてきてスミマセン〜">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="底辺度診断 〜あなたの底辺度は何%？〜">
+<meta name="twitter:description" content="全10問で底辺度が判明。あなたは何%？ #底辺AI音楽フェス">
+<meta name="twitter:image" content="https://fes.wistaria-addict.com/ogp_1200x630.png">
+<title>底辺度診断 | 第一回 底辺AI音楽フェス</title>
+<meta name="description" content="あなたの底辺AI音楽クリエイター度を診断！全10問で底辺レベルが判明。結果をXでシェアして底辺の輪を広げよう。">
+<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIAA6AgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAgFJREFUeJyFkrtuFEEQRU9V98y+ZteyZRswLwmEhYgAgYicEkDAH/AZfAEB38AfIBIyEgIChEBEiAQJhEFYNrZswI+dfcx0F8GOvba8Mh21+raO7r1VAtjS7AIvb91jtyxQEf53ohktn/B6axV/0ic7QQtmRGwywIDMJySiEyHBIk2f0FR/HGAYdfW8WF/my942XpVYaQKoCIqQ+YTlfGcCwMCJ8PbPOnfnznEqbTK0yH4zHkFF6CQpH/6mkyNEM6aTGtc7s5yuAArU1NGPgRBHEX7keyOAcrR5A0qL5KGgGwpKM0qL/Oztcb6R4RA0CkUFxosi+xAZR9EK7UUYhMDzX98YhIATAas6AUhUqd4OvJQ2rq40o+1THi/epu0TghlS7YsC1NUdiWHA4ABQjY7I2iA/NlYFaDiPiFSiEC3SUIdWTgTIy5JHn9+x0u9Scw4zGwPaLhldMBQhD4GbnVkuNttkPqHlPJeyaR6eXWRz2MMfWjAPMJ3UjthyIrzf3qCujgj0YkCBV5srLM2cwYkQKgcHgGA22n8xCot0Q4mTUTMtJwSL3J+/wLVshmEImBxycKU1Rc0lZD6QirJTDun4hAcLlyGG8WxE2Oh3We7tcmNqDhXBiypvfq/RD4G6c8ynDfJQ8HFni6ffP1FYRBAMIxXH6iDn2epXnly9w25Z8A8LV97edT8soQAAAABJRU5ErkJggg==">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXJ7WD8MJ7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXJ7WD8MJ7',{page_title:'底辺度診断',page_path:'/shindan.html'});</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Mono:wght@400;700&family=Zen+Kaku+Gothic+New:wght@900&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --r:#E94560;--r2:#ff6b81;--rg:rgba(233,69,96,.5);--rg2:rgba(233,69,96,.12);
+  --w:#f0f0f0;--m:#555;--bg:#030303;--card:#0a0a0a;--bdr:#151515;
+  --ff:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  --mono:'Space Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--w);font-family:var(--ff);line-height:1.7;overflow-x:hidden;min-height:100vh}
+
+/* ═══ GNAV ═══ */
+.gnav{position:fixed;top:0;left:0;right:0;z-index:8000;background:rgba(3,3,3,.95);border-bottom:1px solid #151515;backdrop-filter:blur(12px);height:48px;display:flex;align-items:center;padding:0 1.2rem}
+.gnav-logo{font-family:var(--mono);font-size:.5rem;letter-spacing:.06em;color:var(--r);text-decoration:none;white-space:nowrap;line-height:1.3;flex:none;margin-right:auto}
+.gnav-logo span{display:block;font-size:.38rem;color:var(--m);margin-top:1px}
+.gnav-links{display:flex;align-items:stretch;height:48px;margin-left:.5rem}
+.gnav-link{font-family:var(--mono);font-size:.48rem;letter-spacing:.06em;color:var(--m);text-decoration:none;display:flex;align-items:center;padding:0 .55rem;border-left:1px solid #111;position:relative;transition:color .2s;white-space:nowrap}
+.gnav-link:last-child{border-right:1px solid #111}
+.gnav-link:hover,.gnav-link.gnav-cur{color:var(--r)}
+.gnav-link.gnav-cur::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--r)}
+.gnav-badge{font-size:.34rem;background:var(--r);color:#030303;padding:1px 4px;border-radius:2px;margin-left:4px;font-weight:bold;animation:gnav-pulse 2s ease-in-out infinite}
+@keyframes gnav-pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.gnav-sns{display:flex;align-items:center;gap:.35rem;margin-left:.5rem;flex:none}
+.gnav-sns a{width:28px;height:28px;border:1px solid #1a1a1a;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--m);text-decoration:none;transition:all .2s}
+.gnav-sns a:hover{border-color:var(--r);color:var(--r)}
+.gnav-ham{display:none;flex-direction:column;justify-content:center;gap:5px;margin-left:auto;padding:.4rem;cursor:pointer;flex:none;background:none;border:none}
+.gnav-ham span{display:block;width:20px;height:1px;background:#666;transition:all .28s;transform-origin:center}
+.gnav-ham.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.gnav-ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.gnav-ham.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.gnav-drawer{position:fixed;top:48px;left:0;right:0;z-index:7999;background:rgba(5,5,5,.99);border-bottom:1px solid #1a1a1a;transform:translateY(-6px);opacity:0;pointer-events:none;transition:all .22s cubic-bezier(.4,0,.2,1);max-height:calc(100dvh - 48px);overflow-y:auto}
+.gnav-drawer.open{transform:translateY(0);opacity:1;pointer-events:auto}
+.gnav-ditem{display:flex;align-items:center;gap:.6rem;padding:.75rem 1.4rem;font-family:var(--mono);font-size:.55rem;letter-spacing:.08em;color:var(--m);border-bottom:1px solid #0d0d0d;text-decoration:none;transition:color .2s;min-height:48px}
+.gnav-ditem::before{content:'';width:4px;height:4px;background:var(--r);border-radius:50%;flex:none;opacity:.45}
+.gnav-ditem:hover{color:var(--r)}
+.gnav-dext{margin-left:auto;font-size:.42rem;color:#333}
+.gnav-ov{display:none;position:fixed;inset:0;z-index:7998}
+.gnav-ov.open{display:block}
+@media(max-width:768px){.gnav-links,.gnav-sns{display:none}.gnav-ham{display:flex}}
+
+/* ═══ HERO ═══ */
+.hero{
+  padding:clamp(5rem,14vw,8rem) 1.5rem clamp(2rem,5vw,3rem);
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'底辺';position:absolute;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  font-size:clamp(8rem,30vw,18rem);font-weight:900;
+  color:rgba(233,69,96,.03);pointer-events:none;white-space:nowrap;
+  font-family:var(--ff);
+}
+.hero-label{font-family:var(--mono);font-size:.6rem;color:var(--r);letter-spacing:.25em;margin-bottom:.8rem;opacity:.8}
+.hero-title{font-size:clamp(1.8rem,5vw,3rem);font-weight:900;letter-spacing:.04em;line-height:1.2;margin-bottom:.8rem}
+.hero-title span{color:var(--r)}
+.hero-sub{font-size:clamp(.8rem,2vw,.9rem);color:var(--m);max-width:500px;margin:0 auto}
+
+/* ═══ SHINDAN WRAPPER ═══ */
+.shindan-wrap{max-width:600px;margin:0 auto;padding:0 1.2rem clamp(4rem,10vw,6rem)}
+
+/* ═══ PROGRESS ═══ */
+.progress-wrap{margin-bottom:2rem}
+.progress-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem}
+.progress-label{font-family:var(--mono);font-size:.58rem;color:var(--m);letter-spacing:.08em}
+.progress-num{font-family:var(--mono);font-size:.58rem;color:var(--r);letter-spacing:.05em}
+.progress-bar{height:2px;background:#1a1a1a;border-radius:1px;overflow:hidden}
+.progress-fill{height:100%;background:var(--r);border-radius:1px;transition:width .4s cubic-bezier(.16,1,.3,1);box-shadow:0 0 8px var(--rg)}
+
+/* ═══ QUESTION CARD ═══ */
+.q-card{
+  background:var(--card);border:1px solid var(--bdr);border-radius:16px;
+  padding:clamp(1.5rem,4vw,2rem);
+  animation:qIn .35s cubic-bezier(.16,1,.3,1);
+}
+@keyframes qIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.q-category{font-family:var(--mono);font-size:.52rem;color:var(--r);letter-spacing:.15em;opacity:.7;margin-bottom:.6rem}
+.q-text{font-size:clamp(1rem,2.5vw,1.2rem);font-weight:700;line-height:1.6;margin-bottom:1.5rem}
+.q-choices{display:flex;flex-direction:column;gap:.6rem}
+.q-choice{
+  display:flex;align-items:center;gap:.8rem;
+  padding:clamp(.8rem,2vw,1rem) clamp(1rem,2.5vw,1.2rem);
+  background:rgba(255,255,255,.02);
+  border:1px solid #1a1a1a;border-radius:10px;
+  cursor:pointer;transition:all .2s;text-align:left;
+  font-family:var(--ff);font-size:clamp(.88rem,2vw,.95rem);color:var(--w);
+}
+.q-choice:hover{border-color:rgba(233,69,96,.4);background:rgba(233,69,96,.04);transform:translateX(4px)}
+.q-choice:active{transform:scale(.97)}
+.q-choice.selected{border-color:var(--r);background:rgba(233,69,96,.08);color:var(--r)}
+.q-choice-icon{font-size:1.1rem;flex:none;width:1.4rem;text-align:center}
+.q-choice-score{display:none}
+
+/* ═══ RESULT SCREEN ═══ */
+.result-screen{display:none;animation:qIn .5s cubic-bezier(.16,1,.3,1)}
+.result-screen.show{display:block}
+
+.result-gauge-wrap{text-align:center;padding:clamp(1.5rem,4vw,2.5rem) 0}
+.result-gauge{position:relative;width:clamp(180px,50vw,240px);height:clamp(180px,50vw,240px);margin:0 auto}
+.result-gauge svg{width:100%;height:100%}
+.result-gauge-text{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+}
+.result-pct{font-family:'Zen Kaku Gothic New',sans-serif;font-size:clamp(3rem,10vw,4.5rem);font-weight:900;line-height:1;color:var(--r);text-shadow:0 0 30px var(--rg)}
+.result-pct-unit{font-family:var(--mono);font-size:.6rem;color:var(--m);letter-spacing:.1em;margin-top:.2rem}
+
+.result-rank{
+  display:inline-block;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;
+  padding:.3rem 1rem;border-radius:4px;margin-bottom:1rem;
+}
+.result-title{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:900;letter-spacing:.04em;margin-bottom:.5rem;line-height:1.3}
+.result-desc{font-size:clamp(.85rem,2vw,.95rem);color:#aaa;line-height:1.8;max-width:480px;margin:0 auto 1.5rem}
+
+.result-breakdown{
+  background:var(--card);border:1px solid var(--bdr);border-radius:12px;
+  padding:1rem 1.2rem;margin-bottom:1.5rem;
+}
+.result-breakdown-title{font-family:var(--mono);font-size:.55rem;color:var(--m);letter-spacing:.12em;margin-bottom:.8rem}
+.rb-row{display:flex;align-items:center;gap:.7rem;padding:.35rem 0;border-bottom:1px solid #0d0d0d;font-size:.82rem}
+.rb-row:last-child{border-bottom:none}
+.rb-label{flex:1;color:#888;font-size:.78rem}
+.rb-bar{flex:2;height:4px;background:#111;border-radius:2px;overflow:hidden}
+.rb-fill{height:100%;border-radius:2px;transition:width 1s cubic-bezier(.16,1,.3,1)}
+.rb-score{font-family:var(--mono);font-size:.65rem;color:var(--r);min-width:2.5rem;text-align:right}
+
+/* CTA buttons */
+.result-ctas{display:flex;flex-direction:column;gap:.7rem;margin-bottom:2rem}
+.btn-share{
+  display:flex;align-items:center;justify-content:center;gap:.6rem;
+  background:var(--r);color:#fff;border:none;border-radius:10px;
+  padding:1rem 1.5rem;font-family:var(--ff);font-size:clamp(.95rem,2.5vw,1.05rem);font-weight:700;
+  cursor:pointer;transition:opacity .2s,transform .2s;text-decoration:none;
+  letter-spacing:.04em;min-height:52px;
+}
+.btn-share:hover{opacity:.85;transform:translateY(-2px)}
+.btn-share:active{transform:scale(.97)}
+.btn-retry{
+  display:flex;align-items:center;justify-content:center;gap:.5rem;
+  background:transparent;color:var(--m);border:1px solid #1a1a1a;border-radius:10px;
+  padding:.8rem 1.5rem;font-family:var(--mono);font-size:.65rem;
+  cursor:pointer;transition:all .2s;letter-spacing:.08em;
+}
+.btn-retry:hover{border-color:var(--r);color:var(--r)}
+.btn-artists{
+  display:flex;align-items:center;justify-content:center;gap:.6rem;
+  background:var(--card);color:var(--w);border:1px solid var(--bdr);border-radius:10px;
+  padding:.9rem 1.5rem;font-family:var(--ff);font-size:clamp(.88rem,2vw,.95rem);font-weight:700;
+  text-decoration:none;transition:border-color .2s,transform .2s;letter-spacing:.03em;
+}
+.btn-artists:hover{border-color:rgba(233,69,96,.4);transform:translateY(-2px)}
+
+/* Footer */
+.ft{text-align:center;padding:3rem 1.5rem;border-top:1px solid var(--bdr)}
+.ft-nav{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap;margin-top:1.2rem}
+.ft-nav a{font-family:var(--mono);font-size:.58rem;color:var(--m);text-decoration:none;padding:.35rem .7rem;border:1px solid #1a1a1a;border-radius:4px;transition:all .2s}
+.ft-nav a:hover{border-color:var(--r);color:var(--r)}
+</style>
+</head>
+<body>
+
+<!-- GNAV -->
+<nav class="gnav" id="gnav">
+  <a href="/" class="gnav-logo">底辺AI音楽フェス<span>〜産まれてきてスミマセン〜</span></a>
+  <div class="gnav-links">
+    <a href="/"                    class="gnav-link">TOP</a>
+    <a href="/artists.html"        class="gnav-link">ARTISTS</a>
+    <a href="/vote.html"           class="gnav-link">VOTE<span class="gnav-badge">期待！</span></a>
+    <a href="/teihendon.html"      class="gnav-link">底辺どん</a>
+    <a href="/goods.html"          class="gnav-link">GOODS</a>
+    <a href="/cm.html"             class="gnav-link">CM</a>
+    <a href="/logo-guideline.html" class="gnav-link">LOGO</a>
+    <a href="/timetable.html"      class="gnav-link">TIME</a>
+    <a href="/gotochi-map.html"    class="gnav-link">MAP</a>
+  </div>
+  <div class="gnav-sns">
+    <a href="https://x.com/teihen_ai_music" target="_blank" rel="noopener">𝕏</a>
+    <a href="https://www.youtube.com/@%E5%BA%95%E8%BE%BAAI%E9%9F%B3%E6%A5%BD%E3%83%95%E3%82%A7%E3%82%B9official" target="_blank" rel="noopener">▶</a>
+  </div>
+  <button class="gnav-ham" id="gnav-ham" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="gnav-drawer" id="gnav-drawer">
+  <a href="/"                    class="gnav-ditem">TOP</a>
+  <a href="/artists.html"        class="gnav-ditem">ARTISTS</a>
+  <a href="/vote.html"           class="gnav-ditem">VOTE <span class="gnav-badge">期待！</span></a>
+  <a href="/teihendon.html"      class="gnav-ditem">底辺どん</a>
+  <a href="/goods.html"          class="gnav-ditem">GOODS</a>
+  <a href="/cm.html"             class="gnav-ditem">CM</a>
+  <a href="/logo-guideline.html" class="gnav-ditem">LOGO GUIDELINE</a>
+  <a href="/timetable.html"      class="gnav-ditem">タイムテーブル</a>
+  <a href="/gotochi-map.html"    class="gnav-ditem">ご当地MAP</a>
+  <a href="https://x.com/teihen_ai_music" class="gnav-ditem" target="_blank" rel="noopener">𝕏 公式Twitter<span class="gnav-dext">↗</span></a>
+  <a href="https://www.youtube.com/@%E5%BA%95%E8%BE%BAAI%E9%9F%B3%E6%A5%BD%E3%83%95%E3%82%A7%E3%82%B9official" class="gnav-ditem" target="_blank" rel="noopener">▶ YouTube<span class="gnav-dext">↗</span></a>
+</div>
+<div class="gnav-ov" id="gnav-ov"></div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">// TEIHEN SHINDAN</div>
+  <h1 class="hero-title">あなたの<span>底辺度</span>は<br>何パーセント？</h1>
+  <p class="hero-sub">全10問の診断でAI音楽クリエイターとしての底辺レベルが判明。<br>結果をXでシェアして底辺の輪を広げよう。</p>
+</div>
+
+<!-- SHINDAN -->
+<div class="shindan-wrap">
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap" id="progressWrap">
+    <div class="progress-top">
+      <span class="progress-label">QUESTION</span>
+      <span class="progress-num" id="progressNum">1 / 10</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:10%"></div></div>
+  </div>
+
+  <!-- QUESTION CARD -->
+  <div class="q-card" id="qCard">
+    <div class="q-category" id="qCategory">// カテゴリ</div>
+    <div class="q-text" id="qText">問題文</div>
+    <div class="q-choices" id="qChoices"></div>
+  </div>
+
+  <!-- RESULT SCREEN (hidden initially) -->
+  <div class="result-screen" id="resultScreen">
+    <div class="result-gauge-wrap">
+      <div class="result-gauge">
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="42" fill="none" stroke="#111" stroke-width="8"/>
+          <circle cx="50" cy="50" r="42" fill="none" stroke="#E94560" stroke-width="8"
+            stroke-linecap="round"
+            stroke-dasharray="263.8"
+            stroke-dashoffset="263.8"
+            transform="rotate(-90 50 50)"
+            id="gaugePath"
+            style="transition:stroke-dashoffset 1.2s cubic-bezier(.16,1,.3,1);filter:drop-shadow(0 0 6px rgba(233,69,96,.6))"/>
+        </svg>
+        <div class="result-gauge-text">
+          <span class="result-pct" id="resultPct">0</span>
+          <span class="result-pct-unit">%</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-bottom:1.5rem">
+      <div class="result-rank" id="resultRank">RANK</div>
+      <div class="result-title" id="resultTitle">診断結果タイトル</div>
+      <div class="result-desc" id="resultDesc">説明文</div>
+    </div>
+
+    <div class="result-breakdown" id="resultBreakdown"></div>
+
+    <div class="result-ctas">
+      <button class="btn-share" id="btnShare">
+        𝕏 結果をXでシェア（底辺の輪を広げる）
+      </button>
+      <a href="/artists.html" class="btn-artists">
+        🎤 同じ底辺仲間の出演者を見る
+      </a>
+      <button class="btn-retry" id="btnRetry">
+        ↩ もう一度診断する
+      </button>
+    </div>
+  </div>
+
+</div><!-- /shindan-wrap -->
+
+<footer class="ft">
+  <div style="font-family:var(--mono);font-size:.6rem;color:var(--m)">産まれてきてスミマセン。でも聴いてください。</div>
+  <div class="ft-nav">
+    <a href="/">TOP</a><a href="/artists.html">ARTISTS</a><a href="/vote.html">VOTE</a>
+    <a href="/teihendon.html">底辺どん</a><a href="/goods.html">GOODS</a><a href="/cm.html">CM</a>
+    <a href="/logo-guideline.html">LOGO</a><a href="/gotochi-map.html">MAP</a>
+  </div>
+</footer>
+
+<script>
+/* ── GNAV ── */
+(function(){
+  var ham=document.getElementById('gnav-ham'),drawer=document.getElementById('gnav-drawer'),ov=document.getElementById('gnav-ov');
+  function close(){ham.classList.remove('open');drawer.classList.remove('open');ov.classList.remove('open')}
+  ham.addEventListener('click',function(){var o=drawer.classList.toggle('open');ham.classList.toggle('open',o);ov.classList.toggle('open',o)});
+  ov.addEventListener('click',close);
+  drawer.querySelectorAll('a').forEach(function(a){if(!a.target)a.addEventListener('click',close)});
+})();
+
+/* ══════════════════════════════════
+   底辺度診断エンジン
+══════════════════════════════════ */
+var QUESTIONS = [
+  {
+    cat:'// AI使用歴',
+    text:'AIで音楽を作り始めたのはいつ？',
+    choices:[
+      {icon:'🧓',text:'3年以上前からガチってる',score:20},
+      {icon:'📅',text:'1〜3年前くらい',score:40},
+      {icon:'🌱',text:'最近半年以内',score:70},
+      {icon:'🤔',text:'このフェスで初めて知った',score:100}
+    ]
+  },
+  {
+    cat:'// 機材・環境',
+    text:'音楽制作の環境は？',
+    choices:[
+      {icon:'🎛️',text:'DAW・機材フル装備のガチ勢',score:10},
+      {icon:'💻',text:'PC1台でなんとかやってる',score:50},
+      {icon:'📱',text:'スマホだけで完結させてる',score:80},
+      {icon:'🧠',text:'ブラウザ上だけで生成してる',score:100}
+    ]
+  },
+  {
+    cat:'// プロンプト力',
+    text:'SunoやUdioでプロンプトを打つとき、あなたは？',
+    choices:[
+      {icon:'📝',text:'事前に構成・楽器・BPMまで設計する',score:5},
+      {icon:'🎯',text:'ジャンルとムードは指定する',score:35},
+      {icon:'🎲',text:'なんとなく思いついたまま打つ',score:70},
+      {icon:'😅',text:'"いい感じで"と打って全部AIに任せる',score:100}
+    ]
+  },
+  {
+    cat:'// 音楽理論',
+    text:'コードとスケールについて、正直なところ？',
+    choices:[
+      {icon:'🎓',text:'楽典を読んで理論で作る',score:5},
+      {icon:'🎹',text:'基本的なコード進行は分かる',score:30},
+      {icon:'🤷',text:'なんとなく聴いて良ければOK',score:70},
+      {icon:'❓',text:'コードって何？',score:100}
+    ]
+  },
+  {
+    cat:'// SNS戦略',
+    text:'完成した曲をXに投稿するとき？',
+    choices:[
+      {icon:'📊',text:'ハッシュタグ・投稿時間を分析して最適化',score:5},
+      {icon:'📌',text:'ハッシュタグはちゃんと付ける',score:35},
+      {icon:'😶',text:'タイトルだけ書いて投稿',score:70},
+      {icon:'🔒',text:'恥ずかしくて非公開にしてる',score:100}
+    ]
+  },
+  {
+    cat:'// 自己評価',
+    text:'自分の楽曲クオリティについて正直に言うと？',
+    choices:[
+      {icon:'💪',text:'売れても不思議じゃないクオリティ',score:5},
+      {icon:'😊',text:'普通に聴けるレベルにはなってる',score:30},
+      {icon:'😬',text:'友人にだけ聴かせられるくらい',score:65},
+      {icon:'🙈',text:'自分でも聴き返すのが怖い',score:100}
+    ]
+  },
+  {
+    cat:'// 再生数',
+    text:'Sunoに投稿した曲の最高再生数は？',
+    choices:[
+      {icon:'🌟',text:'1万回以上',score:0},
+      {icon:'👍',text:'1000〜9999回',score:30},
+      {icon:'😐',text:'100〜999回',score:65},
+      {icon:'🕳️',text:'100回以下（自分しか聴いてない）',score:100}
+    ]
+  },
+  {
+    cat:'// ライブ経験',
+    text:'人前で自分の音楽を披露した経験は？',
+    choices:[
+      {icon:'🎤',text:'ライブハウスで普通にやってる',score:0},
+      {icon:'🥳',text:'パーティーや身内イベントくらいなら',score:25},
+      {icon:'😅',text:'カラオケで自作曲を歌ったことがある',score:70},
+      {icon:'🚪',text:'このフェスが人生初の発表の場になる',score:100}
+    ]
+  },
+  {
+    cat:'// 底辺マインド',
+    text:'底辺AI音楽フェスに参加する（した）動機は？',
+    choices:[
+      {icon:'🔥',text:'自分の実力を世に問いたい',score:10},
+      {icon:'🎁',text:'楽しそうだから軽い気持ちで',score:40},
+      {icon:'🙏',text:'断れなくて気づいたら参加してた',score:80},
+      {icon:'🤖',text:'AIが作った曲なので自分は底辺じゃない（底辺）',score:100}
+    ]
+  },
+  {
+    cat:'// フェスへの期待',
+    text:'フェス本番、自分の出番のとき視聴者数は何人だと思う？',
+    choices:[
+      {icon:'🏟️',text:'1000人以上は来てくれるはず',score:5},
+      {icon:'👥',text:'100人くらいは来るでしょ',score:25},
+      {icon:'🙂',text:'身内と好奇心旺盛な10人くらい',score:65},
+      {icon:'👤',text:'運営と自分だけになる予感がしてる',score:100}
+    ]
+  }
+];
+
+var RANKS = [
+  {min:0,  max:19, label:'ギリ底辺',   bg:'rgba(255,200,50,.15)',  color:'#f0c040', title:'才能の気配がしてヤバい', desc:'あなたはもしかして底辺じゃないかもしれない。このフェスに来たのは間違いかもしれない。でも来てくれてありがとう。'},
+  {min:20, max:39, label:'中級底辺',   bg:'rgba(100,200,255,.1)', color:'#6ac4ff', title:'底辺への道を歩んでいる', desc:'まだ底辺を極めていない。本番までにもっと迷走する余地がある。焦らなくていい。底辺の道は長い。'},
+  {min:40, max:59, label:'本格底辺',   bg:'rgba(180,142,244,.15)',color:'#b48ef4', title:'底辺の素質あり', desc:'いいセンスをしている。AI音楽クリエイターとして必要なものを兼ね備えている。それは「開き直り」だ。'},
+  {min:60, max:79, label:'上級底辺',   bg:'rgba(233,69,96,.15)',  color:'#E94560', title:'底辺エリート', desc:'ここまで来れば本物だ。あなたの底辺力はもはや才能。このフェスにはあなたの居場所がある。'},
+  {min:80, max:100,label:'底辺の極み', bg:'rgba(233,69,96,.25)',  color:'#ff4060', title:'産まれてきてスミマセン', desc:'完璧だ。あなたはこのフェスのために産まれてきた。「AI使ってスミマセン。でも聴いて。」——それがあなたの生き様だ。'}
+];
+
+var CAT_LABELS = ['AI使用歴','機材環境','プロンプト力','音楽理論','SNS戦略','自己評価','再生数','ライブ経験','底辺マインド','フェスへの期待'];
+
+var current = 0, scores = [], totalScore = 0;
+
+function init(){
+  current=0; scores=[]; totalScore=0;
+  document.getElementById('progressWrap').style.display='';
+  document.getElementById('qCard').style.display='';
+  document.getElementById('resultScreen').classList.remove('show');
+  renderQ(0);
+}
+
+function renderQ(i){
+  var q = QUESTIONS[i];
+  document.getElementById('progressNum').textContent=(i+1)+' / '+QUESTIONS.length;
+  document.getElementById('progressFill').style.width=(((i+1)/QUESTIONS.length)*100)+'%';
+  document.getElementById('qCategory').textContent=q.cat;
+  document.getElementById('qText').textContent=q.text;
+  var cc = document.getElementById('qChoices');
+  cc.innerHTML='';
+  q.choices.forEach(function(ch, ci){
+    var btn = document.createElement('button');
+    btn.className='q-choice';
+    btn.innerHTML='<span class="q-choice-icon">'+ch.icon+'</span><span>'+ch.text+'</span>';
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.q-choice').forEach(function(b){b.classList.remove('selected')});
+      btn.classList.add('selected');
+      scores.push(ch.score);
+      setTimeout(function(){
+        if(current < QUESTIONS.length-1){
+          current++;
+          var card=document.getElementById('qCard');
+          card.style.animation='none';
+          card.offsetWidth;
+          card.style.animation='';
+          renderQ(current);
+        } else {
+          showResult();
+        }
+      }, 280);
+    });
+    cc.appendChild(btn);
+  });
+}
+
+function showResult(){
+  var sum = scores.reduce(function(a,b){return a+b},0);
+  var pct = Math.round(sum / (QUESTIONS.length*100) * 100);
+  pct = Math.max(0, Math.min(100, pct));
+  totalScore = pct;
+
+  document.getElementById('progressWrap').style.display='none';
+  document.getElementById('qCard').style.display='none';
+  var rs = document.getElementById('resultScreen');
+  rs.classList.add('show');
+
+  // Gauge animation
+  setTimeout(function(){
+    var circumference = 263.8;
+    var offset = circumference * (1 - pct/100);
+    document.getElementById('gaugePath').style.strokeDashoffset = offset;
+    animateNum(document.getElementById('resultPct'), 0, pct, 1000);
+  }, 100);
+
+  // Rank
+  var rank = RANKS.find(function(r){return pct>=r.min && pct<=r.max}) || RANKS[RANKS.length-1];
+  var rEl = document.getElementById('resultRank');
+  rEl.textContent=rank.label;
+  rEl.style.background=rank.bg;
+  rEl.style.color=rank.color;
+  rEl.style.border='1px solid '+rank.color.replace(')',', .3)').replace('rgb','rgba');
+
+  document.getElementById('resultTitle').textContent=rank.title;
+  document.getElementById('resultDesc').textContent=rank.desc;
+
+  // Breakdown
+  var bd = document.getElementById('resultBreakdown');
+  var catColors=['#E94560','#b48ef4','#ff9500','#6ac4ff','#4caf50','#f0c040','#E94560','#b48ef4','#ff9500','#6ac4ff'];
+  bd.innerHTML='<div class="result-breakdown-title">// カテゴリ別 底辺スコア</div>';
+  scores.forEach(function(s, i){
+    var row=document.createElement('div');
+    row.className='rb-row';
+    row.innerHTML='<span class="rb-label">'+CAT_LABELS[i]+'</span>'+
+      '<div class="rb-bar"><div class="rb-fill" id="rbf'+i+'" style="width:0%;background:'+catColors[i]+'"></div></div>'+
+      '<span class="rb-score">'+s+'</span>';
+    bd.appendChild(row);
+    setTimeout(function(){document.getElementById('rbf'+i).style.width=s+'%'},200+i*60);
+  });
+
+  // Share button
+  var shareText = '【底辺度診断】\n私の底辺AI音楽クリエイター度は '+pct+'% 「'+rank.title+'」でした！\n\n第一回 底辺AI音楽フェス〜産まれてきてスミマセン〜\n2026年4月開催\n\n#底辺AI音楽フェス #底辺度診断\nhttps://fes.wistaria-addict.com/shindan.html';
+  document.getElementById('btnShare').onclick=function(){
+    var url='https://twitter.com/intent/tweet?text='+encodeURIComponent(shareText);
+    window.open(url,'_blank','noopener');
+    gtag('event','shindan_share',{shindan_score:pct,shindan_rank:rank.label});
+  };
+
+  gtag('event','shindan_complete',{shindan_score:pct,shindan_rank:rank.label});
+}
+
+function animateNum(el, from, to, dur){
+  var start=null;
+  function step(ts){
+    if(!start) start=ts;
+    var prog=Math.min((ts-start)/dur,1);
+    var ease=1-Math.pow(1-prog,3);
+    el.textContent=Math.round(from+(to-from)*ease);
+    if(prog<1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+document.getElementById('btnRetry').onclick=function(){
+  document.getElementById('resultScreen').style.animation='none';
+  init();
+};
+
+init();
+</script>
+</body>
+</html>

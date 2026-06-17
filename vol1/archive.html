@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="第一回 底辺AI音楽フェス、6日間 + 前夜祭 全7配信のアーカイブ。主催特別賞の発表、夏底（サマテイ）第二回予告もこちら。">
+<meta name="keywords" content="底辺AI音楽フェス,アーカイブ,第一回,主催特別賞,夏底,サマテイ,第二回,AI音楽">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://fes.wistaria-addict.com/archive.html">
+<meta property="og:title" content="ARCHIVE｜第一回 底辺AI音楽フェスの記録">
+<meta property="og:description" content="6日間 + 前夜祭、全7配信アーカイブ。主催特別賞の発表＆夏底予告。">
+<meta property="og:image" content="https://fes.wistaria-addict.com/ogp_1200x630.png">
+<meta property="og:url" content="https://fes.wistaria-addict.com/archive.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="第一回 底辺AI音楽フェス 〜産まれてきてスミマセン〜">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ARCHIVE｜第一回 底辺AI音楽フェスの記録">
+<meta name="twitter:description" content="6日間 + 前夜祭、全7配信アーカイブ。主催特別賞＆夏底予告。">
+<meta name="twitter:image" content="https://fes.wistaria-addict.com/ogp_1200x630.png">
+<title>ARCHIVE｜第一回 底辺AI音楽フェス</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&family=Space+Mono:wght@400;700&family=Zen+Kaku+Gothic+New:wght@400;700;900&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXJ7WD8MJ7"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-XXJ7WD8MJ7',{page_title:'ARCHIVE',page_path:'/archive.html'});
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --r:#E94560;--r2:#ff6b81;--rg:rgba(233,69,96,0.5);--rg2:rgba(233,69,96,0.15);
+  --gold:#ffd93d;--gold2:#ffb347;--cyan:#3cb4e0;
+  --w:#f0f0f0;--m:#555;--bg:#030303;
+  --card:#0a0a0a;--bdr:#151515;
+  --ff:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  --mono:'Space Mono',monospace;
+  --disp:'Bebas Neue',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--w);font-family:var(--ff);line-height:1.8;overflow-x:hidden;font-size:15px}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.15) 2px,rgba(0,0,0,0.15) 4px);
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* ════ GNAV ════ */
+.gnav{position:fixed;top:0;left:0;right:0;z-index:8000;background:rgba(3,3,3,.95);border-bottom:1px solid #151515;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);height:48px;display:flex;align-items:center;padding:0 1.2rem}
+.gnav-logo{font-family:var(--mono);font-size:.5rem;letter-spacing:.06em;color:var(--r);white-space:nowrap;line-height:1.3;flex:none;margin-right:auto}
+.gnav-logo span{display:block;font-size:.38rem;color:#555;margin-top:1px;letter-spacing:.04em}
+.gnav-links{display:flex;align-items:stretch;height:48px;margin-left:.5rem}
+.gnav-link{font-family:var(--mono);font-size:.48rem;letter-spacing:.06em;color:#555;display:flex;align-items:center;padding:0 .55rem;border-left:1px solid #111;white-space:nowrap;transition:color .2s;position:relative}
+.gnav-link:last-child{border-right:1px solid #111}
+.gnav-link:hover,.gnav-link.gnav-cur{color:var(--r)}
+.gnav-link.gnav-cur::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--r)}
+.gnav-sns{display:flex;align-items:center;gap:.35rem;margin-left:.5rem;flex:none}
+.gnav-sns a{width:28px;height:28px;border:1px solid #1a1a1a;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:.6rem;color:#555;transition:all .2s}
+.gnav-sns a:hover{border-color:var(--r);color:var(--r)}
+.gnav-ham{display:none;flex-direction:column;justify-content:center;gap:5px;margin-left:auto;padding:.4rem;cursor:pointer;flex:none;background:none;border:none}
+.gnav-ham span{display:block;width:20px;height:1px;background:#666;transition:all .28s;transform-origin:center}
+.gnav-ham.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.gnav-ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.gnav-ham.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.gnav-drawer{position:fixed;top:48px;left:0;right:0;z-index:7999;background:rgba(5,5,5,.99);border-bottom:1px solid #1a1a1a;transform:translateY(-6px);opacity:0;pointer-events:none;transition:all .22s cubic-bezier(.4,0,.2,1);max-height:calc(100dvh - 48px);overflow-y:auto}
+.gnav-drawer.open{transform:translateY(0);opacity:1;pointer-events:auto}
+.gnav-ditem{display:flex;align-items:center;gap:.6rem;padding:.75rem 1.4rem;font-family:var(--mono);font-size:.55rem;letter-spacing:.08em;color:#555;border-bottom:1px solid #0d0d0d;min-height:48px;transition:color .2s}
+.gnav-ditem::before{content:'';width:4px;height:4px;background:var(--r);border-radius:50%;flex:none;opacity:.45}
+.gnav-ditem:hover,.gnav-ditem.gnav-cur{color:var(--r)}
+.gnav-ditem.gnav-cur::before{opacity:1}
+.gnav-dext{margin-left:auto;font-size:.42rem;color:#333}
+.gnav-ov{display:none;position:fixed;inset:0;z-index:7998}
+.gnav-ov.open{display:block}
+@media(max-width:768px){.gnav-links,.gnav-sns{display:none}.gnav-ham{display:flex}}
+
+/* ════ HERO ════ */
+.hero{position:relative;padding:clamp(4.5rem,12vw,7rem) clamp(1.2rem,5vw,3rem) clamp(3rem,8vw,5rem);overflow:hidden;z-index:1}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 0%,rgba(233,69,96,.08) 0%,transparent 60%);pointer-events:none;z-index:-1}
+.hero-kicker{font-family:var(--mono);font-size:clamp(.52rem,1.2vw,.65rem);color:var(--r);letter-spacing:.3em;text-align:center;opacity:.8;margin-bottom:1.2rem}
+.hero-title{font-family:var(--disp);font-size:clamp(3.2rem,14vw,7.5rem);letter-spacing:.04em;line-height:.95;text-align:center;color:var(--w);text-shadow:0 0 40px var(--rg);margin-bottom:.6rem}
+.hero-sub{font-size:clamp(.95rem,3vw,1.3rem);font-weight:900;text-align:center;color:var(--w);margin-bottom:.8rem;line-height:1.4}
+.hero-desc{font-family:var(--mono);font-size:clamp(.58rem,1.5vw,.75rem);color:#888;letter-spacing:.1em;text-align:center;line-height:1.8;margin-bottom:2.5rem;max-width:640px;margin-left:auto;margin-right:auto}
+.hero-stats{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(1.5rem,5vw,3rem);max-width:720px;margin:0 auto}
+.hero-stat{text-align:center}
+.hero-stat-num{font-family:var(--disp);font-size:clamp(2.4rem,7vw,4rem);letter-spacing:.04em;line-height:1;color:var(--r);text-shadow:0 0 20px var(--rg2)}
+.hero-stat-lbl{font-family:var(--mono);font-size:clamp(.48rem,1.1vw,.6rem);color:#555;letter-spacing:.15em;margin-top:.4rem}
+.hero-ribbon{display:inline-block;font-family:var(--mono);font-size:.58rem;padding:.35rem .9rem;background:rgba(233,69,96,.12);border:1px solid rgba(233,69,96,.35);color:var(--r);letter-spacing:.15em;border-radius:20px;margin-top:1.8rem}
+.hero-ribbon-wrap{text-align:center}
+
+/* ════ SECTION ════ */
+.sec{position:relative;padding:clamp(3rem,7vw,5rem) clamp(1.2rem,5vw,3rem);z-index:1}
+.sec-label{font-family:var(--mono);font-size:clamp(.52rem,1.2vw,.65rem);color:var(--r);letter-spacing:.3em;opacity:.75;margin-bottom:.7rem;text-align:center}
+.sec-title{font-family:var(--disp);font-size:clamp(2.2rem,7vw,4rem);letter-spacing:.04em;line-height:1;text-align:center;color:var(--w);margin-bottom:1rem}
+.sec-desc{font-family:var(--mono);font-size:clamp(.58rem,1.3vw,.72rem);color:#777;letter-spacing:.08em;text-align:center;line-height:1.8;margin-bottom:2.5rem;max-width:640px;margin-left:auto;margin-right:auto}
+
+/* ════ ARCHIVE GRID ════ */
+.arc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:clamp(1rem,2.5vw,1.6rem);max-width:1280px;margin:0 auto}
+@media(min-width:900px){.arc-grid{grid-template-columns:repeat(2,1fr);gap:clamp(1.2rem,3vw,2rem)}}
+.arc-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;overflow:hidden;transition:border-color .25s,transform .25s;position:relative;display:flex;flex-direction:column}
+.arc-card:hover{border-color:rgba(233,69,96,.4)}
+.arc-card.finale{border:1px solid rgba(255,217,61,.4);background:linear-gradient(135deg,#0f0a02 0%,#1a0f00 100%)}
+.arc-card.finale:hover{border-color:rgba(255,217,61,.7)}
+.arc-card.pre{border-style:dashed;border-color:rgba(233,69,96,.25)}
+.arc-thumb{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden;flex-shrink:0}
+.arc-thumb iframe{width:100%;height:100%;border:0;display:block}
+.arc-meta{padding:.9rem 1.1rem 1rem;flex-shrink:0}
+.arc-dayline{display:flex;align-items:baseline;justify-content:space-between;gap:.5rem;margin-bottom:.3rem}
+.arc-day{font-family:var(--disp);font-size:clamp(1.6rem,4vw,2.2rem);letter-spacing:.05em;line-height:1;color:var(--w)}
+.arc-card.finale .arc-day{color:var(--gold);text-shadow:0 0 20px rgba(255,217,61,.3)}
+.arc-date{font-family:var(--mono);font-size:.6rem;color:var(--r);letter-spacing:.12em}
+.arc-card.finale .arc-date{color:var(--gold2)}
+.arc-title{font-size:.95rem;font-weight:900;color:var(--w);margin:.5rem 0 .6rem;line-height:1.4}
+.arc-note{font-family:var(--mono);font-size:.55rem;color:#666;letter-spacing:.05em;line-height:1.7}
+.arc-badge{position:absolute;top:.7rem;left:.7rem;font-family:var(--mono);font-size:.46rem;padding:3px 8px;border-radius:20px;background:rgba(0,0,0,.8);color:var(--r);letter-spacing:.15em;z-index:2;border:1px solid rgba(233,69,96,.3)}
+.arc-card.finale .arc-badge{background:rgba(255,217,61,.2);color:var(--gold);border-color:rgba(255,217,61,.5)}
+
+/* ── Chapters ── */
+.chapters{border-top:1px solid var(--bdr);background:rgba(0,0,0,.3);flex:1;display:flex;flex-direction:column;min-height:0}
+.arc-card.finale .chapters{border-top-color:rgba(255,217,61,.2)}
+.chapters-head{display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.1rem;border-bottom:1px solid #0f0f0f}
+.chapters-label{display:flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.58rem;color:#888;letter-spacing:.18em}
+.chapters-label::before{content:'▶';color:var(--r);font-size:.5rem}
+.arc-card.finale .chapters-label::before{color:var(--gold)}
+.chapters-count{font-family:var(--mono);font-size:.52rem;color:#555;letter-spacing:.05em;padding:2px 7px;background:rgba(255,255,255,.04);border-radius:10px}
+.chapters-tbd{font-family:var(--mono);font-size:.55rem;color:#555;letter-spacing:.05em;font-style:italic}
+.chapters-list{max-height:260px;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:#2a2a2a transparent}
+.chapters-list::-webkit-scrollbar{width:6px}
+.chapters-list::-webkit-scrollbar-thumb{background:#2a2a2a;border-radius:3px}
+.chapters-list::-webkit-scrollbar-track{background:transparent}
+.chapter-item{display:flex;align-items:center;gap:.7rem;padding:.55rem .9rem;cursor:pointer;border-bottom:1px solid #0a0a0a;transition:background .15s,color .15s;text-align:left;background:none;border-left:0;border-right:0;border-top:0;color:inherit;font:inherit;width:100%;min-height:38px}
+.chapter-item:hover{background:rgba(233,69,96,.08);color:#fff}
+.chapter-item:hover .chapter-time{color:var(--r2)}
+.chapter-item.active{background:rgba(233,69,96,.12);color:#fff}
+.chapter-item.active .chapter-time{color:var(--r);font-weight:700}
+.arc-card.finale .chapter-item:hover{background:rgba(255,217,61,.08)}
+.arc-card.finale .chapter-item:hover .chapter-time{color:var(--gold)}
+.arc-card.finale .chapter-item.active{background:rgba(255,217,61,.1)}
+.arc-card.finale .chapter-item.active .chapter-time{color:var(--gold)}
+.chapter-time{font-family:var(--mono);font-size:.62rem;color:#777;letter-spacing:.05em;flex-shrink:0;min-width:58px;transition:color .15s}
+.chapter-name{font-size:.78rem;color:#ccc;line-height:1.45;flex:1;min-width:0;word-break:break-word}
+.chapter-item:hover .chapter-name{color:#fff}
+.chapters-empty{padding:1.2rem;text-align:center;font-family:var(--mono);font-size:.55rem;color:#555;letter-spacing:.05em;line-height:1.8}
+
+/* ── 横並びパネル ── */
+.arc-panels{
+  display:flex;flex-direction:row;border-top:1px solid var(--bdr);
+  flex:1;min-height:0;
+}
+.arc-panels .chapters{
+  border-top:0;
+  min-width:0;flex:1;
+  border-right:1px solid #111;
+  display:flex;flex-direction:column;
+}
+.arc-card.finale .arc-panels .chapters{border-right-color:rgba(255,217,61,.15)}
+.chat-col{
+  display:none;
+  flex-direction:column;
+  width:52%;flex:none;
+  min-width:0;
+}
+.chat-col.open{
+  display:flex;
+  animation:chatSlideIn .25s ease;
+}
+@keyframes chatSlideIn{from{opacity:0;transform:translateX(8px)}to{opacity:1;transform:none}}
+@media(max-width:640px){
+  .arc-panels{flex-direction:column}
+  .arc-panels .chapters{border-right:0;border-bottom:1px solid #111;flex:none}
+  .chat-col{width:100%}
+}
+
+/* ── チャットトグルボタン ── */
+.chat-toggle{
+  display:flex;align-items:center;justify-content:space-between;
+  width:100%;padding:.55rem .8rem;
+  border:0;border-top:1px solid #111;background:rgba(255,255,255,.02);
+  color:#666;font-family:var(--mono);font-size:.52rem;letter-spacing:.12em;
+  cursor:pointer;transition:background .18s,color .18s;text-align:left;flex:none;
+  margin-top:auto;
+}
+.chat-toggle:hover{background:rgba(233,69,96,.07);color:#ccc}
+.chat-toggle.open{background:rgba(233,69,96,.1);color:var(--r)}
+.arc-card.finale .chat-toggle.open{background:rgba(255,217,61,.1);color:var(--gold2)}
+.arc-card.finale .chat-toggle:hover{background:rgba(255,217,61,.06)}
+.chat-toggle-left{display:flex;align-items:center;gap:.4rem;min-width:0}
+.chat-toggle-dot{
+  width:5px;height:5px;border-radius:50%;background:#444;flex:none;
+  transition:background .2s,box-shadow .2s;
+}
+.chat-toggle.open .chat-toggle-dot{background:var(--r);box-shadow:0 0 5px var(--r)}
+.arc-card.finale .chat-toggle.open .chat-toggle-dot{background:var(--gold2);box-shadow:0 0 5px var(--gold2)}
+.chat-toggle-arr{font-size:.7rem;transition:transform .3s;display:inline-block;opacity:.4;flex:none}
+.chat-toggle.open .chat-toggle-arr{transform:rotate(90deg);opacity:1}
+.chat-toggle-count{
+  font-size:.45rem;color:#555;background:rgba(255,255,255,.05);
+  border-radius:8px;padding:1px 5px;letter-spacing:.04em;white-space:nowrap;
+}
+
+/* チャットパネル本体 */
+.chat-panel{display:flex;flex-direction:column;height:100%;min-height:280px}
+
+/* ネイティブチャット表示 */
+.chat-list{
+  flex:1;overflow-y:auto;overflow-x:hidden;
+  background:rgba(0,0,0,.4);
+  scrollbar-width:thin;scrollbar-color:#2a2a2a transparent;
+  min-height:0;
+}
+.chat-list::-webkit-scrollbar{width:4px}
+.chat-list::-webkit-scrollbar-thumb{background:#2a2a2a;border-radius:2px}
+.chat-msg{
+  display:flex;align-items:baseline;gap:.4rem;
+  padding:.3rem .7rem;border-bottom:1px solid rgba(255,255,255,.025);
+  transition:background .12s;
+}
+.chat-msg:hover{background:rgba(255,255,255,.04)}
+.chat-msg.sc{
+  background:rgba(255,180,0,.08);
+  border-left:2px solid rgba(255,180,0,.5);
+  padding-left:.5rem;
+}
+.chat-msg.member{
+  background:rgba(29,161,242,.07);
+  border-left:2px solid rgba(29,161,242,.4);
+  padding-left:.5rem;
+}
+.chat-msg.chat-seek-target{
+  background:rgba(233,69,96,.18)!important;
+  border-left:2px solid var(--r)!important;
+  padding-left:.5rem;
+  animation:seekPulse 1.4s ease forwards;
+}
+@keyframes seekPulse{0%{background:rgba(233,69,96,.35)}100%{background:rgba(233,69,96,.08)}}
+.chat-time{
+  font-family:var(--mono);font-size:.46rem;color:#3a3a3a;
+  letter-spacing:.02em;flex:none;min-width:36px;
+}
+.chat-author{
+  font-family:var(--mono);font-size:.54rem;color:#777;
+  flex:none;max-width:72px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.chat-sc-amount{font-family:var(--mono);font-size:.46rem;color:#ffb400;flex:none;white-space:nowrap}
+.chat-text{font-size:.68rem;color:#ccc;line-height:1.4;flex:1;min-width:0;word-break:break-word}
+.chat-empty{
+  display:flex;align-items:center;justify-content:center;
+  padding:2rem;font-family:var(--mono);font-size:.55rem;color:#444;
+  letter-spacing:.08em;text-align:center;
+}
+
+/* チャット検索バー */
+.chat-search-bar{
+  display:flex;align-items:center;gap:.4rem;
+  padding:.4rem .7rem;background:rgba(0,0,0,.5);border-bottom:1px solid #111;flex:none;
+}
+.chat-search-bar input{
+  flex:1;background:rgba(255,255,255,.05);border:1px solid #222;
+  border-radius:3px;color:var(--w);font-family:var(--mono);
+  font-size:.54rem;padding:.25rem .5rem;outline:none;letter-spacing:.03em;
+  transition:border-color .15s;min-width:0;
+}
+.chat-search-bar input:focus{border-color:rgba(233,69,96,.4)}
+.chat-search-bar input::placeholder{color:#3a3a3a}
+.chat-search-count{font-family:var(--mono);font-size:.46rem;color:#555;white-space:nowrap;flex:none}
+
+/* フォールバック */
+.chat-fallback{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.5rem;padding:1.5rem .8rem;text-decoration:none;color:inherit;
+  transition:background .18s;text-align:center;flex:1;
+}
+.chat-fallback:hover{background:rgba(233,69,96,.05)}
+.chat-fallback-icon{font-size:1.6rem}
+.chat-fallback-title{font-size:.72rem;font-weight:700;color:#888}
+.chat-fallback-desc{font-family:var(--mono);font-size:.48rem;color:#444;line-height:1.7}
+  display:flex;align-items:center;justify-content:space-between;
+  width:100%;padding:.65rem 1.1rem;
+  border:0;border-top:1px solid #111;background:rgba(255,255,255,.025);
+  color:#666;font-family:var(--mono);font-size:.55rem;letter-spacing:.14em;
+  cursor:pointer;transition:background .18s,color .18s;text-align:left;
+}
+.chat-toggle:hover{background:rgba(233,69,96,.07);color:#ccc}
+.chat-toggle.open{background:rgba(233,69,96,.1);color:var(--r)}
+.arc-card.finale .chat-toggle.open{background:rgba(255,217,61,.1);color:var(--gold2)}
+.arc-card.finale .chat-toggle:hover{background:rgba(255,217,61,.06)}
+.chat-toggle-left{display:flex;align-items:center;gap:.45rem}
+.chat-toggle-dot{
+  width:6px;height:6px;border-radius:50%;background:#444;flex:none;
+  transition:background .2s,box-shadow .2s;
+}
+.chat-toggle.open .chat-toggle-dot{background:var(--r);box-shadow:0 0 6px var(--r)}
+.arc-card.finale .chat-toggle.open .chat-toggle-dot{background:var(--gold2);box-shadow:0 0 6px var(--gold2)}
+.chat-toggle-arr{font-size:.7rem;transition:transform .25s;display:inline-block;opacity:.5}
+.chat-toggle.open .chat-toggle-arr{transform:rotate(180deg);opacity:1}
+.chat-toggle-count{
+  font-size:.48rem;color:#555;background:rgba(255,255,255,.05);
+  border-radius:10px;padding:1px 7px;margin-left:.3rem;letter-spacing:.05em;
+}
+
+/* チャットパネル本体 */
+.chat-panel{
+  max-height:0;overflow:hidden;
+  transition:max-height .35s cubic-bezier(.4,0,.2,1);
+  border-top:0;
+}
+.chat-panel.open{max-height:360px;border-top:1px solid #0f0f0f}
+
+/* ネイティブチャット表示 */
+.chat-list{
+  height:320px;overflow-y:auto;overflow-x:hidden;
+  background:rgba(0,0,0,.4);
+  scrollbar-width:thin;scrollbar-color:#2a2a2a transparent;
+  display:flex;flex-direction:column;
+}
+.chat-list::-webkit-scrollbar{width:5px}
+.chat-list::-webkit-scrollbar-thumb{background:#2a2a2a;border-radius:3px}
+.chat-msg{
+  display:flex;align-items:baseline;gap:.5rem;
+  padding:.35rem .9rem;border-bottom:1px solid rgba(255,255,255,.03);
+  transition:background .12s;
+}
+.chat-msg:hover{background:rgba(255,255,255,.04)}
+.chat-msg.sc{
+  background:var(--sc-bg, rgba(255,180,0,.1));
+  border-left:2px solid var(--sc-bg, #ffb400);
+  padding-left:.7rem;
+}
+.chat-msg.member{
+  background:rgba(29,161,242,.08);
+  border-left:2px solid rgba(29,161,242,.5);
+  padding-left:.7rem;
+}
+.chat-time{
+  font-family:var(--mono);font-size:.5rem;color:#444;
+  letter-spacing:.03em;flex:none;min-width:42px;
+}
+.chat-author{
+  font-family:var(--mono);font-size:.58rem;color:#888;
+  flex:none;max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.chat-sc-amount{
+  font-family:var(--mono);font-size:.5rem;color:#ffb400;
+  flex:none;white-space:nowrap;
+}
+.chat-text{
+  font-size:.72rem;color:#ccc;line-height:1.45;flex:1;min-width:0;word-break:break-word;
+}
+.chat-empty{
+  display:flex;align-items:center;justify-content:center;
+  height:80px;font-family:var(--mono);font-size:.58rem;color:#444;
+  letter-spacing:.08em;flex-direction:column;gap:.5rem;
+}
+
+/* チャット検索バー */
+.chat-search-bar{
+  display:flex;align-items:center;gap:.5rem;
+  padding:.5rem .9rem;background:rgba(0,0,0,.5);border-bottom:1px solid #111;
+}
+.chat-search-bar input{
+  flex:1;background:rgba(255,255,255,.05);border:1px solid #222;
+  border-radius:4px;color:var(--w);font-family:var(--mono);
+  font-size:.58rem;padding:.3rem .6rem;outline:none;letter-spacing:.04em;
+  transition:border-color .15s;
+}
+.chat-search-bar input:focus{border-color:rgba(233,69,96,.4)}
+.chat-search-bar input::placeholder{color:#444}
+.chat-search-count{font-family:var(--mono);font-size:.5rem;color:#555;white-space:nowrap}
+
+.chat-msg.chat-seek-target{
+  background:rgba(233,69,96,.18)!important;
+  border-left:2px solid var(--r);
+  padding-left:.7rem;
+  animation:seekPulse 1.2s ease forwards;
+}
+@keyframes seekPulse{
+  0%{background:rgba(233,69,96,.35)}
+  100%{background:rgba(233,69,96,.1)}
+}
+
+/* フォールバック：チャットデータ未取得時 */
+.chat-fallback{
+  display:flex;align-items:center;gap:1rem;
+  padding:1rem 1.2rem;background:rgba(255,255,255,.02);
+  text-decoration:none;color:inherit;transition:background .18s;
+}
+.chat-fallback:hover{background:rgba(233,69,96,.06)}
+.chat-fallback-icon{font-size:1.5rem;flex:none}
+.chat-fallback-body{flex:1;min-width:0}
+.chat-fallback-title{font-size:.78rem;font-weight:700;color:#aaa;margin-bottom:.2rem}
+.chat-fallback-desc{font-family:var(--mono);font-size:.5rem;color:#555;line-height:1.6}
+
+/* ── Spotify section ── */
+.spotify-wrap{position:relative;padding:clamp(3rem,6vw,4.5rem) clamp(1.2rem,5vw,3rem);background:linear-gradient(180deg,#030303 0%,#071a0f 50%,#030303 100%);z-index:1;overflow:hidden}
+.spotify-wrap::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 30%,rgba(29,185,84,.1) 0%,transparent 65%);pointer-events:none}
+.spotify-inner{max-width:880px;margin:0 auto;position:relative;z-index:1}
+.spotify-label{font-family:var(--mono);font-size:clamp(.52rem,1.2vw,.65rem);color:#1DB954;letter-spacing:.3em;text-align:center;margin-bottom:.7rem;opacity:.9}
+.spotify-title{font-family:var(--disp);font-size:clamp(2rem,6vw,3.2rem);letter-spacing:.04em;text-align:center;color:var(--w);margin-bottom:.6rem;line-height:1}
+.spotify-title em{font-style:normal;color:#1DB954;text-shadow:0 0 20px rgba(29,185,84,.4)}
+.spotify-desc{font-family:var(--mono);font-size:clamp(.58rem,1.3vw,.72rem);color:#888;letter-spacing:.08em;text-align:center;line-height:1.8;margin-bottom:2rem}
+.spotify-embed-wrap{background:rgba(0,0,0,.4);border:1px solid rgba(29,185,84,.25);border-radius:16px;padding:.8rem;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.spotify-embed-wrap iframe{border-radius:12px;display:block;width:100%}
+.spotify-cta{text-align:center;margin-top:1.4rem}
+.spotify-cta a{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.15em;color:#1DB954;padding:.7rem 1.3rem;border:1px solid rgba(29,185,84,.4);border-radius:30px;transition:all .2s;background:rgba(29,185,84,.05)}
+.spotify-cta a:hover{background:rgba(29,185,84,.12);border-color:#1DB954}
+
+/* ════ AWARD ════ */
+.award-wrap{background:radial-gradient(ellipse 80% 100% at 50% 0%,#1a0f3a 0%,#0a0620 40%,#030303 90%);padding:clamp(3rem,7vw,5rem) 0;position:relative;overflow:hidden}
+.award-wrap::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%,rgba(255,217,61,.9),transparent 50%),
+    radial-gradient(1px 1px at 28% 42%,rgba(255,255,255,.5),transparent 50%),
+    radial-gradient(1.5px 1.5px at 58% 25%,rgba(255,217,61,.8),transparent 50%),
+    radial-gradient(1px 1px at 82% 60%,rgba(255,255,255,.7),transparent 50%),
+    radial-gradient(1px 1px at 45% 78%,rgba(255,217,61,.6),transparent 50%),
+    radial-gradient(2px 2px at 72% 15%,rgba(255,255,255,.9),transparent 50%),
+    radial-gradient(1px 1px at 18% 88%,rgba(255,217,61,.5),transparent 50%),
+    radial-gradient(1.5px 1.5px at 92% 35%,rgba(255,255,255,.6),transparent 50%);
+  background-size:100% 100%;
+  animation:starTwinkle 6s ease-in-out infinite alternate
+}
+@keyframes starTwinkle{0%{opacity:.4}100%{opacity:1}}
+.award-top{text-align:center;padding:0 clamp(1.2rem,5vw,3rem);margin-bottom:2.5rem}
+.award-kicker-row{display:flex;align-items:center;justify-content:center;gap:.8rem;flex-wrap:wrap;margin-bottom:1rem}
+.award-kicker-ribbon{display:inline-block;font-size:.85rem;color:#e8d8ff;letter-spacing:.12em;line-height:1.5}
+.award-kicker-medal{display:inline-flex;align-items:center;justify-content:center;width:72px;height:72px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ffe37d,#c99516);color:#5a3a00;font-weight:900;font-size:.75rem;line-height:1.2;text-align:center;box-shadow:0 4px 20px rgba(255,217,61,.35);border:3px solid #8a5e00;font-family:var(--ff)}
+.award-sec-title{font-family:var(--ff);font-weight:900;font-size:clamp(2.4rem,9vw,4.8rem);letter-spacing:.12em;text-align:center;background:linear-gradient(180deg,#fff2aa 0%,#ffd93d 40%,#c99516 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 40px rgba(255,217,61,.3);margin-bottom:1rem;line-height:1.1}
+.award-sec-desc{font-size:clamp(.85rem,2vw,1rem);color:#d9c9ff;line-height:1.9;max-width:620px;margin:0 auto .6rem}
+.award-sec-desc b{color:var(--gold);font-weight:900}
+.award-sec-caveat{font-family:var(--mono);font-size:clamp(.55rem,1.2vw,.68rem);color:#8878b0;letter-spacing:.05em;line-height:1.7}
+
+.award-list{display:flex;flex-direction:column;gap:clamp(1.8rem,4vw,3rem);max-width:980px;margin:0 auto;padding:0 clamp(1.2rem,5vw,3rem)}
+.award-card{position:relative;background:linear-gradient(145deg,rgba(26,11,58,.85) 0%,rgba(15,6,36,.85) 100%);border:1px solid rgba(255,217,61,.3);border-radius:22px;padding:clamp(1.8rem,4vw,2.6rem) clamp(1.2rem,3vw,2rem);overflow:hidden;backdrop-filter:blur(6px)}
+.award-card::before{
+  content:'';position:absolute;top:0;left:-50%;right:-50%;bottom:0;
+  background:linear-gradient(90deg,transparent 0%,rgba(255,217,61,.04) 50%,transparent 100%);
+  animation:awardShimmer 8s linear infinite;pointer-events:none
+}
+@keyframes awardShimmer{0%{transform:translateX(-20%)}100%{transform:translateX(20%)}}
+.award-card>*{position:relative;z-index:1}
+.award-banner{display:flex;align-items:center;justify-content:center;gap:.7rem;background:linear-gradient(90deg,transparent 0%,rgba(107,73,166,.7) 15%,rgba(148,97,209,.85) 50%,rgba(107,73,166,.7) 85%,transparent 100%);padding:.7rem 1rem;border-radius:4px;margin:-.5rem -1rem 1.8rem;position:relative}
+.award-banner::before,.award-banner::after{content:'';position:absolute;top:50%;width:18px;height:28px;background:linear-gradient(90deg,#6b49a6,#4a3372);transform:translateY(-50%);clip-path:polygon(0 0,100% 0,100% 100%,0 100%,30% 50%)}
+.award-banner::before{left:-4px}
+.award-banner::after{right:-4px;transform:translateY(-50%) scaleX(-1)}
+.award-banner-text{font-size:clamp(1.1rem,3vw,1.5rem);font-weight:900;color:#fff;letter-spacing:.08em;text-shadow:1px 1px 2px rgba(0,0,0,.6),0 0 14px rgba(255,217,61,.3)}
+
+.award-body{display:grid;grid-template-columns:1fr;gap:1.4rem;align-items:center}
+@media(min-width:640px){.award-body{grid-template-columns:1fr 1.3fr;gap:2rem}}
+
+.award-winner-box{text-align:center}
+.award-winner-row{display:flex;align-items:center;justify-content:center;gap:.7rem;flex-wrap:wrap;margin-bottom:.4rem}
+.award-winner-single{font-size:clamp(1.1rem,2.8vw,1.4rem);font-weight:900;color:#fff;text-shadow:0 0 12px rgba(255,217,61,.4)}
+.award-winner-no{font-family:var(--mono);font-size:.55rem;color:var(--gold2);letter-spacing:.1em;padding:2px 8px;border:1px solid rgba(255,217,61,.35);border-radius:20px;background:rgba(255,217,61,.06)}
+.award-work{font-size:clamp(.9rem,2vw,1.05rem);font-weight:700;color:#fff;margin-top:.4rem;padding:.5rem .8rem;background:rgba(0,0,0,.5);border-radius:8px;border:1px solid rgba(255,217,61,.2);line-height:1.5;display:inline-block}
+.award-prize{margin-top:1.2rem;display:inline-flex;align-items:baseline;gap:.5rem;padding:.5rem 1.2rem;background:linear-gradient(90deg,rgba(255,217,61,.22),rgba(255,179,71,.22));border:2px solid rgba(255,217,61,.55);border-radius:10px;box-shadow:0 4px 20px rgba(255,217,61,.15)}
+.award-prize-label{font-family:var(--ff);font-size:.65rem;color:var(--gold2);font-weight:700;letter-spacing:.08em;line-height:1}
+.award-prize-amount{font-family:var(--disp);font-size:clamp(1.4rem,3.5vw,2.1rem);letter-spacing:.05em;color:var(--gold);text-shadow:0 0 10px rgba(255,217,61,.4);line-height:1}
+.award-prize-unit{font-family:var(--ff);font-size:.9rem;color:var(--gold);font-weight:900}
+
+.award-comment{font-size:clamp(.85rem,1.9vw,.95rem);color:#f5edff;line-height:1.9;letter-spacing:.02em}
+.award-comment b{color:var(--gold);font-weight:900;background:linear-gradient(transparent 70%,rgba(255,217,61,.2) 70%,rgba(255,217,61,.2) 95%,transparent 95%);padding:0 .1em}
+.award-comment .poop{display:inline-block;font-size:1.1em;transform:translateY(2px)}
+
+.award-footer{max-width:720px;margin:2.4rem auto 0;padding:1.2rem 1.6rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,217,61,.18);border-radius:12px;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;justify-content:center}
+.award-footer-icon{font-size:1.4rem;color:var(--gold2)}
+.award-footer-msg{font-size:.82rem;color:#d9c9ff;line-height:1.7;text-align:center;flex:1;min-width:260px}
+.award-closing{text-align:center;font-size:clamp(.88rem,2vw,1rem);color:var(--gold);margin-top:1.4rem;letter-spacing:.05em;font-weight:700}
+.award-closing-heart{color:#ff8fb5;display:inline-block;animation:heartBeat 1.6s ease-in-out infinite}
+@keyframes heartBeat{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+
+/* ════ SAMATEI ════ */
+.samatei{position:relative;padding:0;overflow:hidden;background:#0a1a2a}
+.samatei-hero{position:relative;min-height:min(78vh,680px);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:clamp(4rem,10vw,7rem) clamp(1.2rem,5vw,3rem) clamp(2rem,5vw,3.5rem);overflow:hidden}
+.samatei-hero::before{
+  content:'';position:absolute;inset:0;
+  background:url('img/samatei_hammock.jpg') center/cover no-repeat;
+  z-index:0;
+}
+.samatei-hero::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,26,42,0) 0%,rgba(10,26,42,.1) 45%,rgba(10,26,42,.75) 85%,#041a2e 100%);
+  z-index:1;
+}
+.samatei-hero>*{position:relative;z-index:2}
+.samatei-hero-inner{text-align:center;width:100%}
+.samatei-teaser{font-family:var(--mono);font-size:clamp(.52rem,1.2vw,.65rem);color:#fff;letter-spacing:.3em;margin-bottom:1rem;text-shadow:0 2px 6px rgba(0,0,0,.6);opacity:.95}
+.samatei-event{font-size:clamp(.95rem,2.3vw,1.15rem);font-weight:900;color:#fff;margin-bottom:.8rem;text-shadow:0 2px 8px rgba(0,0,0,.7);letter-spacing:.1em}
+.samatei-when-wrap{margin-top:.8rem}
+.samatei-when{display:inline-block;font-family:var(--disp);font-size:clamp(1.6rem,4.2vw,2.4rem);letter-spacing:.06em;color:var(--gold);background:rgba(0,0,0,.55);padding:.5rem 1.6rem;border-radius:10px;border:1px solid rgba(255,217,61,.5);backdrop-filter:blur(4px);text-shadow:0 0 16px rgba(255,217,61,.4)}
+.samatei-body{background:linear-gradient(180deg,#041a2e 0%,#073454 50%,#041a2e 100%);padding:clamp(3rem,6vw,4.5rem) clamp(1.2rem,5vw,3rem);position:relative}
+.samatei-body::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 30%,rgba(60,180,224,.18) 0%,transparent 70%),radial-gradient(ellipse 40% 30% at 80% 80%,rgba(255,217,61,.1) 0%,transparent 60%);pointer-events:none}
+.samatei-body>*{position:relative;z-index:1}
+.samatei-copy{max-width:640px;margin:0 auto 2.4rem;font-size:clamp(.88rem,2vw,1rem);color:#e0f0fa;text-align:center;line-height:1.9}
+.samatei-copy em{font-style:normal;color:var(--gold);font-weight:700}
+.samatei-cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.samatei-cta a{font-family:var(--mono);font-size:.65rem;letter-spacing:.15em;padding:.9rem 1.6rem;border-radius:10px;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s;font-weight:700}
+.samatei-cta-pri{background:linear-gradient(135deg,var(--gold),#ff7e6b);color:#0a1a2a;border:none}
+.samatei-cta-pri:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,217,61,.3)}
+.samatei-cta-sec{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.2)}
+.samatei-cta-sec:hover{background:rgba(255,255,255,.15);border-color:var(--gold)}
+.samatei-note{font-family:var(--mono);font-size:.56rem;color:#8abfd8;letter-spacing:.08em;text-align:center;margin-top:1.8rem;line-height:1.8}
+
+/* ════ THANKS ════ */
+.thanks{padding:clamp(3rem,7vw,5rem) clamp(1.2rem,5vw,3rem);position:relative;z-index:1;text-align:center}
+.thanks-title{font-family:var(--disp);font-size:clamp(2.5rem,8vw,4.5rem);color:var(--r);letter-spacing:.08em;line-height:1;margin-bottom:1.2rem;text-shadow:0 0 30px var(--rg)}
+.thanks-body{max-width:580px;margin:0 auto;font-size:clamp(.88rem,2vw,1rem);color:#ccc;line-height:2}
+.thanks-sig{font-family:var(--mono);font-size:.62rem;color:#666;letter-spacing:.1em;margin-top:2rem}
+
+/* ════ FOOTER ════ */
+.ft{border-top:1px solid #1a1a1a;padding:clamp(2.5rem,5vw,3.5rem) clamp(1.2rem,5vw,3rem) clamp(2rem,4vw,3rem);text-align:center;position:relative;z-index:1}
+.ftm{font-size:1rem;font-weight:900;color:var(--w);margin-bottom:.5rem}
+.fts{font-family:var(--mono);font-size:.58rem;color:#555;letter-spacing:.08em;line-height:1.8;margin-bottom:1.6rem}
+.btt{display:inline-block;font-family:var(--mono);font-size:.55rem;color:var(--r);border:1px solid var(--r);padding:.5rem 1.2rem;border-radius:20px;letter-spacing:.12em;transition:all .2s;cursor:pointer}
+.btt:hover{background:var(--r);color:#030303}
+.ft-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:.2rem .8rem;margin-top:1.6rem;padding-top:1.6rem;border-top:1px solid #111}
+.ft-nav a{font-family:var(--mono);font-size:.52rem;color:#555;letter-spacing:.08em;padding:.3rem .4rem;transition:color .2s}
+.ft-nav a:hover{color:var(--r)}
+.ft-privacy{font-family:var(--mono);font-size:.48rem;color:#333;letter-spacing:.04em;line-height:1.7;margin-top:1.5rem;max-width:780px;margin-left:auto;margin-right:auto}
+.ft-privacy a{color:#555}
+.ft-privacy a:hover{color:var(--r)}
+
+/* ════ Scroll reveal ════ */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- ═════ GNAV ═════ -->
+<nav class="gnav" id="gnav">
+  <a class="gnav-logo" href="/">底辺AI音楽フェス<span>FES 2026 ARCHIVE</span></a>
+  <div class="gnav-links">
+    <a class="gnav-link" href="/">TOP</a>
+    <a class="gnav-link" href="/artists.html">ARTISTS</a>
+    <a class="gnav-link" href="/timetable.html">TIMETABLE</a>
+    <a class="gnav-link gnav-cur" href="/archive.html">ARCHIVE</a>
+    <a class="gnav-link" href="/teihendon.html">底辺どん</a>
+    <a class="gnav-link" href="/goods.html">GOODS</a>
+    <a class="gnav-link" href="/cm.html">CM</a>
+  </div>
+  <div class="gnav-sns">
+    <a href="https://x.com/teihen_ai_music" target="_blank" rel="noopener" aria-label="X">𝕏</a>
+    <a href="https://www.youtube.com/@%E5%BA%95%E8%BE%BAAI%E9%9F%B3%E6%A5%BD%E3%83%95%E3%82%A7%E3%82%B9official" target="_blank" rel="noopener" aria-label="YouTube">▶</a>
+  </div>
+  <button class="gnav-ham" id="gnavHam" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="gnav-ov" id="gnavOv"></div>
+<aside class="gnav-drawer" id="gnavDrawer">
+  <a class="gnav-ditem" href="/">TOP<span class="gnav-dext">→</span></a>
+  <a class="gnav-ditem" href="/artists.html">ARTISTS<span class="gnav-dext">→</span></a>
+  <a class="gnav-ditem" href="/timetable.html">TIMETABLE<span class="gnav-dext">→</span></a>
+  <a class="gnav-ditem gnav-cur" href="/archive.html">ARCHIVE<span class="gnav-dext">→</span></a>
+  <a class="gnav-ditem" href="/teihendon.html">底辺どん<span class="gnav-dext">→</span></a>
+  <a class="gnav-ditem" href="/goods.html">GOODS<span class="gnav-dext">→</span></a>
+  <a class="gnav-ditem" href="/cm.html">CM<span class="gnav-dext">→</span></a>
+  <a class="gnav-ditem" href="/logo-guideline.html">LOGO GUIDELINE<span class="gnav-dext">→</span></a>
+  <a class="gnav-ditem" href="/gotochi-map.html">ご当地MAP<span class="gnav-dext">→</span></a>
+  <a class="gnav-ditem" href="https://x.com/teihen_ai_music" target="_blank" rel="noopener">X (公式)<span class="gnav-dext">↗</span></a>
+  <a class="gnav-ditem" href="https://www.youtube.com/@%E5%BA%95%E8%BE%BAAI%E9%9F%B3%E6%A5%BD%E3%83%95%E3%82%A7%E3%82%B9official" target="_blank" rel="noopener">▶ YouTube<span class="gnav-dext">↗</span></a>
+</aside>
+
+<!-- ═════ HERO ═════ -->
+<header class="hero" style="padding-top:calc(48px + clamp(3rem,8vw,5rem))">
+  <div class="hero-kicker">// 第一回 無事終了</div>
+  <h1 class="hero-title">ARCHIVE</h1>
+  <p class="hero-sub">第一回 底辺AI音楽フェス、閉幕しました。</p>
+  <p class="hero-desc">
+    前夜祭 4/7 から FINALE 4/22 まで、計7夜。<br>
+    出演 102 組、のべ数千人の底辺と地獄を分かち合った記録。<br>
+    全配信アーカイブ、いつでも無料で視聴可能です。
+  </p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num">7</div>
+      <div class="hero-stat-lbl">NIGHTS</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">102</div>
+      <div class="hero-stat-lbl">ARTISTS</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">∞</div>
+      <div class="hero-stat-lbl">SUMIMASEN</div>
+    </div>
+  </div>
+  <div class="hero-ribbon-wrap">
+    <span class="hero-ribbon">THANK YOU FOR BEING BOTTOM WITH US</span>
+  </div>
+</header>
+
+<!-- ═════ ARCHIVE VIDEOS ═════ -->
+<section class="sec" id="videos">
+  <div class="sec-label rv">// 01 ·  全配信アーカイブ</div>
+  <h2 class="sec-title rv">ARCHIVE ／ 7 NIGHTS</h2>
+  <p class="sec-desc rv">
+    全配信の Premiere アーカイブ。もう一度、あるいは初めて、底辺に浸ってください。<br>
+    感想は <a href="https://twitter.com/intent/tweet?hashtags=%E5%BA%95%E8%BE%BAAI%E9%9F%B3%E6%A5%BD%E3%83%95%E3%82%A7%E3%82%B9" target="_blank" rel="noopener" style="color:var(--r)">#底辺AI音楽フェス</a> で。
+  </p>
+
+  <div class="arc-grid">
+    <div class="arc-card pre rv">
+      <div class="arc-badge">PRE NIGHT</div>
+      <div class="arc-thumb">
+        <iframe id="yt-day0" data-video-id="43-8JVR5WuE" data-day="day0" src="https://www.youtube-nocookie.com/embed/43-8JVR5WuE?enablejsapi=1" title="前夜祭" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="arc-meta">
+        <div class="arc-dayline">
+          <div class="arc-day">PRE NIGHT</div>
+          <div class="arc-date">4.07 MON</div>
+        </div>
+        <div class="arc-title">前夜祭</div>
+        <div class="arc-note">底辺どん／鬱さぎ／パギャンどん 出演。この夜、地獄が始まった。</div>
+      </div>
+      <div class="arc-panels">
+        <div class="chapters" data-day="day0">
+          <button class="chat-toggle" data-video-id="43-8JVR5WuE" data-day="day0" aria-expanded="false">
+            <span class="chat-toggle-left"><span class="chat-toggle-dot"></span>💬 チャット<span class="chat-toggle-count"></span></span>
+            <span class="chat-toggle-arr">▶</span>
+          </button>
+        </div>
+        <div class="chat-col">
+          <div class="chat-panel"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arc-card rv">
+      <div class="arc-badge">PRE EVENT</div>
+      <div class="arc-thumb">
+        <iframe id="yt-day1" data-video-id="a4YX6pub6RA" data-day="day1" src="https://www.youtube-nocookie.com/embed/a4YX6pub6RA?enablejsapi=1" title="Day1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="arc-meta">
+        <div class="arc-dayline">
+          <div class="arc-day">DAY 1</div>
+          <div class="arc-date">4.08 TUE</div>
+        </div>
+        <div class="arc-title">プレイベント Day 1</div>
+        <div class="arc-note">プレイベント初日。恐る恐るの船出。</div>
+      </div>
+      <div class="arc-panels">
+        <div class="chapters" data-day="day1">
+          <button class="chat-toggle" data-video-id="a4YX6pub6RA" data-day="day1" aria-expanded="false">
+            <span class="chat-toggle-left"><span class="chat-toggle-dot"></span>💬 チャット<span class="chat-toggle-count"></span></span>
+            <span class="chat-toggle-arr">▶</span>
+          </button>
+        </div>
+        <div class="chat-col">
+          <div class="chat-panel"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arc-card rv">
+      <div class="arc-badge">PRE EVENT</div>
+      <div class="arc-thumb">
+        <iframe id="yt-day2" data-video-id="LGYOXxCwg2k" data-day="day2" src="https://www.youtube-nocookie.com/embed/LGYOXxCwg2k?enablejsapi=1" title="Day2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="arc-meta">
+        <div class="arc-dayline">
+          <div class="arc-day">DAY 2</div>
+          <div class="arc-date">4.09 WED</div>
+        </div>
+        <div class="arc-title">プレイベント Day 2</div>
+        <div class="arc-note">Cyber Device・鳩＠レイバー・ema.・Wistaria Addict 他。</div>
+      </div>
+      <div class="arc-panels">
+        <div class="chapters" data-day="day2">
+          <button class="chat-toggle" data-video-id="LGYOXxCwg2k" data-day="day2" aria-expanded="false">
+            <span class="chat-toggle-left"><span class="chat-toggle-dot"></span>💬 チャット<span class="chat-toggle-count"></span></span>
+            <span class="chat-toggle-arr">▶</span>
+          </button>
+        </div>
+        <div class="chat-col">
+          <div class="chat-panel"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arc-card rv">
+      <div class="arc-badge">MAIN EVENT</div>
+      <div class="arc-thumb">
+        <iframe id="yt-day3" data-video-id="8pUOo0vm9kg" data-day="day3" src="https://www.youtube-nocookie.com/embed/8pUOo0vm9kg?enablejsapi=1" title="Day3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="arc-meta">
+        <div class="arc-dayline">
+          <div class="arc-day">DAY 3</div>
+          <div class="arc-date">4.14 MON</div>
+        </div>
+        <div class="arc-title">メインイベント Day 3</div>
+        <div class="arc-note">本番突入。ここからが本物の地獄。</div>
+      </div>
+      <div class="arc-panels">
+        <div class="chapters" data-day="day3">
+          <button class="chat-toggle" data-video-id="8pUOo0vm9kg" data-day="day3" aria-expanded="false">
+            <span class="chat-toggle-left"><span class="chat-toggle-dot"></span>💬 チャット<span class="chat-toggle-count"></span></span>
+            <span class="chat-toggle-arr">▶</span>
+          </button>
+        </div>
+        <div class="chat-col">
+          <div class="chat-panel"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arc-card rv">
+      <div class="arc-badge">MAIN EVENT</div>
+      <div class="arc-thumb">
+        <iframe id="yt-day4" data-video-id="NMuB4H1AGHI" data-day="day4" src="https://www.youtube-nocookie.com/embed/NMuB4H1AGHI?enablejsapi=1" title="Day4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="arc-meta">
+        <div class="arc-dayline">
+          <div class="arc-day">DAY 4</div>
+          <div class="arc-date">4.15 TUE</div>
+        </div>
+        <div class="arc-title">メインイベント Day 4</div>
+        <div class="arc-note">hurahura・テケテン・未熟・高宮ルアリエ 他。</div>
+      </div>
+      <div class="arc-panels">
+        <div class="chapters" data-day="day4">
+          <button class="chat-toggle" data-video-id="NMuB4H1AGHI" data-day="day4" aria-expanded="false">
+            <span class="chat-toggle-left"><span class="chat-toggle-dot"></span>💬 チャット<span class="chat-toggle-count"></span></span>
+            <span class="chat-toggle-arr">▶</span>
+          </button>
+        </div>
+        <div class="chat-col">
+          <div class="chat-panel"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arc-card rv">
+      <div class="arc-badge">MAIN EVENT</div>
+      <div class="arc-thumb">
+        <iframe id="yt-day5" data-video-id="2UMgq3WX-N0" data-day="day5" src="https://www.youtube-nocookie.com/embed/2UMgq3WX-N0?enablejsapi=1" title="Day5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="arc-meta">
+        <div class="arc-dayline">
+          <div class="arc-day">DAY 5</div>
+          <div class="arc-date">4.21 MON</div>
+        </div>
+        <div class="arc-title">メインイベント Day 5</div>
+        <div class="arc-note">終盤戦。最終日直前、底辺の総決起。</div>
+      </div>
+      <div class="arc-panels">
+        <div class="chapters" data-day="day5">
+          <button class="chat-toggle" data-video-id="2UMgq3WX-N0" data-day="day5" aria-expanded="false">
+            <span class="chat-toggle-left"><span class="chat-toggle-dot"></span>💬 チャット<span class="chat-toggle-count"></span></span>
+            <span class="chat-toggle-arr">▶</span>
+          </button>
+        </div>
+        <div class="chat-col">
+          <div class="chat-panel"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arc-card finale rv">
+      <div class="arc-badge">🔥 FINALE 🔥</div>
+      <div class="arc-thumb">
+        <iframe id="yt-day6" data-video-id="iEy0ZYa-87M" data-day="day6" src="https://www.youtube-nocookie.com/embed/iEy0ZYa-87M?enablejsapi=1" title="Day6 FINALE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="arc-meta">
+        <div class="arc-dayline">
+          <div class="arc-day">DAY 6</div>
+          <div class="arc-date">4.22 TUE</div>
+        </div>
+        <div class="arc-title">FINALE ／ 本当にラスト</div>
+        <div class="arc-note">第一回の最終夜。102組が積み上げた"底辺"の結晶。</div>
+      </div>
+      <div class="arc-panels">
+        <div class="chapters" data-day="day6">
+          <button class="chat-toggle" data-video-id="iEy0ZYa-87M" data-day="day6" aria-expanded="false">
+            <span class="chat-toggle-left"><span class="chat-toggle-dot"></span>💬 チャット<span class="chat-toggle-count"></span></span>
+            <span class="chat-toggle-arr">▶</span>
+          </button>
+        </div>
+        <div class="chat-col">
+          <div class="chat-panel"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════ SPOTIFY PLAYLIST ═════ -->
+<section class="spotify-wrap" id="spotify">
+  <div class="spotify-inner">
+    <div class="spotify-label rv">// 01.5 ·  AUDIO ONLY</div>
+    <h2 class="spotify-title rv">🎧 <em>Spotify</em> Playlist</h2>
+    <p class="spotify-desc rv">
+      映像なしで、音だけ浴びたいあなたへ。<br>
+      底辺AI音楽フェスのプレイリスト、Spotifyで無限再生。
+    </p>
+    <div class="spotify-embed-wrap rv">
+      <iframe src="https://open.spotify.com/embed/playlist/7aG7YOxEOySNP9e9Tzvtbv?utm_source=generator&theme=0" width="100%" height="380" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    <p class="spotify-cta rv">
+      <a href="https://open.spotify.com/playlist/7aG7YOxEOySNP9e9Tzvtbv" target="_blank" rel="noopener">
+        SPOTIFY で開く <span>↗</span>
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- ═════ 主催特別賞 ═════ -->
+<section class="award-wrap" id="award">
+  <div class="award-top">
+    <div class="award-kicker-row rv">
+      <span class="award-kicker-ribbon">第一回 底辺AI音楽フェス 〜産まれてきてスミマセン〜</span>
+      <span class="award-kicker-medal">おめでとう<br>ございます!</span>
+    </div>
+    <h2 class="award-sec-title rv">主催特別賞</h2>
+    <p class="award-sec-desc rv">
+      主催が気まぐれに選んだ、<b>底辺を愛した2作品</b>に贈る特別な賞です！
+    </p>
+    <p class="award-sec-caveat rv">
+      ※ 第二回に賞があるかは分かりませんので期待しないでください
+    </p>
+  </div>
+
+  <div class="award-list">
+
+    <!-- 賞① 底辺を浄化したで賞 -->
+    <div class="award-card rv">
+      <div class="award-banner">
+        <span class="award-banner-text">底辺を浄化したで賞</span>
+      </div>
+      <div class="award-body">
+        <div class="award-winner-box">
+          <div class="award-winner-row">
+            <span class="award-winner-no">No. 009</span>
+            <span class="award-winner-single">Mizukaze／みずほ さん</span>
+          </div>
+          <div class="award-work">「Whispers of the Night ／ ワイルグロウイング」</div>
+          <div class="award-prize">
+            <span class="award-prize-label">AMAZONギフト券</span>
+            <span class="award-prize-amount">3,000</span>
+            <span class="award-prize-unit">円</span>
+          </div>
+        </div>
+        <div class="award-comment">
+          音で<b>底辺を浄化した</b>、数少ない "例外"。<br>
+          濁りきった夜の底から、澄んだ輪郭だけが残った。<br>
+          この音があったから、フェスは "ただの地獄" では終わらなかった。
+        </div>
+      </div>
+    </div>
+
+    <!-- 賞② 最優秀かりんとう賞 -->
+    <div class="award-card rv">
+      <div class="award-banner">
+        <span class="award-banner-text">最優秀かりんとう賞</span>
+      </div>
+      <div class="award-body">
+        <div class="award-winner-box">
+          <div class="award-winner-row">
+            <span class="award-winner-no">No. 096</span>
+            <span class="award-winner-single">AIbon さん</span>
+          </div>
+          <div class="award-winner-row">
+            <span class="award-winner-no">No. 005</span>
+            <span class="award-winner-single">エルフなんよ さん</span>
+          </div>
+          <div class="award-work">「小さな聖堂（klósett lag）」</div>
+          <div class="award-prize">
+            <span class="award-prize-label">AMAZONギフト券</span>
+            <span class="award-prize-amount">各 1,000</span>
+            <span class="award-prize-unit">円</span>
+          </div>
+        </div>
+        <div class="award-comment">
+          <span class="poop">💩</span> ネタはいくつかありましたが、その中でも特に印象深かった。<br>
+          <b>底辺×底辺でしか起きない</b>、事故みたいな傑作。<br>
+          再現性ゼロ、保存性ゼロ、しかし確かに記憶に残る光の方向。
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="award-footer rv">
+    <span class="award-footer-icon">✉️</span>
+    <div class="award-footer-msg">
+      後ほどDMにてギフト券をお送りしますので、よろしくお願いします！
+    </div>
+  </div>
+  <p class="award-closing rv">
+    また次の機会にもぜひ参加してくださいね〜！ <span class="award-closing-heart">♡</span>
+  </p>
+</section>
+
+<!-- ═════ SAMATEI 夏底 ═════ -->
+<section class="samatei" id="samatei">
+  <div class="samatei-hero">
+    <div class="samatei-hero-inner">
+      <div class="samatei-teaser rv">// 03 ·  COMING SOON</div>
+      <p class="samatei-event rv">第二回 底辺AI音楽フェス</p>
+      <div class="samatei-when-wrap rv">
+        <span class="samatei-when">2026 SUMMER — TBD</span>
+      </div>
+    </div>
+  </div>
+  <div class="samatei-body">
+    <p class="samatei-copy rv">
+      ハンモックで寝てる底辺どんと、隣でダラける<em>パギャンどん</em>。<br>
+      <em>夏の底辺</em>は、もっとユルく、もっと甘やかに。<br>
+      "ダメ"を肯定する、第二回が始動します。
+    </p>
+    <div class="samatei-cta rv">
+      <a class="samatei-cta-pri" href="https://x.com/teihen_ai_music" target="_blank" rel="noopener">
+        𝕏 最新情報を追う <span>→</span>
+      </a>
+      <a class="samatei-cta-sec" href="https://www.youtube.com/@%E5%BA%95%E8%BE%BAAI%E9%9F%B3%E6%A5%BD%E3%83%95%E3%82%A7%E3%82%B9official" target="_blank" rel="noopener">
+        ▶ YouTube をチャンネル登録
+      </a>
+    </div>
+    <p class="samatei-note rv">
+      出演募集・エントリー方法は公式Xにて順次告知予定。<br>
+      「呼ばれてないけど来ました」が合言葉。
+    </p>
+  </div>
+</section>
+
+<!-- ═════ THANKS ═════ -->
+<section class="thanks">
+  <h2 class="thanks-title rv">THANK YOU.</h2>
+  <p class="thanks-body rv">
+    産まれてきてスミマセン。<br>
+    ここまで聴いてくれて、ありがとうございました。<br><br>
+    出演者、投票してくれた人、CMを作ってくれた人、応援してくれた人、<br>
+    そして運営の無茶を黙って見守ってくれた全員に、心からの感謝を。<br><br>
+    底辺は、ここで終わりません。また、夏に。
+  </p>
+  <p class="thanks-sig rv">— 主催 ／ 貯水TANK ＆ Wistaria Addict</p>
+</section>
+
+<!-- ═════ FOOTER ═════ -->
+<footer class="ft">
+  <div class="ftm">産まれてきてスミマセン。でも聴いてくれてありがとう。</div>
+  <div class="fts">アーカイブはYouTube公式チャンネルにて無料公開中です。<br>感想・引用リポストいつでも歓迎です。</div>
+  <a href="#" class="btt" id="bttLink">↑ BACK TO TOP</a>
+  <div class="ft-nav">
+    <a href="/">TOP</a>
+    <a href="/artists.html">ARTISTS</a>
+    <a href="/timetable.html">TIMETABLE</a>
+    <a href="/archive.html">ARCHIVE</a>
+    <a href="/vote.html">VOTE</a>
+    <a href="/teihendon.html">底辺どん</a>
+    <a href="/goods.html">GOODS</a>
+    <a href="/cm.html">CM</a>
+    <a href="/logo-guideline.html">LOGO GUIDELINE</a>
+    <a href="/gotochi-map.html">ご当地MAP</a>
+    <a href="https://x.com/teihen_ai_music" target="_blank" rel="noopener">X (公式)</a>
+    <a href="https://www.youtube.com/@%E5%BA%95%E8%BE%BAAI%E9%9F%B3%E6%A5%BD%E3%83%95%E3%82%A7%E3%82%B9official" target="_blank" rel="noopener">YOUTUBE</a>
+  </div>
+  <div class="ft-privacy">当サイトではアクセス状況の把握を目的にGoogle Analyticsを使用しています。Cookieにより匿名のアクセスデータが収集されますが、個人を特定する情報は取得していません。詳細は<a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Googleのポリシー</a>をご確認ください。</div>
+</footer>
+
+<script>
+/* ── gnav drawer ── */
+var ham = document.getElementById('gnavHam'),
+    dr  = document.getElementById('gnavDrawer'),
+    ov  = document.getElementById('gnavOv');
+function tg(){var o=dr.classList.toggle('open');ov.classList.toggle('open',o);ham.classList.toggle('open',o);document.body.style.overflow=o?'hidden':''}
+ham.addEventListener('click',tg);
+ov.addEventListener('click',tg);
+dr.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){if(dr.classList.contains('open'))tg()})});
+
+/* ── reveal on scroll ── */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+
+/* ── BACK TO TOP ── */
+document.getElementById('bttLink').addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})});
+
+/* ════════════════════════════════════════════════════════
+   CHAPTERS — クリックで動画内の該当時刻にシーク
+   ════════════════════════════════════════════════════════ */
+var CHAPTERS = {
+  day0: null,  // 前夜祭：チャプター未定
+  day1: [
+    ['1:02', 'Sort5691'],
+    ['5:08', 'Henumn'],
+    ['11:21', 'MOGU'],
+    ['14:25', 'てい'],
+    ['21:07', '奥州健一'],
+    ['30:48', 'KOBA Official'],
+    ['34:35', 'kawauso3dayo'],
+    ['41:25', 'Sky Sketch'],
+    ['45:33', 'かっつぁん'],
+    ['49:48', 'よーいち'],
+    ['54:38', 'AIbon'],
+    ['59:43', 'うさミミック'],
+    ['1:02:46', 'ぴーちょマン'],
+    ['1:07:52', '#digitalgirl'],
+    ['1:17:57', 'REI & THE MEVIUS ARCADE'],
+    ['1:27:57', 'HEARTofCyan'],
+    ['1:33:08', 'PONKOTSU-DECODER']
+  ],
+  day2: [
+    ['1:04', 'Cyber Device'],
+    ['6:14', '鳩@レイバー'],
+    ['11:20', 'ema.'],
+    ['21:51', 'daitenP'],
+    ['30:00', 'Project Muse'],
+    ['35:30', 'ヘイヨー'],
+    ['41:03', '鏡介'],
+    ['45:42', 'なまたま'],
+    ['53:06', 'GABu'],
+    ['58:12', 'Wistaria Addict'],
+    ['1:02:58', 'ハルハルHaruVerse'],
+    ['1:09:26', 'Garbage Garden'],
+    ['1:19:32', '弐八'],
+    ['1:22:46', 'The Hollow Abyss'],
+    ['1:27:00', 'Aurelio'],
+    ['1:32:07', 'タイヤフミヤとふしぎカンパニー']
+  ],
+  day3: [
+    ['1:02', 'ゆめのゆめ'],
+    ['5:55', '鏡 エラ'],
+    ['9:51', 'シオンドラゴニュートP'],
+    ['13:23', '南黒山ソイヤ'],
+    ['22:21', 'ANZLY'],
+    ['28:49', 'MeTa-Sun'],
+    ['38:54', '音羽ぽんすけ'],
+    ['42:47', 'Lien（リアン）'],
+    ['47:28', 'Xme (エックスミー)'],
+    ['52:38', '＋diver(プラスダイバー)'],
+    ['57:44', 'Mizukaze/みずほ'],
+    ['1:03:55', 'balloonfish'],
+    ['1:13:29', 'RIXIA'],
+    ['1:22:04', 'yyyymusic@憂李'],
+    ['1:31:08', 'ダブルみこと（光恋斗&魅故人）'],
+    ['1:36:14', "N'Éclat Noir"],
+    ['1:40:48', 'ジャック・ザ・ヴィシャス']
+  ],
+  day4: [
+    ['1:02', 'hurahura'],
+    ['7:25', 'テケテン'],
+    ['16:52', '未熟'],
+    ['22:01', '高宮ルアリエ'],
+    ['29:02', 'エルフなんよ'],
+    ['31:16', 'Stingray Tokyoska'],
+    ['39:36', 'ELEMAYU'],
+    ['44:03', 'シノニム (Synonym)'],
+    ['48:33', 'ΛoI'],
+    ['53:23', 'Sound Out Theme'],
+    ['58:13', '花音 Kanon'],
+    ['1:02:27', '底辺おNiiさん'],
+    ['1:07:34', '昭和少年Z'],
+    ['1:11:14', 'フェレヴーズ'],
+    ['1:20:35', '五島 雅'],
+    ['1:27:04', 'DGBP'],
+    ['1:30:53', 'Hallucination Records']
+  ],
+  day5: [
+    ['1:08', '玄之 狐'],
+    ['5:51', 'でんでろ３'],
+    ['12:03', 'やっこまんX'],
+    ['16:27', 'MoMu & TeaSteam'],
+    ['26:53', '∫varts'],
+    ['36:43', 'はるけっぴぃ!'],
+    ['44:11', '夜凪ミミ'],
+    ['48:07', 'FU-SI'],
+    ['55:40', 'Makotang a capella'],
+    ['1:06:28', 'Rez'],
+    ['1:11:45', 'RYU:GiN'],
+    ['1:21:49', 'unigame/VIREL'],
+    ['1:28:27', 'toMion'],
+    ['1:32:15', 'みつじ'],
+    ['1:41:07', 'Ωdim⁷'],
+    ['1:49:37', 'Hi!Guys!Tunes']
+  ],
+  day6: [
+    ['1:09', 'ノスタルジア'],
+    ['10:12', 'ユミリアの夢案内'],
+    ['18:46', 'GOKIGEN Tiger'],
+    ['22:26', 'MAYA'],
+    ['28:01', 'Baumkuchen-Man'],
+    ['37:34', 'FormerEM Jp.'],
+    ['42:17', 'みずたまりんご'],
+    ['47:14', 'Drakichi English'],
+    ['56:49', 'Resonance Diva'],
+    ['1:00:40', 'Yakkyoku-oj3'],
+    ['1:10:46', 'Wanda'],
+    ['1:15:10', 'Bianca'],
+    ['1:18:23', 'Coco'],
+    ['1:20:41', 'フィベル'],
+    ['1:29:25', 'CAGWorks'],
+    ['1:33:45', 'den_ma(冥土長)']
+  ]
+};
+
+function parseTime(t){
+  var p = t.split(':').map(Number);
+  if(p.length === 3) return p[0]*3600 + p[1]*60 + p[2];
+  return p[0]*60 + p[1];
+}
+
+/* -- YouTube IFrame API 読み込み -- */
+(function(){
+  var tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(tag);
+})();
+
+var ytPlayers = {};
+function onYouTubeIframeAPIReady(){
+  document.querySelectorAll('.arc-thumb iframe[data-day]').forEach(function(iframe){
+    var dkey = iframe.dataset.day;
+    ytPlayers[dkey] = new YT.Player(iframe, {});
+  });
+}
+
+/* -- チャプターUIをレンダリング -- */
+(function renderChapters(){
+  document.querySelectorAll('.chapters[data-day]').forEach(function(container){
+    var dkey = container.dataset.day;
+    var chapters = CHAPTERS[dkey];
+    var count = chapters ? chapters.length : 0;
+
+    // ヘッダ
+    var head = document.createElement('div');
+    head.className = 'chapters-head';
+    if(count > 0){
+      head.innerHTML = '<div class="chapters-label">CHAPTERS</div><span class="chapters-count">'+count+' tracks</span>';
+    } else {
+      head.innerHTML = '<div class="chapters-label">CHAPTERS</div><span class="chapters-tbd">準備中</span>';
+    }
+    container.appendChild(head);
+
+    if(!chapters){
+      var empty = document.createElement('div');
+      empty.className = 'chapters-empty';
+      empty.textContent = dkey === 'day0' ? 'チャプター情報は近日追加予定' : 'FINALE のチャプター情報は準備中です';
+      container.appendChild(empty);
+      return;
+    }
+
+    var list = document.createElement('div');
+    list.className = 'chapters-list';
+    chapters.forEach(function(c, idx){
+      var time = c[0], name = c[1];
+      var seconds = parseTime(time);
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'chapter-item';
+      btn.dataset.seconds = String(seconds);
+      btn.dataset.day = dkey;
+      btn.innerHTML = '<span class="chapter-time">'+time+'</span><span class="chapter-name"></span>';
+      btn.querySelector('.chapter-name').textContent = name;
+      btn.addEventListener('click', function(){
+        var player = ytPlayers[dkey];
+        // 同カード内の他チャプターのアクティブ解除
+        list.querySelectorAll('.chapter-item.active').forEach(function(el){el.classList.remove('active')});
+        btn.classList.add('active');
+        if(player && typeof player.seekTo === 'function'){
+          player.seekTo(seconds, true);
+          if(typeof player.playVideo === 'function') player.playVideo();
+        } else {
+          // APIが未準備の場合はURLで開く
+          var vid = document.getElementById('yt-'+dkey).dataset.videoId;
+          window.open('https://youtu.be/'+vid+'?t='+seconds, '_blank', 'noopener');
+        }
+        // チャットリプレイと時刻を同期
+        var card = btn.closest('.arc-card');
+        if(card){
+          card.dispatchEvent(new CustomEvent('chapter-seek', {detail:{seconds:seconds}}));
+        }
+      });
+      list.appendChild(btn);
+    });
+    container.appendChild(list);
+  });
+})();
+
+/* -- チャットリプレイ アコーディオン -- */
+(function initChatToggles(){
+  var CHAT_BASE = '/vol1/chat/';
+
+  function fmtTime(ms){
+    var s = Math.floor(ms / 1000);
+    var m = Math.floor(s / 60);
+    var ss = String(s % 60).padStart(2,'0');
+    if(m >= 60){ var h=Math.floor(m/60),mm=String(m%60).padStart(2,'0'); return h+':'+mm+':'+ss; }
+    return m+':'+ss;
+  }
+
+  function buildChatUI(panel, col, messages){
+    /* 検索バー */
+    var bar = document.createElement('div');
+    bar.className = 'chat-search-bar';
+    var input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = 'コメント検索...';
+    var countEl = document.createElement('span');
+    countEl.className = 'chat-search-count';
+    countEl.textContent = messages.length.toLocaleString()+'件';
+    bar.appendChild(input);
+    bar.appendChild(countEl);
+    panel.appendChild(bar);
+
+    var list = document.createElement('div');
+    list.className = 'chat-list';
+    panel.appendChild(list);
+
+    function renderList(msgs, focusIdx){
+      list.innerHTML = '';
+      if(!msgs.length){
+        var e2=document.createElement('div'); e2.className='chat-empty';
+        e2.textContent='該当するコメントがありません'; list.appendChild(e2); return;
+      }
+      var start = focusIdx !== undefined ? Math.max(0, focusIdx-100) : 0;
+      var targetOffset = focusIdx !== undefined ? focusIdx - start : -1;
+      var limit = Math.min(msgs.length - start, 800);
+      var frag = document.createDocumentFragment();
+      for(var i=0;i<limit;i++){
+        var msg = msgs[start+i];
+        var row = document.createElement('div');
+        row.className = 'chat-msg'+(msg.sc?' sc':'')+(msg.type==='member'?' member':'');
+        if(i===targetOffset) row.classList.add('chat-seek-target');
+        if(msg.sc&&msg.bg) row.style.setProperty('--sc-bg',msg.bg+'33');
+        var time=document.createElement('span'); time.className='chat-time'; time.textContent=fmtTime(msg.t);
+        var auth=document.createElement('span'); auth.className='chat-author'; auth.textContent=msg.a;
+        var txt=document.createElement('span'); txt.className='chat-text';
+        if(msg.sc){
+          var amt=document.createElement('span'); amt.className='chat-sc-amount'; amt.textContent=msg.sc+' ';
+          txt.appendChild(amt); txt.appendChild(document.createTextNode(msg.m));
+        } else { txt.textContent=msg.m; }
+        row.appendChild(time); row.appendChild(auth); row.appendChild(txt);
+        frag.appendChild(row);
+      }
+      list.appendChild(frag);
+      if(focusIdx!==undefined){
+        var tgt=list.querySelector('.chat-seek-target');
+        if(tgt) tgt.scrollIntoView({block:'center'});
+      } else {
+        list.scrollTop=list.scrollHeight;
+      }
+    }
+
+    renderList(messages);
+
+    /* チャプター連動（チャット内だけスクロール・ページはスクロールしない） */
+    var card = col.closest('.arc-card');
+    if(card){
+      card.addEventListener('chapter-seek', function(e){
+        var seekMs = e.detail.seconds * 1000;
+        var lo=0,hi=messages.length-1,mid;
+        while(lo<hi){ mid=Math.ceil((lo+hi)/2); if(messages[mid].t<=seekMs) lo=mid; else hi=mid-1; }
+        renderList(messages, lo);
+      });
+    }
+
+    /* 検索 */
+    var timer;
+    input.addEventListener('input', function(){
+      clearTimeout(timer);
+      timer = setTimeout(function(){
+        var q = input.value.trim().toLowerCase();
+        var filtered = q ? messages.filter(function(m){ return m.m.toLowerCase().indexOf(q)!==-1||m.a.toLowerCase().indexOf(q)!==-1; }) : messages;
+        countEl.textContent = filtered.length.toLocaleString()+'件';
+        renderList(filtered);
+      }, 200);
+    });
+  }
+
+  function buildFallback(panel, videoId){
+    var a=document.createElement('a'); a.className='chat-fallback';
+    a.href='https://youtu.be/'+videoId; a.target='_blank'; a.rel='noopener noreferrer';
+    a.innerHTML='<span class="chat-fallback-icon">💬</span>'
+      +'<div class="chat-fallback-title">チャットデータ未取得</div>'
+      +'<div class="chat-fallback-desc">chat/dayN.json を配置すると表示されます</div>';
+    panel.appendChild(a);
+  }
+
+  document.querySelectorAll('.chat-toggle').forEach(function(btn){
+    var col   = btn.closest('.arc-panels').querySelector('.chat-col');
+    var panel = col.querySelector('.chat-panel');
+    var videoId = btn.dataset.videoId;
+    var day     = btn.dataset.day;
+    var loaded  = false;
+
+    btn.addEventListener('click', function(){
+      var isOpen = col.classList.contains('open');
+      if(isOpen){
+        col.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+      } else {
+        if(!loaded){
+          loaded = true;
+          fetch(CHAT_BASE + day + '.json')
+            .then(function(r){ return r.ok ? r.json() : Promise.reject(); })
+            .then(function(msgs){
+              buildChatUI(panel, col, msgs);
+              btn.querySelector('.chat-toggle-count').textContent = msgs.length.toLocaleString()+'件';
+            })
+            .catch(function(){ buildFallback(panel, videoId); });
+        }
+        col.classList.add('open');
+        btn.classList.add('open');
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

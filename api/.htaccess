@@ -1,0 +1,6 @@
+<Files "votes_data.json">
+    Require all denied
+</Files>
+<Files "votes_boost.json">
+    Require all denied
+</Files>
