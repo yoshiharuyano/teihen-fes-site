@@ -9,7 +9,7 @@
   </url>
   <url>
     <loc>https://fes.wistaria-addict.com/index.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -80,5 +80,11 @@
       <video:publication_date>2026-04-22T22:00:00+09:00</video:publication_date>
       <video:tag>AI音楽</video:tag><video:tag>底辺AI音楽フェス</video:tag><video:tag>FINALE</video:tag>
     </video:video>
+  </url>
+  <url>
+    <loc>https://fes.wistaria-addict.com/vol2/banchou.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

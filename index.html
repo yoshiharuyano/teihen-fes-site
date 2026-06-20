@@ -182,7 +182,7 @@
       "name": "応募はいつから？スケジュールは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "応募開始：2026年5月18日（月）／応募締切：6月3日（水）／サポート希望者の曲提供締切：6月18日（木）／応募者の作品制作スタート：7月3日（金）／作品制作締切：8月4日（火）／本番：8月18日（火）・19日（水）・24日（月）・25日（火）。約3ヶ月かけて段階的に進行します。"
+        "text": "応募開始：2026年5月18日（月）／応募締切：6月3日（水）／サポート（動画制作）希望者のWAV提供締切：7月3日（金）／応募者の作品制作スタート：7月3日（金）／作品制作締切：8月4日（火）／本番：8月18日（火）・19日（水）・24日（月）・25日（火）。約3ヶ月かけて段階的に進行します。"
       }
     },
     {
@@ -230,7 +230,7 @@
       "name": "動画制作のサポートはある？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "あります。応募時に「サポート（動画制作）希望」を選択すると、サポーター（動画制作陣）にマッチングされます。サポート枠は約22組予定（全体約90組中の約1/4）。サポート枠は『1曲1分・1人最大3曲（合計3分）』の制約があります。曲提供締切は2026年6月18日。サポーターはそこから動画のブラッシュアップを進め、本番に間に合わせます。"
+        "text": "あります。応募時に「サポート（動画制作）希望」を選択すると、サポーター（動画制作陣）にマッチングされます。サポート枠は約22組予定（全体約90組中の約1/4）。サポート枠は『1曲1分・1人最大3曲（合計3分）』の制約があります。サポート枠のWAV提供締切は2026年7月3日（6月18日から延長）。提出フォーム：https://forms.gle/vB8wGKF35DcNXSaJA。サポーターはそこから動画のブラッシュアップを進め、本番に間に合わせます。"
       }
     },
     {
@@ -910,6 +910,29 @@ dl.defs dd:last-child{border-bottom:none}
 .phase-body .hand-list{margin:.4rem 0}
 .phase-body .hand-list li{font-size:.88rem;line-height:1.7;padding:.2rem 0 .2rem 1.4em}
 
+
+/* ===== イマココ マーカー（当日基準・動的） ===== */
+.phase-card.phase-now{border-color:var(--coral);box-shadow:5px 5px 0 rgba(255,154,168,.55)}
+.phase-card.phase-now .phase-header{background:#fff4ef}
+.phase-now-pin{
+  position:absolute;top:-17px;right:14px;z-index:6;
+  display:inline-flex;align-items:center;gap:.25rem;
+  font-family:var(--display);font-size:.92rem;color:#fff;
+  background:var(--coral);border:2.5px solid var(--ink);border-radius:99px;
+  padding:.18rem .75rem .24rem;white-space:nowrap;
+  box-shadow:2px 2px 0 rgba(61,53,47,.25);transform:rotate(-3deg);
+  animation:imakokoBob 1.8s ease-in-out infinite;
+}
+.phase-now-pin::before{content:'\1F4CD';font-size:1rem}
+@keyframes imakokoBob{0%,100%{transform:rotate(-3deg) translateY(0)}50%{transform:rotate(-3deg) translateY(-4px)}}
+.phase-card.phase-done{opacity:.6;filter:saturate(.5)}
+.phase-card.phase-done .phase-no::after{
+  content:'\6E08';position:absolute;inset:0;display:grid;place-items:center;
+  font-family:var(--display);font-size:.95rem;color:#fff;
+  background:rgba(61,53,47,.66);border-radius:50%;
+}
+@media(prefers-reduced-motion:reduce){.phase-now-pin{animation:none}}
+
 /* ===== FAQ ===== */
 .faq-list{display:flex;flex-direction:column;gap:.5rem;margin:1rem 0}
 .faq-item{
@@ -1526,6 +1549,16 @@ footer::before{
         <span class="news-text"><a href="/vol2/artists.html">プレエントリー一覧を公開しました！</a> 現在<strong>112組</strong>が応募中です（出演・出演順は確定ではありません）。🏖🧟</span>
       </li>-->
       <li class="news-item">
+        <span class="news-date">2026.06.19</span>
+        <span class="news-badge new">フォーム</span>
+        <span class="news-text"><strong>WAV提出フォームを公開</strong>しました🎧 「🎵サポート希望」の方は <a href="https://forms.gle/vB8wGKF35DcNXSaJA" target="_blank" rel="noopener">提出フォーム</a> から。締切は <strong>6/18 → 7/3(金)</strong> に延長。🎬自作で動画提出の方への案内は準備中です、もう少々お待ちを🙏</span>
+      </li>
+      <li class="news-item">
+        <span class="news-date">2026.06.19</span>
+        <span class="news-badge new">応援店</span>
+        <span class="news-text">長崎の <a href="/vol2/banchou.html">居酒屋 ばんちょう</a> が<strong>サマテイ公式応援店舗</strong>になりました！店内にポスターを掲示してくれています。長崎に行ったらぜひ一杯🏮🍢</span>
+      </li>
+      <li class="news-item">
         <span class="news-date">2026.06.04</span>
         <span class="news-badge urgent">締切</span>
         <span class="news-text">プレエントリーの受付は<strong>6/3(水)</strong>で終了しました。</span>
@@ -1688,7 +1721,7 @@ footer::before{
       <tr><th>START</th><td>22:00〜（JST）</td></tr>
       <tr><th>応募開始</th><td>2026年5月18日（月）</td></tr>
       <tr><th>応募締切</th><td>2026年6月3日（水）</td></tr>
-      <tr><th>サポート曲提供締切</th><td>2026年6月18日（木）</td></tr>
+      <tr><th>サポート枠WAV提供締切</th><td>2026年7月3日（金）　<span style="color:var(--sub);font-size:.8em">※6/18から延長</span></td></tr>
       <tr><th>制作スタート</th><td>2026年7月3日（金）</td></tr>
       <tr><th>作品提出締切</th><td>2026年8月4日（火）</td></tr>
       <tr><th>会場（架空）</th><td>ゆるゆるビーチ（仮）</td></tr>
@@ -1759,19 +1792,22 @@ footer::before{
         </div>
       </div>
 
-      <!-- Phase 素材デッドライン -->
+      <!-- Phase サポート枠WAV締切 -->
       <div class="phase-card">
         <div class="phase-header">
-          <div class="phase-no">📦</div>
+          <div class="phase-no">🎧</div>
           <div class="phase-info">
-            <div class="phase-when"><span class="ago">2ヶ月前</span>2026.06.18 (木) ごろ</div>
-            <div class="phase-title">素材提供デッドライン</div>
+            <div class="phase-when"><span class="ago">WAV締切</span>2026.07.03 (金) まで</div>
+            <div class="phase-title">サポート枠の楽曲（WAV）提供デッドライン</div>
           </div>
         </div>
         <div class="phase-body">
+          <h4>※「🎵 サポート希望」の方だけの締切です</h4>
           <ul class="hand-list">
-            <li>サポート希望者の「曲」提供締め切り</li>
-            <li>サポーターはここから動画制作を本格化（構成練り 0.5ヶ月）</li>
+            <li><strong>サポート（動画制作）希望者</strong>が、動画化してもらう楽曲データ（WAV）を提出する締め切り（<strong>6/18 → 7/3 に延長</strong>）</li>
+            <li>提出はこちら → <a href="https://forms.gle/vB8wGKF35DcNXSaJA" target="_blank" rel="noopener">WAV提出フォーム</a></li>
+            <li>サポーターは受け取ったWAVをもとに動画制作を本格化</li>
+            <li><strong>🎬 自作（動画提出）の方の提出案内は準備中です。もう少々お待ちください</strong></li>
           </ul>
         </div>
       </div>
@@ -2039,7 +2075,7 @@ footer::before{
       <li><strong>プレエントリーフォーム</strong>から申請（受付中！）※出演確定ではありません</li>
       <li>応募時に <strong>「🎬 自作動画派」 or 「🎵 サポート希望」</strong> を選択</li>
       <li><strong>6月3日（水）</strong>までに応募完了</li>
-      <li>サポート希望の人は<strong>6月18日（木）</strong>までに曲を提供（1〜3曲（運営判断で1〜3分に動画化））</li>
+      <li>サポート希望の人は<strong>7月3日（金）</strong>までにWAVを提供（<a href="https://forms.gle/vB8wGKF35DcNXSaJA" target="_blank" rel="noopener">WAV提出フォーム</a>／1〜3曲・運営判断で1〜3分に動画化）</li>
       <li>自作動画派の人は<strong>7月3日（金）</strong>に制作スタート、<strong>8月4日（火）</strong>までに作品提出</li>
       <li>出演順は8月初旬に発表</li>
     </ol>
@@ -2121,7 +2157,7 @@ footer::before{
       <details class="faq-item">
         <summary class="faq-q"><span><span class="q-tag">Q03</span>応募はいつから？スケジュールは？</span></summary>
         <div class="faq-a">
-          応募開始：<strong>2026年5月18日（月）</strong>／応募締切：<strong>6月3日（水）</strong>／サポート希望者の曲提供締切：<strong>6月18日（木）</strong>／応募者の作品制作スタート：<strong>7月3日（金）</strong>／作品制作締切：<strong>8月4日（火）</strong>／本番：<strong>8月18日（火）・19日（水）・24日（月）・25日（火）</strong>。約3ヶ月かけて段階的に進行します。
+          応募開始：<strong>2026年5月18日（月）</strong>／応募締切：<strong>6月3日（水）</strong>／サポート（動画制作）希望者のWAV提供締切：<strong>7月3日（金）</strong>／応募者の作品制作スタート：<strong>7月3日（金）</strong>／作品制作締切：<strong>8月4日（火）</strong>／本番：<strong>8月18日（火）・19日（水）・24日（月）・25日（火）</strong>。約3ヶ月かけて段階的に進行します。
         </div>
       </details>
 
@@ -2170,7 +2206,7 @@ footer::before{
       <details class="faq-item">
         <summary class="faq-q"><span><span class="q-tag">Q10</span>動画制作のサポートはある？</span></summary>
         <div class="faq-a">
-          あります。応募時に<strong>「🎵 サポート希望」</strong>を選択すると、サポーター（動画制作陣）にマッチングされます。サポート枠は<strong>約22組予定</strong>（全体約90組中の約1/4）で、持ち時間は<strong>1〜3曲提出・運営判断で1〜3分に動画化</strong>。曲提供締切は<strong>2026年6月18日（木）</strong>。サポーターはそこから動画のブラッシュアップを進め、本番に間に合わせます。
+          あります。応募時に<strong>「🎵 サポート希望」</strong>を選択すると、サポーター（動画制作陣）にマッチングされます。サポート枠は<strong>約22組予定</strong>（全体約90組中の約1/4）で、持ち時間は<strong>1〜3曲提出・運営判断で1〜3分に動画化</strong>。サポート枠のWAV提供締切は<strong>2026年7月3日（金）</strong>（6/18から延長）。サポーターはそこから動画のブラッシュアップを進め、本番に間に合わせます。
         </div>
       </details>
 
@@ -2227,7 +2263,7 @@ footer::before{
 
     milestone_apply_open:     2026-05-18 (Mon) — 応募開始
     milestone_apply_close:    2026-06-03 (Wed) — 応募締切・参加者確定
-    milestone_supporter_song: 2026-06-18 (Thu) — サポート曲提供締切
+    milestone_supporter_song: 2026-07-03 (Fri) — サポート枠WAV提供締切 (6/18から延長)
     milestone_creation_start: 2026-07-03 (Fri) — 応募者制作スタート (1ヶ月)
     milestone_submission:     2026-08-04 (Tue) — 作品提出締切
 
@@ -2456,6 +2492,105 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
   });
 });
 </script>
+
+
+<script>
+/* ── スケジュール「イマココ」マーカー（当日基準で自動移動） ── */
+(function(){
+  var tl=document.getElementById('timeline'); if(!tl) return;
+  var cards=tl.querySelectorAll('.phase-card'); if(!cards.length) return;
+  var ds=['2026-05-18','2026-06-03','2026-07-03','2026-07-03','2026-08-04','2026-08-18'];
+  var endMain='2026-08-25';
+  function ymd(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+  var today=ymd(new Date()), cur=-1;
+  for(var i=0;i<ds.length && i<cards.length;i++){ if(today>=ds[i]) cur=i; }
+  if(cur<0) cur=0;
+  var label='イマココ';
+  if(cur===ds.length-1){ label=(today>endMain)?'おわり！またね':'開催中！'; }
+  for(var j=0;j<cards.length;j++){
+    if(j<cur){ cards[j].classList.add('phase-done'); }
+    else if(j===cur){
+      cards[j].classList.add('phase-now');
+      var pin=document.createElement('span');
+      pin.className='phase-now-pin'; pin.textContent=label;
+      cards[j].appendChild(pin);
+    }
+  }
+})();
+</script>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- 居酒屋ばんちょう 公式応援店舗バナー（追従／サイド）              -->
+<!-- index.html の閉じ body タグの直前に貼り付けてください。         -->
+<!-- ※ロゴ画像は /vol2/img/banchou-logo.png に配置してください。     -->
+<!-- クラス名は bcb- 接頭辞でスコープ済み（既存スタイルと衝突しません）-->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="bcb" id="bcbSide" aria-label="サマテイ公式応援店舗 居酒屋ばんちょう">
+  <button class="bcb-x" id="bcbClose" aria-label="閉じる">×</button>
+  <a class="bcb-link" href="/vol2/banchou.html" id="bcbLink">
+    <span class="bcb-ribbon">🏮 公式応援店</span>
+    <img class="bcb-logo" src="/vol2/img/banchou-logo.png" alt="居酒屋ばんちょう ロゴ" width="48" height="48" loading="lazy">
+    <span class="bcb-txt">
+      <span class="bcb-t1">居酒屋 ばんちょう</span>
+      <span class="bcb-t2">長崎・畝刈町の焼き鳥屋</span>
+    </span>
+    <span class="bcb-go">見る →</span>
+  </a>
+</div>
+
+<style>
+.bcb{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:8500;
+  font-family:'Yusei Magic','Zen Maru Gothic',sans-serif}
+.bcb-link{display:flex;flex-direction:column;align-items:center;gap:.35rem;
+  text-decoration:none;color:#3d352f;background:#fdf8ec;
+  border:2px solid #e0533a;border-right:none;border-radius:14px 0 0 14px;
+  padding:.8rem .7rem .85rem .85rem;width:122px;
+  box-shadow:-6px 6px 18px rgba(61,53,47,.22);
+  transition:transform .22s cubic-bezier(.34,1.56,.64,1),box-shadow .22s}
+.bcb-link:hover{transform:translateX(-4px);box-shadow:-9px 8px 22px rgba(224,83,58,.3)}
+.bcb-ribbon{font-size:.6rem;color:#fff;background:#e0533a;padding:.16rem .55rem;border-radius:999px;letter-spacing:.03em;line-height:1.4}
+.bcb-logo{width:48px;height:48px;border-radius:50%;background:#fff;border:1.5px solid #e6d8bd;
+  object-fit:contain;padding:3px;box-shadow:0 2px 5px rgba(61,53,47,.15);
+  animation:bcbBob 2.8s ease-in-out infinite}
+@keyframes bcbBob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-3px) rotate(2deg)}}
+.bcb-txt{text-align:center}
+.bcb-t1{display:block;font-size:.72rem;color:#b8381f;line-height:1.25}
+.bcb-t2{display:block;font-size:.55rem;color:#8a7d6e;margin-top:1px;font-family:'Zen Maru Gothic',sans-serif}
+.bcb-go{font-size:.58rem;color:#fff;background:#3d352f;padding:.2rem .7rem;border-radius:999px;letter-spacing:.04em}
+.bcb-x{position:absolute;top:-9px;left:-9px;width:22px;height:22px;border-radius:50%;
+  background:#fff;border:1px solid #e6d8bd;color:#8a7d6e;font-size:.85rem;line-height:1;
+  cursor:pointer;display:grid;place-items:center;box-shadow:0 2px 6px rgba(61,53,47,.2);transition:all .18s;padding:0}
+.bcb-x:hover{background:#e0533a;color:#fff;border-color:#e0533a;transform:rotate(90deg)}
+.bcb.bcb-hide{display:none}
+@media(prefers-reduced-motion:reduce){.bcb-logo{animation:none}}
+
+/* スマホ：右下の小さめ縦バナーに（本文を邪魔しない幅） */
+@media(max-width:680px){
+  .bcb{top:auto;bottom:14px;transform:none}
+  .bcb-link{width:100px;padding:.55rem .5rem;border-radius:12px 0 0 12px}
+  .bcb-logo{width:38px;height:38px}
+  .bcb-t1{font-size:.64rem}
+  .bcb-t2{display:none}
+}
+</style>
+
+<script>
+(function(){
+  var box=document.getElementById('bcbSide');
+  if(!box) return;
+  try{ if(sessionStorage.getItem('bcbClosed')==='1'){ box.classList.add('bcb-hide'); } }catch(e){}
+  var btn=document.getElementById('bcbClose');
+  if(btn){ btn.addEventListener('click',function(ev){
+    ev.preventDefault(); ev.stopPropagation();
+    box.classList.add('bcb-hide');
+    try{ sessionStorage.setItem('bcbClosed','1'); }catch(e){}
+    if(window.gtag) gtag('event','sponsor_banner_close',{sponsor:'banchou'});
+  }); }
+  var lk=document.getElementById('bcbLink');
+  if(lk){ lk.addEventListener('click',function(){ if(window.gtag) gtag('event','sponsor_banner_click',{sponsor:'banchou'}); }); }
+})();
+</script>
+<!-- ════════ /居酒屋ばんちょう 公式応援店舗バナー ════════ -->
 
 </body>
 </html>
