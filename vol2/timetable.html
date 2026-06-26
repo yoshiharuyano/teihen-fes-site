@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>タイムテーブル（準備中）｜サマテイ 2026 〜夏とゾンビ〜</title>
+<meta name="description" content="サマテイ（底辺AI音楽フェスの夏フェス）のタイムテーブルは現在作成中です。出演順が決まりしだい公開します。">
+<meta property="og:title" content="TIMETABLE（準備中）｜サマテイ 2026 〜夏とゾンビ〜">
+<meta property="og:type" content="website">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=Klee+One:wght@400;600&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Caveat:wght@500;700&family=Kosugi+Maru&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fdf8ec;--paper2:#fbf3e0;--paper3:#f5ead0;--paper-deep:#ebdcb6;
+  --sky:#cfe9f3;--sky2:#a8d4e8;--sea:#7ec4cf;--sea2:#4ea7b6;
+  --coral:#ff9aa8;--coral2:#ffb6c1;--pink:#fcd6dc;--sand:#f0d9a8;
+  --sun:#ffd97d;--sun2:#fce086;--mint:#b8e3c8;--lavender:#dcd0ee;
+  --zombie:#a8c89c;--zombie2:#8ab581;--bruise:#b48ee0;
+  --ink:#3d352f;--ink2:#5a4d44;--sub:#8a7a6c;--pencil:#7c6f63;
+  --line:#d8c8a8;--line2:#c4b18a;
+  --display:'Yusei Magic',cursive;--hand:'Klee One',serif;
+  --body:'Zen Maru Gothic','Hiragino Maru Gothic ProN',sans-serif;
+  --en:'Caveat',cursive;--kana:'Kosugi Maru','Zen Maru Gothic',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.9;font-weight:500;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit}
+.skip{position:absolute;left:-9999px;top:0;background:var(--coral);color:#fff;padding:.5rem 1rem;font-family:var(--display);z-index:200}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(253,248,236,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:2px dashed var(--line);padding:.55rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.hdr-l{display:flex;align-items:center;gap:.6rem;min-width:0;flex:1}
+.hdr-tag{font-family:var(--en);font-size:.95rem;background:var(--zombie);color:var(--ink);padding:.05rem .55rem;border-radius:99px;border:2px solid var(--ink);transform:rotate(-3deg);flex-shrink:0;font-weight:700}
+.hdr-title{font-family:var(--display);font-size:.95rem;letter-spacing:.05em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hdr-r{display:flex;gap:.4rem;flex-shrink:0}
+.hdr-link{font-family:var(--hand);font-size:.78rem;color:var(--ink2);padding:.25rem .65rem;background:var(--paper2);border:1.5px solid var(--ink);border-radius:99px;transition:all .2s;text-decoration:none}
+.hdr-link:hover,.hdr-link.on{background:var(--sun);transform:translateY(-1px)}
+
+/* main */
+main{flex:1;display:flex;flex-direction:column;justify-content:center}
+.hero{max-width:1100px;margin:0 auto;padding:2.4rem clamp(1rem,4vw,2rem) .5rem;position:relative;width:100%}
+.sec-num{display:inline-block;font-family:var(--en);font-size:1.05rem;font-weight:700;color:var(--ink);background:var(--sun2);padding:.05rem .8rem;border:1.5px solid var(--ink);border-radius:99px;transform:rotate(-2deg)}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,9vw,4.6rem);line-height:1;letter-spacing:.05em;margin:.7rem 0 .3rem}
+.hero h1 .en{font-family:var(--en);color:var(--coral);font-size:.55em;margin-left:.3em}
+.hero p{font-family:var(--hand);color:var(--ink2);font-size:.92rem;max-width:52ch}
+.hero p b{color:var(--coral);font-weight:700}
+.hero .deco{position:absolute;right:clamp(1rem,4vw,2rem);top:2rem;font-size:clamp(2rem,7vw,3.2rem);transform:rotate(8deg);opacity:.9}
+
+/* building / under construction */
+.building{max-width:1100px;margin:1.4rem auto 0;padding:0 clamp(1rem,4vw,2rem);width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.2rem}
+.building-card{background:var(--paper2);border:2px solid var(--ink);border-radius:16px;box-shadow:4px 6px 0 rgba(61,53,47,.14);padding:2rem 1.5rem;width:100%;max-width:560px;position:relative}
+.building-card::before{content:'🚧';position:absolute;top:-.9rem;left:-.4rem;font-size:1.6rem;transform:rotate(-12deg)}
+.building-card::after{content:'🚧';position:absolute;bottom:-.9rem;right:-.4rem;font-size:1.6rem;transform:rotate(12deg)}
+.building-emoji{font-size:clamp(2.4rem,9vw,3.4rem);line-height:1.2;margin-bottom:.4rem}
+.building-msg{font-family:var(--en);font-size:1.8rem;font-weight:700;color:var(--sea2);letter-spacing:.04em}
+.building-sub{font-family:var(--hand);font-size:.92rem;color:var(--ink2);margin-top:.2rem}
+.bd-dates{margin-top:1.6rem;border-top:2px dashed var(--line2);padding-top:1.2rem;text-align:left}
+.bd-label{font-family:var(--en);font-size:1.05rem;font-weight:700;color:var(--coral);text-align:center;margin-bottom:.7rem}
+.bd-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.bd-list li{display:flex;align-items:center;gap:.6rem;font-family:var(--body);font-size:.9rem;background:var(--paper);border:1.5px solid var(--line);border-radius:10px;padding:.45rem .8rem}
+.bd-day{font-family:var(--display);font-size:.78rem;color:#fff;background:var(--sea);border-radius:6px;padding:.05rem .55rem;flex-shrink:0}
+.bd-day.fin{background:var(--coral)}
+.bd-date{font-weight:700}
+.bd-note{font-family:var(--mono);font-size:.66rem;color:var(--sub);text-align:center;margin-top:.8rem;line-height:1.7}
+.back-link{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--display);font-size:.92rem;color:var(--ink);background:var(--sun);border:2px solid var(--ink);border-radius:99px;padding:.55rem 1.3rem;text-decoration:none;box-shadow:3px 4px 0 rgba(61,53,47,.16);transition:all .2s}
+.back-link:hover{background:var(--sun2);transform:translateY(-2px);box-shadow:3px 6px 0 rgba(61,53,47,.18)}
+
+/* wave */
+.wave{width:100%;height:18px;margin:2.4rem 0 0;opacity:.55;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 18'><path d='M0 9 Q 7.5 0 15 9 T 30 9 T 45 9 T 60 9' stroke='%237ec4cf' stroke-width='2' fill='none' stroke-linecap='round'/></svg>");background-repeat:repeat-x;background-size:60px 18px}
+
+/* footer */
+footer{margin-top:2rem;padding:3rem 1rem 5rem;background:linear-gradient(180deg,transparent,var(--paper3));text-align:center}
+.ft-links{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin-bottom:1.5rem}
+.ft-links a{font-family:var(--display);font-size:.85rem;color:var(--ink);background:var(--paper);padding:.3rem .9rem;border:1.5px solid var(--ink);border-radius:99px;text-decoration:none;transition:all .2s}
+.ft-links a:hover{background:var(--sun)}
+.ft-meta{font-family:var(--hand);font-size:.78rem;color:var(--ink2);line-height:2}
+.ft-cute{font-family:var(--en);font-size:1.1rem;color:var(--coral);margin-top:.6rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+
+<header class="hdr" role="banner">
+  <div class="hdr-l">
+    <span class="hdr-tag">2026.08</span>
+    <span class="hdr-title">サマテイ ♡ 夏とゾンビ</span>
+  </div>
+  <nav class="hdr-r" aria-label="サイト内ナビ">
+    <a class="hdr-link" href="/">TOP</a>
+    <a class="hdr-link" href="/vol2/artists.html">エントリー</a>
+    <a class="hdr-link on" href="/vol2/timetable.html" aria-current="page">日程</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <span class="sec-num">TIMETABLE ✿</span>
+    <h1>タイムテーブル<span class="en">timetable</span></h1>
+    <p>出演順・タイムテーブルは<b>ただいま作成中</b>です🏖🧟 決まりしだい、このページで公開します。もう少々お待ちください。</p>
+    <span class="deco">🗓</span>
+  </section>
+
+  <div class="building">
+    <div class="building-card">
+      <div class="building-emoji">🏖🚧🧟</div>
+      <div class="building-msg">Coming soon...</div>
+      <div class="building-sub">ただいま せっせと組み立て中</div>
+
+      <div class="bd-dates">
+        <div class="bd-label">開催予定 ☀</div>
+        <ul class="bd-list">
+          <li><span class="bd-day">DAY 1</span><span class="bd-date">8/18 (火)</span></li>
+          <li><span class="bd-day">DAY 2</span><span class="bd-date">8/19 (水)</span></li>
+          <li><span class="bd-day">DAY 3</span><span class="bd-date">8/24 (月)</span></li>
+          <li><span class="bd-day fin">FINALE</span><span class="bd-date">8/25 (火)</span></li>
+        </ul>
+        <div class="bd-note">YouTube Premiere 無料配信予定 ／ 日程・出演順は変更になる場合があります</div>
+      </div>
+    </div>
+
+    <a class="back-link" href="/vol2/artists.html">👀 出演予定アーティストを見る →</a>
+  </div>
+
+  <div class="wave"></div>
+</main>
+
+<footer role="contentinfo">
+  <nav class="ft-links" aria-label="フッターナビ">
+    <a href="/">TOP</a>
+    <a href="/vol2/artists.html">ARTISTS</a>
+    <a href="/vol2/timetable.html">TIMETABLE</a>
+    <a href="/teihendon.html">底辺どん</a>
+    <a href="https://x.com/teihen_ai_music">公式X</a>
+  </nav>
+  <div class="ft-meta">
+    <strong>サマテイ 2026 〜夏とゾンビ〜</strong> — 底辺AI音楽フェスの夏フェス<br>
+    ゆる〜く、たのし〜く、最高かも...<br>
+    主催：貯水TANK ／ © 2026 底辺AI音楽フェス実行委員会
+  </div>
+  <div class="ft-cute">see you on the beach 🧟♡</div>
+</footer>
+
+</body>
+</html>
