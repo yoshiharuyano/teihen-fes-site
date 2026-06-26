@@ -110,6 +110,30 @@ footer{margin-top:3rem;padding:3rem 1rem 5rem;background:linear-gradient(180deg,
 .ft-meta{font-family:var(--hand);font-size:.78rem;color:var(--ink2);line-height:2}
 .ft-cute{font-family:var(--en);font-size:1.1rem;color:var(--coral);margin-top:.6rem}
 @media(max-width:600px){.grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}.card{padding:1rem}.avatar{width:60px;height:60px;font-size:1.6rem}}
+
+/* ===== view toggle ===== */
+.viewtoggle{display:inline-flex;border:2px solid var(--ink);border-radius:99px;overflow:hidden;background:var(--paper2);flex-shrink:0}
+.vbtn{font-family:var(--hand);font-size:.8rem;color:var(--ink2);background:transparent;border:none;padding:.35rem .85rem;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:.3rem;white-space:nowrap}
+.vbtn.on{background:var(--sea);color:#fff;font-weight:700}
+.vbtn:not(.on):hover{background:var(--paper3)}
+.vbtn+.vbtn{border-left:2px solid var(--ink)}
+.hidden{display:none!important}
+
+/* ===== grid view (namespaced gv-*) ===== */
+.gv-grid{max-width:1100px;margin:1rem auto 0;padding:0 clamp(1rem,4vw,2rem);display:grid;grid-template-columns:repeat(auto-fill,minmax(116px,1fr));gap:clamp(.6rem,1.6vw,1rem)}
+.gv-grp{grid-column:1/-1;display:flex;align-items:center;gap:.7rem;margin:1.3rem 0 .2rem}
+.gv-grp span{font-family:var(--display);font-size:1.2rem;color:var(--coral);background:var(--paper);border:2px solid var(--ink);border-radius:50%;width:2rem;height:2rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.gv-grp::after{content:'';flex:1;height:2px;background:var(--line2)}
+.gv-tile{display:flex;flex-direction:column;gap:.4rem;transition:transform .15s}
+.gv-tile:hover{transform:translateY(-3px)}
+.gv-tile.nolink{cursor:default}.gv-tile.nolink:hover{transform:none}
+.gv-ph{position:relative;aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:linear-gradient(135deg,var(--sun),var(--coral2));border:1.5px solid var(--line2);display:flex;align-items:center;justify-content:center}
+.gv-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.gv-ini{font-family:var(--display);font-size:1.8rem;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.15)}
+.gv-dot{position:absolute;top:.4rem;right:.4rem;width:.7rem;height:.7rem;border-radius:50%;border:1.5px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.1)}
+.gv-dot.video{background:var(--coral)}.gv-dot.support{background:var(--sea)}
+.gv-nm{font-size:.74rem;font-weight:700;line-height:1.35;color:var(--ink);word-break:break-word;text-align:center}
+@media(max-width:600px){.gv-grid{grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}}
 </style>
 </head>
 <body>
@@ -139,6 +163,10 @@ footer{margin-top:3rem;padding:3rem 1rem 5rem;background:linear-gradient(180deg,
   <div class="stats" id="stats"></div>
 
   <div class="ctrl">
+    <div class="viewtoggle" id="viewtoggle" role="group" aria-label="表示切替">
+      <button class="vbtn on" data-v="card" type="button">🎴 カード</button>
+      <button class="vbtn" data-v="grid" type="button">▦ グリッド</button>
+    </div>
     <div class="search">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
       <input type="text" id="q" placeholder="アーティスト名で検索...">
@@ -148,7 +176,7 @@ footer{margin-top:3rem;padding:3rem 1rem 5rem;background:linear-gradient(180deg,
       <button class="fbtn" data-f="video">🎬 自作動画</button>
       <button class="fbtn" data-f="support">🎧 サポート</button>
     </div>
-    <div class="sortwrap">
+    <div class="sortwrap" id="sortwrap">
       <label>並び</label>
       <select id="sort">
         <option value="no">エントリー順</option>
@@ -160,7 +188,8 @@ footer{margin-top:3rem;padding:3rem 1rem 5rem;background:linear-gradient(180deg,
   </div>
 
   <div class="wave"></div>
-  <div class="grid" id="grid"><div class="empty"><span class="big">🌊</span>メンテ中...</div></div>
+  <div class="grid" id="grid"><div class="empty"><span class="big">🌊</span>読み込み中...</div></div>
+  <div class="gv-grid hidden" id="gvGrid" aria-live="polite"></div>
 </main>
 
 <footer role="contentinfo">
@@ -179,5 +208,121 @@ footer{margin-top:3rem;padding:3rem 1rem 5rem;background:linear-gradient(180deg,
   <div class="ft-cute">see you on the beach 🧟♡</div>
 </footer>
 
+<script>
+/* ===== サマテイ vol2 アーティスト：カード / グリッド 切替（localStorage 記憶あり） ===== */
+var depthTitle={1:"すねまで",2:"ひざまで",3:"ももまで",4:"こしまで",5:"へそまで",6:"むねまで",7:"かたまで",8:"あごまで",9:"はなまで",10:"完全沈没 🧟"};
+var X_SVG='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>';
+var TT_SVG='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.51a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.43v-7.15a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-.81-1.52 4.81 4.81 0 01-.38-2.39z"/></svg>';
+var VKEY='samatei_v2_artistview';
+var artists=[],q='',filter='all',sort='no',view='card';
+var grid=document.getElementById('grid'),gvGrid=document.getElementById('gvGrid'),statsEl=document.getElementById('stats'),sortwrap=document.getElementById('sortwrap');
+
+function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function snsKind(u){u=(u||'').toLowerCase();return u.indexOf('tiktok')>-1?'TikTok':(u.indexOf('x.com')>-1||u.indexOf('twitter')>-1)?'X':'';}
+function toKata(s){return (s||'').replace(/[\u3041-\u3096]/g,function(c){return String.fromCharCode(c.charCodeAt(0)+0x60);});}
+var ROWS=[['ア','アァイィウゥエェオォヴ'],['カ','カガキギクグケゲコゴ'],['サ','サザシジスズセゼソゾ'],['タ','タダチヂッツヅテデトド'],['ナ','ナニヌネノ'],['ハ','ハバパヒビピフブプヘベペホボポ'],['マ','マミムメモ'],['ヤ','ヤャユュヨョ'],['ラ','ラリルレロ'],['ワ','ワヲヰヱ']];
+function rowOf(kana){var k=toKata((kana||'').replace(/^[\s\u3000]+/,''));var c=k.charAt(0);for(var i=0;i<ROWS.length;i++){if(ROWS[i][1].indexOf(c)>-1)return [i,ROWS[i][0]];}return [99,'A-Z #'];}
+
+/* アイコン拡張子フォールバック（カード用 / グリッド用） */
+window.__iconErr=function(img){var e=['.jpg','.png','.jpeg','.webp','.gif'];var i=(parseInt(img.dataset.i||'0',10))+1;if(i<e.length){img.dataset.i=i;img.src=img.dataset.base+e[i];}else{img.style.display='none';img.parentNode.textContent=img.dataset.init||'?';}};
+window.__iconErrG=function(img){var e=['.jpg','.png','.jpeg','.webp','.gif'];var i=(parseInt(img.dataset.i||'0',10))+1;if(i<e.length){img.dataset.i=i;img.src=img.dataset.base+e[i];}else{img.style.display='none';var d=img.parentNode.querySelector('.gv-dot');img.parentNode.innerHTML='<span class="gv-ini">'+(img.dataset.init||'?')+'</span>'+(d?d.outerHTML:'');}};
+
+/* 共通の絞り込み（フィルター＋検索） */
+function baseList(){return artists.filter(function(a){return filter==='all'||a.type===filter;});}
+function searchList(list){if(!q)return list;return list.filter(function(a){return a.name.toLowerCase().indexOf(q)>-1||(a.url||'').toLowerCase().indexOf(q)>-1||(a.genre||'').toLowerCase().indexOf(q)>-1||toKata(a.kana).indexOf(toKata(q))>-1;});}
+
+function renderStats(){
+  var v=artists.filter(function(a){return a.type==='video';}).length;
+  var s=artists.length-v;
+  var avg=artists.length?(artists.reduce(function(t,a){return t+a.depth;},0)/artists.length).toFixed(1):'0';
+  statsEl.innerHTML=
+    '<div class="stat"><div class="n">'+artists.length+'</div><div class="l">acts</div></div>'+
+    '<div class="stat"><div class="n">'+v+'</div><div class="l">🎬 自作</div></div>'+
+    '<div class="stat"><div class="n">'+s+'</div><div class="l">🎧 サポート</div></div>'+
+    '<div class="stat"><div class="n">'+avg+'</div><div class="l">📉 平均底辺度</div></div>';
+}
+function meter(d){var h='';for(var i=1;i<=10;i++){var on=i<=d,cls='pip'+(on?' on':'')+(on&&i===10?' x':(on&&i>=8?' deep':''));h+='<div class="'+cls+'"></div>';}return h;}
+
+/* ---- カード表示 ---- */
+function renderCard(){
+  var f=searchList(baseList()).slice();
+  if(sort==='name')f.sort(function(a,b){return a.name.localeCompare(b.name,'ja');});
+  else if(sort==='depth-desc')f.sort(function(a,b){return b.depth-a.depth||a.no.localeCompare(b.no);});
+  else if(sort==='depth-asc')f.sort(function(a,b){return a.depth-b.depth||a.no.localeCompare(b.no);});
+  else f.sort(function(a,b){return a.no.localeCompare(b.no);});
+  if(!f.length){grid.innerHTML='<div class="empty"><span class="big">🐚</span>'+(q?'「'+esc(q)+'」に一致するエントリーがいません':'プレエントリーは近日公開予定です')+'</div>';return;}
+  grid.innerHTML=f.map(function(a){
+    var init=esc((a.name||'?').charAt(0));
+    var av=a.icon?'<img src="'+esc(a.icon)+'.jpg" data-base="'+esc(a.icon)+'" data-i="0" data-init="'+init+'" alt="'+esc(a.name)+'" onerror="__iconErr(this)">':init;
+    var k=snsKind(a.url);
+    var sns=k?'<a class="sns" href="'+esc(a.url)+'" target="_blank" rel="noopener">'+(k==='TikTok'?TT_SVG:X_SVG)+'<span>'+k+'</span></a>':'<div class="sns none">SNS未登録</div>';
+    var music=a.link?'<a class="sns music" href="'+esc(a.link)+'" target="_blank" rel="noopener">♪ <span>楽曲</span></a>':'';
+    var tag=a.type==='video'?'<span class="tag video">🎬 自作動画</span>':'<span class="tag support">🎧 サポート</span>';
+    var dt=depthTitle[a.depth]||'';
+    var genre=a.genre?'<div class="genre">♪ '+esc(a.genre)+'</div>':'';
+    var cmt=a.comment?'<div class="comment">'+esc(a.comment)+'</div>':'';
+    return '<div class="card"><span class="no">No.'+esc(a.no)+'</span>'+
+      '<div class="avatar">'+av+'</div>'+
+      '<div class="name">'+esc(a.name)+'</div>'+
+      genre+
+      '<div><div class="depth-lbl">底辺度</div><div class="meter">'+meter(a.depth)+'</div>'+
+      '<div class="depth-txt">'+a.depth+' / 10 — '+dt+'</div></div>'+
+      cmt+tag+
+      '<div class="links">'+music+sns+'</div></div>';
+  }).join('');
+}
+
+/* ---- グリッド表示（五十音順） ---- */
+function renderGrid(){
+  var f=searchList(baseList()).slice();
+  f.sort(function(a,b){var ra=rowOf(a.kana),rb=rowOf(b.kana);if(ra[0]!==rb[0])return ra[0]-rb[0];return toKata(a.kana).localeCompare(toKata(b.kana),'ja');});
+  if(!f.length){gvGrid.innerHTML='<div class="empty"><span class="big">🐚</span>'+(q?'「'+esc(q)+'」に一致するエントリーがいません':'近日公開予定です')+'</div>';return;}
+  var html='',curRow=null;
+  f.forEach(function(a){
+    var r=rowOf(a.kana);
+    if(r[0]!==curRow){curRow=r[0];html+='<div class="gv-grp"><span>'+r[1].charAt(0)+'</span></div>';}
+    var init=esc((a.name||'?').charAt(0));
+    var dot='<span class="gv-dot '+(a.type||'')+'"></span>';
+    var ph=a.icon?'<img src="'+esc(a.icon)+'.jpg" data-base="'+esc(a.icon)+'" data-i="0" data-init="'+init+'" alt="'+esc(a.name)+'" onerror="__iconErrG(this)">'+dot:'<span class="gv-ini">'+init+'</span>'+dot;
+    var op=a.url?'href="'+esc(a.url)+'" target="_blank" rel="noopener"':'';
+    html+='<a class="gv-tile'+(a.url?'':' nolink')+'" '+op+'><div class="gv-ph">'+ph+'</div><div class="gv-nm">'+esc(a.name)+'</div></a>';
+  });
+  gvGrid.innerHTML=html;
+}
+
+function renderActive(){if(view==='grid')renderGrid();else renderCard();}
+
+function applyView(){
+  var isCard=view!=='grid';
+  grid.classList.toggle('hidden',!isCard);
+  gvGrid.classList.toggle('hidden',isCard);
+  if(sortwrap)sortwrap.style.display=isCard?'':'none';
+  var btns=document.querySelectorAll('#viewtoggle .vbtn');
+  [].forEach.call(btns,function(b){b.classList.toggle('on',b.dataset.v===view);});
+  renderActive();
+}
+
+function boot(d){artists=(d||[]).filter(function(a){return a.show!==false;});renderStats();applyView();}
+
+/* events */
+document.getElementById('q').addEventListener('input',function(){q=this.value.trim().toLowerCase();renderActive();});
+document.getElementById('sort').addEventListener('change',function(){sort=this.value;if(view!=='grid')renderCard();});
+document.getElementById('filters').addEventListener('click',function(e){var b=e.target.closest('.fbtn');if(!b)return;[].forEach.call(this.children,function(c){c.classList.remove('on');});b.classList.add('on');filter=b.dataset.f;renderActive();});
+document.getElementById('viewtoggle').addEventListener('click',function(e){var b=e.target.closest('.vbtn');if(!b)return;view=b.dataset.v;try{localStorage.setItem(VKEY,view);}catch(_){}applyView();});
+
+/* 前回選んだ表示を復元 */
+try{var sv=localStorage.getItem(VKEY);if(sv==='grid'||sv==='card')view=sv;}catch(_){}
+
+fetch('artists.json?_='+Date.now())
+  .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
+  .then(boot)
+  .catch(function(e){
+    console.error('artists.json 読み込み失敗:',e);
+    grid.classList.remove('hidden');gvGrid.classList.add('hidden');
+    grid.innerHTML='<div class="empty"><span class="big">🐚</span>artists.json を読み込めませんでした。<br>'+
+      'artists.html と同じ場所に artists.json を置き、Webサーバー経由で開いてください。<br>'+
+      '<span style="font-family:var(--mono);font-size:.7rem">(ローカル確認は: python -m http.server)</span></div>';
+  });
+</script>
 </body>
 </html>
